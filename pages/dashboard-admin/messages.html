@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages — Admin · Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .inbox-layout { display: grid; grid-template-columns: 300px 1fr; gap: 0; height: calc(100vh - 70px); overflow: hidden; }
+    .inbox-list { border-right: 1px solid var(--clr-border); overflow-y: auto; background: var(--clr-white); }
+    .inbox-thread { overflow-y: auto; display: flex; flex-direction: column; background: var(--clr-surface); }
+    .inbox-item { display: flex; gap: 0.75rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--clr-border); cursor: pointer; transition: background 0.15s; position: relative; }
+    .inbox-item:hover { background: var(--clr-gray-50); }
+    .inbox-item.active { background: rgba(201,168,76,0.06); border-left: 3px solid var(--clr-gold); }
+    .inbox-item.unread::before { content: ''; position: absolute; top: 50%; left: 0.5rem; transform: translateY(-50%); width: 6px; height: 6px; background: var(--clr-gold); border-radius: 50%; }
+    .inbox-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .inbox-meta { flex: 1; min-width: 0; }
+    .inbox-name { font-size: 0.875rem; font-weight: 600; color: var(--clr-text); display: flex; justify-content: space-between; }
+    .inbox-name .time { font-size: 0.72rem; font-weight: 400; color: var(--clr-text-muted); }
+    .inbox-preview { font-size: 0.78rem; color: var(--clr-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 0.2rem; }
+    .inbox-tag { font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 10px; margin-top: 0.4rem; display: inline-block; }
+    .thread-header { padding: 1.25rem 1.5rem; background: var(--clr-white); border-bottom: 1px solid var(--clr-border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+    .thread-body { flex: 1; overflow-y: auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+    .msg-bubble { max-width: 70%; }
+    .msg-bubble.from-client { align-self: flex-start; }
+    .msg-bubble.from-team { align-self: flex-end; }
+    .msg-bubble__text { padding: 0.875rem 1.1rem; border-radius: 14px; font-size: 0.875rem; line-height: 1.65; }
+    .msg-bubble.from-client .msg-bubble__text { background: var(--clr-white); color: var(--clr-text); border-bottom-left-radius: 4px; }
+    .msg-bubble.from-team .msg-bubble__text { background: var(--clr-black); color: white; border-bottom-right-radius: 4px; }
+    .msg-bubble__meta { font-size: 0.72rem; color: var(--clr-text-muted); margin-top: 0.3rem; }
+    .msg-bubble.from-team .msg-bubble__meta { text-align: right; }
+    .thread-input { padding: 1rem 1.5rem; background: var(--clr-white); border-top: 1px solid var(--clr-border); flex-shrink: 0; }
+    .thread-input textarea { width: 100%; border: 1px solid var(--clr-border); border-radius: 10px; padding: 0.75rem 1rem; font-size: 0.875rem; font-family: inherit; resize: none; outline: none; background: var(--clr-surface); color: var(--clr-text); }
+    .thread-input textarea:focus { border-color: var(--clr-gold); }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Client View</a></div>
+    </nav>
+  </aside>
+
+  <div class="dash-main" style="overflow:hidden;display:flex;flex-direction:column;">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Messages</h1><p class="dash-page-subtitle">7 unread conversations</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /></div>
+      </div>
+    </header>
+
+    <div class="inbox-layout">
+      <!-- Inbox List -->
+      <div class="inbox-list">
+        <div style="padding:1rem 1.25rem;border-bottom:1px solid var(--clr-border);">
+          <input type="search" placeholder="Search messages..." style="width:100%;padding:0.5rem 0.75rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.8rem;background:var(--clr-surface);color:var(--clr-text);outline:none;" />
+        </div>
+        <div class="inbox-item active unread">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Alexandra" class="inbox-avatar" />
+          <div class="inbox-meta">
+            <p class="inbox-name">Alexandra Chen <span class="time">2h</span></p>
+            <p class="inbox-preview">The quartzite samples have arrived — can you confirm...</p>
+            <span class="inbox-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Park Slope</span>
+          </div>
+        </div>
+        <div class="inbox-item unread">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="James" class="inbox-avatar" />
+          <div class="inbox-meta">
+            <p class="inbox-name">James Hartley <span class="time">5h</span></p>
+            <p class="inbox-preview">Can we schedule a call to review the kitchen renders?</p>
+            <span class="inbox-tag" style="background:rgba(59,130,246,0.1);color:#1d4ed8;">Tribeca</span>
+          </div>
+        </div>
+        <div class="inbox-item">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-black);display:flex;align-items:center;justify-content:center;color:white;font-size:0.8rem;font-weight:700;flex-shrink:0;">AM</div>
+          <div class="inbox-meta">
+            <p class="inbox-name">Al-Mansoor Group <span class="time">Yesterday</span></p>
+            <p class="inbox-preview">Lighting scheme approved. Please proceed to procurement.</p>
+            <span class="inbox-tag" style="background:rgba(34,197,94,0.1);color:#166534;">Saffron Club</span>
+          </div>
+        </div>
+        <div class="inbox-item">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Sunita" class="inbox-avatar" />
+          <div class="inbox-meta">
+            <p class="inbox-name">Sunita Patel <span class="time">Mar 24</span></p>
+            <p class="inbox-preview">Initial concept boards look amazing. We love option 2.</p>
+            <span class="inbox-tag" style="background:rgba(168,85,247,0.1);color:#7e22ce;">Gramercy</span>
+          </div>
+        </div>
+        <div class="inbox-item">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--clr-gray-700);display:flex;align-items:center;justify-content:center;color:white;font-size:0.8rem;font-weight:700;flex-shrink:0;">NG</div>
+          <div class="inbox-meta">
+            <p class="inbox-name">Noma Group <span class="time">Mar 22</span></p>
+            <p class="inbox-preview">Can we add a private dining room to the brief?</p>
+            <span class="inbox-tag" style="background:rgba(249,115,22,0.1);color:#c2410c;">Noma SoHo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Thread -->
+      <div class="inbox-thread">
+        <div class="thread-header">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Alexandra" style="width:40px;height:40px;border-radius:50%;object-fit:cover;" />
+            <div>
+              <p style="font-weight:600;font-size:0.9375rem;margin:0;">Alexandra Chen</p>
+              <p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Park Slope Residence · Active Project</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:0.75rem;">
+            <button style="padding:0.4rem 1rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.8rem;background:transparent;cursor:pointer;color:var(--clr-text);">View Project</button>
+          </div>
+        </div>
+
+        <div class="thread-body">
+          <div class="msg-bubble from-client">
+            <div class="msg-bubble__text">Hi Isabel, the quartzite samples have arrived from the supplier. I've placed them in the guest bathroom to get a sense of scale — they look beautiful in natural light. Should I wait for the kitchen samples before confirming?</div>
+            <p class="msg-bubble__meta">Alexandra Chen · March 26, 10:14 AM</p>
+          </div>
+
+          <div class="msg-bubble from-team">
+            <div class="msg-bubble__text">Hi Alexandra, fantastic — that's exactly the right approach. The kitchen samples are arriving Thursday so I'd recommend waiting until you can compare both side by side. The undertones can read very differently between the two spaces. I'll send you a comparison guide tomorrow.</div>
+            <p class="msg-bubble__meta">Isabel Voss (you) · March 26, 11:02 AM</p>
+          </div>
+
+          <div class="msg-bubble from-client">
+            <div class="msg-bubble__text">Perfect, that makes total sense. Also — the brass tap fittings we ordered from the Italian supplier, do you have an ETA? The plumber is asking for a confirmed delivery date before he can schedule installation.</div>
+            <p class="msg-bubble__meta">Alexandra Chen · March 26, 11:15 AM</p>
+          </div>
+
+          <div class="msg-bubble from-team">
+            <div class="msg-bubble__text">Great question — I'll chase the supplier today. Last confirmation I received was a 4-week lead time from March 10th, so that would put delivery around April 7th. I'll get written confirmation and share it with your plumber directly. Can you send me his email?</div>
+            <p class="msg-bubble__meta">Isabel Voss (you) · March 26, 11:28 AM</p>
+          </div>
+
+          <div class="msg-bubble from-client">
+            <div class="msg-bubble__text">The quartzite samples have arrived — can you confirm your preferred edge profile? We've gone back and forth on the eased vs. mitered finish and I'd love your professional eye on it in person if possible.</div>
+            <p class="msg-bubble__meta">Alexandra Chen · Today, 2:04 PM</p>
+          </div>
+        </div>
+
+        <div class="thread-input">
+          <textarea rows="3" placeholder="Type a reply..."></textarea>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.75rem;">
+            <div style="display:flex;gap:0.5rem;">
+              <button style="padding:0.4rem;background:none;border:none;cursor:pointer;color:var(--clr-text-muted);" title="Attach file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+            </div>
+            <button class="btn btn--primary" style="padding:0.5rem 1.5rem;font-size:0.875rem;">Send Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team — Admin · Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .team-card { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+    .team-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .team-card__photo { height: 160px; overflow: hidden; position: relative; }
+    .team-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-card__role-badge { position: absolute; bottom: 0.75rem; left: 0.75rem; background: var(--clr-gold); color: white; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 10px; }
+    .team-card__body { padding: 1.25rem; }
+    .team-card__name { font-weight: 700; font-size: 0.9375rem; color: var(--clr-text); margin: 0 0 0.2rem; }
+    .team-card__title { font-size: 0.8rem; color: var(--clr-text-muted); margin: 0 0 1rem; }
+    .team-card__stats { display: flex; gap: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--clr-border); }
+    .team-card__stat { text-align: center; flex: 1; }
+    .team-card__stat-val { font-family: var(--font-display); font-size: 1.125rem; font-weight: 400; color: var(--clr-text); }
+    .team-card__stat-label { font-size: 0.65rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.1rem; }
+    @media (max-width: 1200px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Client View</a></div>
+    </nav>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Team</h1><p class="dash-page-subtitle">8 designers &amp; architects</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <div class="dash-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" placeholder="Search team..." aria-label="Search" /></div>
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /></div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+        <div style="display:flex;gap:0.5rem;">
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:none;background:var(--clr-black);color:white;cursor:pointer;">All Roles</button>
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">Architecture</button>
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">Interior</button>
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">3D &amp; Viz</button>
+        </div>
+        <button class="btn btn--primary" style="gap:0.5rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Member</button>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="David Kim" /><span class="team-card__role-badge">Partner</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">David Kim</p>
+            <p class="team-card__title">Founding Partner &amp; Architect</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">7</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">17</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.9</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Isabel Voss" /><span class="team-card__role-badge">Partner</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">Isabel Voss</p>
+            <p class="team-card__title">Principal Interior Designer</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">5</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">12</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.9</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Marcus Trent" /><span class="team-card__role-badge" style="background:var(--clr-black);">Senior</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">Marcus Trent</p>
+            <p class="team-card__title">Senior Architect</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">4</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">9</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.8</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Priya Sharma" /><span class="team-card__role-badge" style="background:var(--clr-black);">Mid</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">Priya Sharma</p>
+            <p class="team-card__title">Interior Designer</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">3</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">5</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.7</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Tom Laurent" /><span class="team-card__role-badge" style="background:rgba(59,130,246,0.9);">3D / Viz</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">Tom Laurent</p>
+            <p class="team-card__title">3D Visualisation Lead</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">12</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">8</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.9</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Yuki Tanaka" /><span class="team-card__role-badge" style="background:var(--clr-black);">Junior</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">Yuki Tanaka</p>
+            <p class="team-card__title">Junior Architect</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">2</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">2</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.6</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo"><img src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&q=80" alt="Carlos Reyes" /><span class="team-card__role-badge" style="background:rgba(168,85,247,0.9);">PM</span></div>
+          <div class="team-card__body">
+            <p class="team-card__name">Carlos Reyes</p>
+            <p class="team-card__title">Project Manager</p>
+            <div class="team-card__stats">
+              <div class="team-card__stat"><p class="team-card__stat-val">6</p><p class="team-card__stat-label">Projects</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">6</p><p class="team-card__stat-label">Years</p></div>
+              <div class="team-card__stat"><p class="team-card__stat-val">4.8</p><p class="team-card__stat-label">Rating</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="team-card" style="background:var(--clr-gray-50);border-style:dashed;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;cursor:pointer;min-height:260px;">
+          <div style="width:48px;height:48px;background:rgba(201,168,76,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <p style="font-size:0.875rem;font-weight:500;color:var(--clr-text-muted);">Add Team Member</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

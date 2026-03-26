@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages — Studio Noir Client Portal</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+</head>
+<body class="dashboard-layout">
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a></div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Overview</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="renderings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>3D Renderings</a>
+      <a href="materials.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/></svg>Materials</a>
+      <a href="feedback.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Account</p>
+      <a href="documents.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Documents</a>
+      <a href="messages.html" class="dash-nav__link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">3</span></a>
+      <a href="profile.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/></svg>Settings</a>
+    </nav>
+  </aside>
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Messages</h1><p class="dash-page-subtitle">Upper West Side Residence</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="User" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" />
+      </div>
+    </header>
+    <div class="dash-content">
+      <div class="dash-card"><div class="dash-card__header"><h3 class="dash-card__title">Messages</h3><span style="font-size:0.75rem;color:var(--clr-gold);font-weight:600;">3 unread</span></div><div style="display:flex;flex-direction:column;gap:0;">
+<div style="display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:8px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);cursor:pointer;margin-bottom:0.5rem;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Isabel" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/><div style="flex:1;min-width:0;"><div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><p style="font-weight:700;font-size:0.875rem;margin:0;">Isabel Voss</p><span style="font-size:0.75rem;color:var(--clr-text-muted);">10:32 AM</span></div><p style="font-size:0.8rem;color:var(--clr-text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;">Your kitchen stone sample is confirmed for delivery Mar 28...</p></div><span class="dash-badge">1</span></div>
+<div style="display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:8px;cursor:pointer;margin-bottom:0.5rem;transition:background 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='transparent'"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Marcus" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;"/><div style="flex:1;min-width:0;"><div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><p style="font-weight:600;font-size:0.875rem;margin:0;">Marcus Trent</p><span style="font-size:0.75rem;color:var(--clr-text-muted);">Yesterday</span></div><p style="font-size:0.8rem;color:var(--clr-text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;">Sharing the updated lighting schedule for your review...</p></div><span class="dash-badge">2</span></div>
+<div style="display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:8px;cursor:pointer;margin-bottom:0.5rem;transition:background 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='transparent'"><div style="width:44px;height:44px;border-radius:50%;background:var(--clr-black);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.8rem;font-weight:700;color:white;">SN</div><div style="flex:1;min-width:0;"><div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><p style="font-weight:600;font-size:0.875rem;margin:0;">Studio Noir Team</p><span style="font-size:0.75rem;color:var(--clr-text-muted);">Mar 20</span></div><p style="font-size:0.8rem;color:var(--clr-text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;">Batch 2 renderings are now available in your portal...</p></div></div>
+</div><div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><label class="form-label">New Message</label><textarea class="form-input" rows="3" placeholder="Write a message to your design team..." style="margin-bottom:0.75rem;resize:vertical;"></textarea><button class="btn btn--primary" style="font-size:0.85rem;">Send Message</button></div></div>
+    </div>
+  </div>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

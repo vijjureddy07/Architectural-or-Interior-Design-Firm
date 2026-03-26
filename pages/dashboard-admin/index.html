@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+</head>
+<body class="dashboard-layout">
+
+  <!-- ══ ADMIN SIDEBAR ══ -->
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">SN</div>
+        <span class="navbar__logo-text">Studio Noir</span>
+      </a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);">
+        <a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Client View
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Admin Overview</h1><p class="dash-page-subtitle">Thursday, March 26, 2026</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <div class="dash-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" placeholder="Search projects, clients..." aria-label="Search" /></div>
+        <button class="dash-topbar__icon-btn" style="position:relative;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span style="position:absolute;top:2px;right:2px;width:8px;height:8px;background:var(--clr-gold);border-radius:50%;"></span></button>
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /><div><p style="font-size:0.875rem;font-weight:600;margin:0;line-height:1.2;">David Kim</p><p style="font-size:0.7rem;color:var(--clr-gold);margin:0;">Administrator</p></div></div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <!-- KPI Row -->
+      <div class="dash-stat-grid" style="grid-template-columns:repeat(5,1fr);">
+        <div class="dash-stat-card"><div class="dash-stat-card__icon" style="background:rgba(201,168,76,0.12);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div><p class="dash-stat-card__value">12</p><p class="dash-stat-card__label">Active Projects</p></div></div>
+        <div class="dash-stat-card"><div class="dash-stat-card__icon" style="background:rgba(34,197,94,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5" width="22"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><p class="dash-stat-card__value">34</p><p class="dash-stat-card__label">Total Clients</p></div></div>
+        <div class="dash-stat-card"><div class="dash-stat-card__icon" style="background:rgba(59,130,246,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" width="22"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><p class="dash-stat-card__value">$2.4M</p><p class="dash-stat-card__label">Revenue YTD</p></div></div>
+        <div class="dash-stat-card"><div class="dash-stat-card__icon" style="background:rgba(249,115,22,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5" width="22"><path d="M17 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><p class="dash-stat-card__value">28</p><p class="dash-stat-card__label">Team Members</p></div></div>
+        <div class="dash-stat-card"><div class="dash-stat-card__icon" style="background:rgba(168,85,247,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" width="22"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><p class="dash-stat-card__value">94%</p><p class="dash-stat-card__label">Client Satisfaction</p></div></div>
+      </div>
+
+      <!-- Charts + Projects -->
+      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+        <!-- Revenue Chart -->
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Revenue Overview</h3><select style="font-size:0.8rem;padding:0.3rem 0.6rem;border-radius:6px;border:1px solid var(--clr-border);background:var(--clr-surface);color:var(--clr-text);cursor:pointer;"><option>2026 YTD</option><option>2025 Full Year</option></select></div>
+          <canvas id="revenueChart" height="240"></canvas>
+        </div>
+
+        <!-- Active Projects Quick -->
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Projects by Status</h3><a href="projects.html" style="font-size:0.8rem;color:var(--clr-gold);text-decoration:none;font-weight:600;">View All →</a></div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.5rem;">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Design Development</span><span>5 projects</span></div>
+              <div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:42%;height:100%;background:var(--clr-gold);border-radius:100px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Construction Phase</span><span>3 projects</span></div>
+              <div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:25%;height:100%;background:#3b82f6;border-radius:100px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Concept / Brief</span><span>2 projects</span></div>
+              <div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:17%;height:100%;background:#22c55e;border-radius:100px;"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Handover / Completed</span><span>2 projects</span></div>
+              <div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:17%;height:100%;background:#a855f7;border-radius:100px;"></div></div>
+            </div>
+          </div>
+          <canvas id="donutChart" height="160"></canvas>
+        </div>
+      </div>
+
+      <!-- Recent Projects Table -->
+      <div class="dash-card" style="margin-bottom:1.5rem;">
+        <div class="dash-card__header"><h3 class="dash-card__title">Active Projects</h3><a href="projects.html" class="btn btn--outline" style="font-size:0.8rem;">All Projects</a></div>
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead><tr><th>Project</th><th>Client</th><th>Lead Designer</th><th>Phase</th><th>Due</th><th>Budget</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Upper West Side Residence</strong></td><td>Alexandra Chen</td><td>Isabel Voss</td><td>Design Development</td><td>Nov 2026</td><td>$285,000</td><td><span class="dash-status dash-status--active">On Track</span></td></tr>
+              <tr><td><strong>The Greenwich Townhouse</strong></td><td>James &amp; Sarah Keller</td><td>Marcus Trent</td><td>Concept Design</td><td>Aug 2027</td><td>$420,000</td><td><span class="dash-status dash-status--active">On Track</span></td></tr>
+              <tr><td><strong>SoHo Loft Conversion</strong></td><td>Priya Nair</td><td>Isabel Voss</td><td>Construction</td><td>Jun 2026</td><td>$195,000</td><td><span class="dash-status dash-status--warning">At Risk</span></td></tr>
+              <tr><td><strong>Malibu Beach House</strong></td><td>Thomas Beaumont</td><td>David Kim</td><td>Construction</td><td>Sep 2026</td><td>$680,000</td><td><span class="dash-status dash-status--active">On Track</span></td></tr>
+              <tr><td><strong>Park Slope Townhouse</strong></td><td>Rachel Wong</td><td>Marcus Trent</td><td>Brief &amp; Discovery</td><td>TBD</td><td>$145,000</td><td><span class="dash-status">New</span></td></tr>
+              <tr><td><strong>Tribeca Penthouse Phase 2</strong></td><td>Michael Torres</td><td>Isabel Voss</td><td>Design Development</td><td>Mar 2027</td><td>$380,000</td><td><span class="dash-status dash-status--active">On Track</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Team + Enquiries -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        <!-- Team Workload -->
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Team Workload</h3><a href="team.html" style="font-size:0.8rem;color:var(--clr-gold);text-decoration:none;font-weight:600;">View All →</a></div>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="display:flex;align-items:center;gap:1rem;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Isabel" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;"/><div style="flex:1;"><div style="display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.35rem;"><span style="font-weight:600;">Isabel Voss</span><span style="color:var(--clr-text-muted);">5 projects</span></div><div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:83%;height:100%;background:var(--clr-gold);border-radius:100px;"></div></div></div></div>
+            <div style="display:flex;align-items:center;gap:1rem;"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Marcus" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;"/><div style="flex:1;"><div style="display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.35rem;"><span style="font-weight:600;">Marcus Trent</span><span style="color:var(--clr-text-muted);">4 projects</span></div><div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:67%;height:100%;background:#3b82f6;border-radius:100px;"></div></div></div></div>
+            <div style="display:flex;align-items:center;gap:1rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="David" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;"/><div style="flex:1;"><div style="display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.35rem;"><span style="font-weight:600;">David Kim</span><span style="color:var(--clr-text-muted);">2 projects</span></div><div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:33%;height:100%;background:#22c55e;border-radius:100px;"></div></div></div></div>
+            <div style="display:flex;align-items:center;gap:1rem;"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&q=80" alt="Priya" style="width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;"/><div style="flex:1;"><div style="display:flex;justify-content:space-between;font-size:0.85rem;margin-bottom:0.35rem;"><span style="font-weight:600;">Priya Sharma</span><span style="color:var(--clr-text-muted);">3 projects</span></div><div style="background:var(--clr-gray-100);border-radius:100px;height:6px;"><div style="width:50%;height:100%;background:#a855f7;border-radius:100px;"></div></div></div></div>
+          </div>
+        </div>
+
+        <!-- New Enquiries -->
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">New Enquiries</h3><span class="dash-badge">4 new</span></div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="padding:1rem;border-radius:8px;border:1px solid var(--clr-border);"><div style="display:flex;justify-content:space-between;margin-bottom:0.35rem;"><p style="font-weight:600;font-size:0.875rem;margin:0;">Sophie Laurent</p><span style="font-size:0.7rem;color:var(--clr-text-muted);">2h ago</span></div><p style="font-size:0.8rem;color:var(--clr-text-muted);margin:0 0 0.75rem;">Full apartment interior, Paris 8e · Budget $180K</p><div style="display:flex;gap:0.5rem;"><button style="flex:1;padding:0.4rem;border-radius:6px;background:rgba(201,168,76,0.1);color:var(--clr-gold);border:1px solid rgba(201,168,76,0.3);cursor:pointer;font-size:0.75rem;font-weight:600;">Assign</button><button style="flex:1;padding:0.4rem;border-radius:6px;background:var(--clr-gray-100);color:var(--clr-text-muted);border:none;cursor:pointer;font-size:0.75rem;">Archive</button></div></div>
+            <div style="padding:1rem;border-radius:8px;border:1px solid var(--clr-border);"><div style="display:flex;justify-content:space-between;margin-bottom:0.35rem;"><p style="font-weight:600;font-size:0.875rem;margin:0;">Robert Chang</p><span style="font-size:0.7rem;color:var(--clr-text-muted);">5h ago</span></div><p style="font-size:0.8rem;color:var(--clr-text-muted);margin:0 0 0.75rem;">New build, Hamptons · 8,000 sq ft · Budget $1.2M+</p><div style="display:flex;gap:0.5rem;"><button style="flex:1;padding:0.4rem;border-radius:6px;background:rgba(201,168,76,0.1);color:var(--clr-gold);border:1px solid rgba(201,168,76,0.3);cursor:pointer;font-size:0.75rem;font-weight:600;">Assign</button><button style="flex:1;padding:0.4rem;border-radius:6px;background:var(--clr-gray-100);color:var(--clr-text-muted);border:none;cursor:pointer;font-size:0.75rem;">Archive</button></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    // Revenue Bar Chart
+    (function() {
+      const ctx = document.getElementById('revenueChart');
+      if (!ctx) return;
+      const months = ['Oct','Nov','Dec','Jan','Feb','Mar'];
+      const data = [185000, 220000, 310000, 195000, 280000, 410000];
+      const max = Math.max(...data);
+      const h = 240, pad = 40, barW = 40, gap = ((ctx.offsetWidth || 500) - pad*2 - barW*months.length) / (months.length - 1);
+      ctx.width = ctx.offsetWidth || 500; ctx.height = h;
+      const c = ctx.getContext('2d');
+      c.clearRect(0,0,ctx.width,h);
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const textColor = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.4)';
+      months.forEach((m, i) => {
+        const x = pad + i * (barW + gap);
+        const bh = ((data[i] / max) * (h - 60));
+        const y = h - 30 - bh;
+        const grad = c.createLinearGradient(0, y, 0, h-30);
+        grad.addColorStop(0, '#C9A84C');
+        grad.addColorStop(1, 'rgba(201,168,76,0.2)');
+        c.fillStyle = grad;
+        c.beginPath();
+        c.roundRect(x, y, barW, bh, 4);
+        c.fill();
+        c.fillStyle = textColor;
+        c.font = '11px sans-serif';
+        c.textAlign = 'center';
+        c.fillText(m, x + barW/2, h - 10);
+        c.fillText('$' + (data[i]/1000).toFixed(0) + 'k', x + barW/2, y - 5);
+      });
+    })();
+  </script>
+</body>
+</html>

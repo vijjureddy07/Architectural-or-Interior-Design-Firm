@@ -1,0 +1,98 @@
+/* ============================================================
+   STUDIO NOIR — Dark Mode Stylesheet
+   ============================================================ */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .navbar {
+  background: var(--clr-gray-900);
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .card {
+  background: var(--clr-gray-900);
+  border-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .service-card {
+  background: var(--clr-gray-900);
+  border-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .testimonial-card {
+  background: var(--clr-gray-900);
+  border-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .form-input {
+  background: var(--clr-gray-900);
+  border-color: var(--clr-gray-700);
+  color: var(--clr-gray-100);
+}
+
+[data-theme="dark"] .form-input::placeholder {
+  color: var(--clr-gray-500);
+}
+
+[data-theme="dark"] .page-header {
+  background: var(--clr-black);
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .stats-bar {
+  border-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .stats-bar__item {
+  border-right-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .stats-bar__item:hover {
+  background: var(--clr-gray-900);
+}
+
+[data-theme="dark"] .tabs__nav {
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .accordion-item {
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .navbar__dropdown {
+  background: var(--clr-gray-900);
+  border-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .navbar__mobile {
+  background: var(--clr-gray-900);
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .navbar__mobile-link {
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .navbar__mobile-sub a {
+  border-bottom-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .map-placeholder {
+  background: var(--clr-gray-900);
+  border-color: var(--clr-gray-700);
+}
+
+[data-theme="dark"] .process-step__num {
+  background: var(--clr-gray-900);
+}
+
+[data-theme="dark"] .badge--light {
+  background: var(--clr-gray-700);
+  color: var(--clr-gray-200);
+}
+
+/* Theme toggle button active state */
+.theme-btn.dark-active svg.moon-icon { display: none; }
+.theme-btn.dark-active svg.sun-icon { display: block !important; }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Renderings — Studio Noir Client Portal</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .render-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .render-card { background: var(--clr-white); border-radius: 12px; overflow: hidden; border: 1px solid var(--clr-border); transition: transform 0.2s, box-shadow 0.2s; }
+    .render-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+    .render-card__img { aspect-ratio: 16/10; overflow: hidden; position: relative; cursor: pointer; }
+    .render-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .render-card:hover .render-card__img img { transform: scale(1.04); }
+    .render-card__zoom { position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s; }
+    .render-card:hover .render-card__zoom { opacity: 1; }
+    .render-card__body { padding: 1.125rem; }
+    .render-card__title { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.25rem; color: var(--clr-text); }
+    .render-card__meta { font-size: 0.75rem; color: var(--clr-text-muted); display: flex; align-items: center; justify-content: space-between; }
+    .render-status { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 20px; }
+    .render-status--new { background: rgba(59,130,246,0.1); color: #3b82f6; }
+    .render-status--approved { background: rgba(34,197,94,0.1); color: #22c55e; }
+    .render-status--revision { background: rgba(249,115,22,0.1); color: #f97316; }
+    /* Lightbox */
+    .lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 1000; display: none; align-items: center; justify-content: center; }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-inner { position: relative; max-width: 90vw; max-height: 85vh; }
+    .lightbox-inner img { max-width: 100%; max-height: 85vh; border-radius: 8px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: -2.5rem; right: 0; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; opacity: 0.7; }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-caption { position: absolute; bottom: -2.5rem; left: 0; right: 0; text-align: center; color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a></div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Overview</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="renderings.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>3D Renderings</a>
+      <a href="materials.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>Materials</a>
+      <a href="feedback.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Account</p>
+      <a href="documents.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Documents</a>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">3</span></a>
+      <a href="profile.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+    </nav>
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">3D Renderings</h1><p class="dash-page-subtitle">Upper West Side Residence · 12 renders</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="User" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" />
+      </div>
+    </header>
+    <div class="dash-content">
+
+      <!-- Filter Bar -->
+      <div class="dash-card" style="margin-bottom:1.5rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <button class="render-filter-btn active" onclick="filterRenders(this,'all')" style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:600;background:var(--clr-black);color:white;border:none;cursor:pointer;">All (12)</button>
+            <button class="render-filter-btn" onclick="filterRenders(this,'new')" style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:500;background:var(--clr-gray-100);color:var(--clr-text);border:none;cursor:pointer;">New (4)</button>
+            <button class="render-filter-btn" onclick="filterRenders(this,'approved')" style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:500;background:var(--clr-gray-100);color:var(--clr-text);border:none;cursor:pointer;">Approved (7)</button>
+            <button class="render-filter-btn" onclick="filterRenders(this,'revision')" style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:500;background:var(--clr-gray-100);color:var(--clr-text);border:none;cursor:pointer;">Revision (1)</button>
+          </div>
+          <div style="display:flex;gap:0.5rem;">
+            <button style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;background:rgba(201,168,76,0.1);color:var(--clr-gold);border:1px solid rgba(201,168,76,0.3);cursor:pointer;font-weight:600;">↓ Download All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Renders Grid -->
+      <div class="render-grid">
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Living Room" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Living Room — View A</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="Master Bedroom" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Master Bedroom</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Kitchen" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Kitchen — View A</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+        <div class="render-card" data-status="revision">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80" alt="Entrance Hall" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Entrance Hall</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--revision">↩ Revision</span></div></div>
+        </div>
+        <div class="render-card" data-status="new">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Living Room B" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Living Room — View B</p><div class="render-card__meta"><span>Batch 2 · Mar 20</span><span class="render-status render-status--new">● New</span></div></div>
+        </div>
+        <div class="render-card" data-status="new">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80" alt="Study" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Study / Home Office</p><div class="render-card__meta"><span>Batch 2 · Mar 20</span><span class="render-status render-status--new">● New</span></div></div>
+        </div>
+        <div class="render-card" data-status="new">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Kitchen B" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Kitchen — View B</p><div class="render-card__meta"><span>Batch 2 · Mar 20</span><span class="render-status render-status--new">● New</span></div></div>
+        </div>
+        <div class="render-card" data-status="new">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80" alt="Master Bath" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Master Bathroom</p><div class="render-card__meta"><span>Batch 2 · Mar 20</span><span class="render-status render-status--new">● New</span></div></div>
+        </div>
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="Dining Room" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Dining Room</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Terrace" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Terrace / Outdoor</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=600&q=80" alt="Guest Room" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Guest Bedroom</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+        <div class="render-card" data-status="approved">
+          <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Hallway" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
+          <div class="render-card__body"><p class="render-card__title">Main Hallway</p><div class="render-card__meta"><span>Batch 1 · Jan 10</span><span class="render-status render-status--approved">✓ Approved</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightboxBtn()">✕</button>
+      <img id="lightbox-img" src="" alt="Render full view" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src.replace('w=600','w=1200');
+      document.getElementById('lightbox-caption').textContent = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox(e) { if(e.target === document.getElementById('lightbox')) closeLightboxBtn(); }
+    function closeLightboxBtn() { document.getElementById('lightbox').classList.remove('open'); }
+    function filterRenders(btn, status) {
+      document.querySelectorAll('.render-filter-btn').forEach(b => { b.style.background='var(--clr-gray-100)'; b.style.color='var(--clr-text)'; });
+      btn.style.background='var(--clr-black)'; btn.style.color='white';
+      document.querySelectorAll('.render-card').forEach(card => {
+        if(status === 'all' || card.dataset.status === status) card.style.display='block';
+        else card.style.display='none';
+      });
+    }
+  </script>
+</body>
+</html>

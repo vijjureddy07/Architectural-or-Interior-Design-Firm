@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frequently asked questions about Studio Noir's design process, pricing, and client portal." />
+  <title>FAQ — Studio Noir</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../assets/css/rtl.css" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <ul class="navbar__nav" role="list">
+        <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
+        <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
+        <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
+        <li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link">Portfolio</a></li>
+        <li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li>
+        <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
+        <li class="navbar__nav-item"><a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="dashboard-user/index.html">User Dashboard</a><a href="dashboard-admin/index.html">Admin Dashboard</a></div></li>
+      </ul>
+      <div class="navbar__actions">
+        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <button class="navbar__icon-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
+        <a href="login.html" class="btn btn--ghost">Login</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile"><a href="../index.html" class="navbar__mobile-link">Home</a><a href="about.html" class="navbar__mobile-link">About</a><a href="contact.html" class="navbar__mobile-link">Contact</a><a href="login.html" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Login</a></div>
+
+  <!-- ══ HERO ══ -->
+  <section style="padding: 140px 0 80px; background: var(--clr-black); text-align: center;">
+    <div class="container">
+      <p class="section-label" style="color:var(--clr-gold);">Got Questions?</p>
+      <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--clr-white);font-weight:300;margin:0.5rem 0 1rem;">Frequently Asked <em>Questions</em></h1>
+      <p style="color:var(--clr-gray-400);max-width:500px;margin:0 auto;">Everything you need to know about working with Studio Noir — from first consultation to final installation.</p>
+    </div>
+  </section>
+
+  <!-- ══ FAQ CONTENT ══ -->
+  <section style="padding: var(--space-5xl) 0; background: var(--clr-surface);">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:260px 1fr;gap:4rem;align-items:start;">
+
+        <!-- Sidebar Nav -->
+        <div style="position:sticky;top:100px;">
+          <nav aria-label="FAQ categories">
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.25rem;">
+              <li><a href="#process" style="display:block;padding:0.6rem 1rem;border-radius:8px;font-size:0.875rem;font-weight:500;color:var(--clr-gold);background:rgba(201,168,76,0.08);text-decoration:none;">The Design Process</a></li>
+              <li><a href="#pricing" style="display:block;padding:0.6rem 1rem;border-radius:8px;font-size:0.875rem;color:var(--clr-text-muted);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='none'">Pricing &amp; Payments</a></li>
+              <li><a href="#portal" style="display:block;padding:0.6rem 1rem;border-radius:8px;font-size:0.875rem;color:var(--clr-text-muted);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='none'">The Client Portal</a></li>
+              <li><a href="#renderings" style="display:block;padding:0.6rem 1rem;border-radius:8px;font-size:0.875rem;color:var(--clr-text-muted);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='none'">3D Renderings</a></li>
+              <li><a href="#materials" style="display:block;padding:0.6rem 1rem;border-radius:8px;font-size:0.875rem;color:var(--clr-text-muted);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='none'">Materials &amp; Procurement</a></li>
+              <li><a href="#international" style="display:block;padding:0.6rem 1rem;border-radius:8px;font-size:0.875rem;color:var(--clr-text-muted);text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='var(--clr-gray-100)'" onmouseout="this.style.background='none'">International Projects</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- FAQ Sections -->
+        <div>
+
+          <!-- Process -->
+          <div id="process" style="margin-bottom:3.5rem;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">The Design Process</h2>
+            <div class="accordion">
+              <div class="accordion__item"><button class="accordion__trigger">How does a project begin?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Every engagement starts with an initial consultation — typically a 60-minute video call or in-person meeting at our studio or your property. We'll explore your brief, lifestyle, vision, and the practical parameters of the space. There's no fee for this first conversation. If it feels like a mutual fit, we'll send a formal proposal within five business days.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">How long does an interior design project take?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Timelines vary considerably based on scope. A single-room interior consultation can deliver results in 4–6 weeks. A full apartment interior typically takes 4–8 months from brief to installation. A complete architectural new build may run 18–36 months including planning and construction. We'll always give you a realistic timeline in the proposal phase.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">Will I have input during the design process?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Absolutely. Our process is highly collaborative. You'll be presented with concept options, asked to make decisions on materials and configurations, and kept informed at every milestone via our client portal. No design decisions are finalised without your explicit sign-off.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">What happens if I don't like the initial concept?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Our engagement structure typically includes two to three concept directions. If none resonate, we'll re-brief and revise. Our goal is a design you love — we'd rather spend more time in the concept phase than proceed with a direction you're uncertain about.</p></div></div>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div id="pricing" style="margin-bottom:3.5rem;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">Pricing &amp; Payments</h2>
+            <div class="accordion">
+              <div class="accordion__item"><button class="accordion__trigger">How is the design fee structured?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Most interior projects are charged on a fixed fee agreed before work begins. Architectural projects may use either a fixed fee or a percentage of construction cost (typically 8–15%). All fees are outlined clearly in your proposal with payment milestone schedules.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">Is procurement (furniture, materials) included in the fee?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Our design fee covers selection, specification, and project management of procurement. Items are purchased at trade prices and passed on to clients with a modest project management markup (typically 15–20%). This is always itemised transparently in client accounts within the portal.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">Do you require a deposit?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Yes — a 30% deposit is required to commence work and is set against the final invoice. Subsequent payments follow a milestone schedule tied to project phases.</p></div></div>
+            </div>
+          </div>
+
+          <!-- Client Portal -->
+          <div id="portal" style="margin-bottom:3.5rem;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">The Client Portal</h2>
+            <div class="accordion">
+              <div class="accordion__item"><button class="accordion__trigger">What can I access in the client portal?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Your client portal gives you secure, 24/7 access to your 3D renderings, material selections and approval workflows, project timeline and milestones, procurement tracking, shared documents and contracts, and a direct messaging channel with your design team.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">When do I get access to the portal?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Your portal account is activated when the project commences — typically within 48 hours of your deposit payment being processed. You'll receive a welcome email with login credentials and a short walkthrough guide.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">Can multiple people (e.g. my partner, my contractor) access the portal?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Yes. Up to three client users can be added per project at no additional cost. Contractor access can also be granted on a view-only basis. Contact your project manager to add or remove users.</p></div></div>
+            </div>
+          </div>
+
+          <!-- Renderings -->
+          <div id="renderings" style="margin-bottom:3.5rem;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">3D Renderings</h2>
+            <div class="accordion">
+              <div class="accordion__item"><button class="accordion__trigger">What types of renders do you produce?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>We produce photo-realistic still renders, walkthrough animations, and 360° panoramic views depending on project scope. Render packages can also be added to any engagement as an add-on service.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">Can I request revisions to renders after viewing them?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Yes. Our standard process includes up to two rounds of render revisions per space. Additional revision rounds can be accommodated at a nominal hourly rate.</p></div></div>
+            </div>
+          </div>
+
+          <!-- Materials -->
+          <div id="materials" style="margin-bottom:3.5rem;">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">Materials &amp; Procurement</h2>
+            <div class="accordion">
+              <div class="accordion__item"><button class="accordion__trigger">How do I approve material selections?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>All material proposals are presented to you through the client portal with images, specifications, supplier information, and costs. You can approve, reject, or comment on each item directly in the portal. Physical samples are dispatched to your address for tactile review of key finishes.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">Can I source my own materials or furniture?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Yes, within reason. We welcome client-supplied pieces where they complement the overall design direction. We'll assess any proposed items for suitability and integration. We do ask that client-supplied pieces are disclosed early in the process to allow us to plan around them.</p></div></div>
+            </div>
+          </div>
+
+          <!-- International -->
+          <div id="international">
+            <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--clr-border);">International Projects</h2>
+            <div class="accordion">
+              <div class="accordion__item"><button class="accordion__trigger">Do you take projects outside the United States?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Yes. We've worked on projects in the UK, France, Switzerland, the UAE, and across the US. Architectural services may require partnering with local architects of record in certain jurisdictions, which we facilitate. Interior design projects can often be managed remotely via the portal with periodic site visits.</p></div></div>
+              <div class="accordion__item"><button class="accordion__trigger">How are travel costs handled for international projects?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Travel expenses (flights, accommodation, ground transport) are billed at cost with no markup. A travel budget estimate is included in the initial proposal. We schedule site visits efficiently to minimise cost and disruption.</p></div></div>
+            </div>
+          </div>
+
+          <!-- Still have questions -->
+          <div style="background:linear-gradient(135deg,var(--clr-black),#1a1a1a);border-radius:16px;padding:2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;">
+            <div>
+              <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:400;color:white;margin-bottom:0.5rem;">Still have questions?</h3>
+              <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;margin:0;">Our team typically responds within 4 business hours.</p>
+            </div>
+            <a href="contact.html" class="btn btn--primary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Studio Noir</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces worldwide.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links" style="margin-bottom:1.5rem;"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li></ul><div class="footer__col-title">Newsletter</div><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email" required /><button type="submit" class="footer__newsletter-btn">Subscribe</button></form></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Studio Noir. All rights reserved.</p><div class="footer__contact-row"><span>hello@studionoir.com</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

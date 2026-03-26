@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Studio Noir Client Portal — User Dashboard" />
+  <title>Dashboard — Studio Noir Client Portal</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+</head>
+<body class="dashboard-layout">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="dash-sidebar" id="dashSidebar" role="complementary" aria-label="Dashboard navigation">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo" style="text-decoration:none;">
+        <div class="navbar__logo-mark">SN</div>
+        <span class="navbar__logo-text">Studio Noir</span>
+      </a>
+    </div>
+    <nav class="dash-nav" aria-label="Dashboard menu">
+      <p class="dash-nav__section">Overview</p>
+      <a href="index.html" class="dash-nav__link active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="renderings.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+        3D Renderings
+      </a>
+      <a href="materials.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        Materials
+      </a>
+      <a href="feedback.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Feedback
+      </a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Account</p>
+      <a href="documents.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Documents
+      </a>
+      <a href="messages.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Messages
+        <span class="dash-badge">3</span>
+      </a>
+      <a href="profile.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </a>
+      <a href="settings.html" class="dash-nav__link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
+      </a>
+      <div style="margin-top:auto;padding-top:2rem;border-top:1px solid var(--clr-border);">
+        <a href="../login.html" class="dash-nav__link" style="color:var(--clr-text-muted);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sign Out
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <div class="dash-main">
+    <!-- Topbar -->
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div>
+          <h1 class="dash-page-title">Dashboard</h1>
+          <p class="dash-page-subtitle">Welcome back, Alexandra</p>
+        </div>
+      </div>
+      <div class="dash-topbar__right">
+        <div class="dash-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" placeholder="Search..." aria-label="Search dashboard" />
+        </div>
+        <button class="dash-topbar__icon-btn" aria-label="Notifications" style="position:relative;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span style="position:absolute;top:2px;right:2px;width:8px;height:8px;background:var(--clr-gold);border-radius:50%;"></span>
+        </button>
+        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg>
+        </button>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Alexandra Chen" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" />
+          <div style="display:none;" class="show-md">
+            <p style="font-size:0.875rem;font-weight:600;margin:0;line-height:1.2;">Alexandra Chen</p>
+            <p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Client</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="dash-content">
+
+      <!-- Project Status Banner -->
+      <div class="dash-project-banner">
+        <div>
+          <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold);margin-bottom:0.35rem;">Active Project</p>
+          <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:white;margin:0;">Upper West Side Residence</h2>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;margin:0.35rem 0 0;">Lead Designer: Isabel Voss · Started October 2025</p>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="renderings.html" class="btn btn--primary" style="font-size:0.875rem;">View Renderings</a>
+          <a href="messages.html" class="btn btn--ghost-light" style="font-size:0.875rem;">Message Team</a>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="dash-stat-grid">
+        <div class="dash-stat-card">
+          <div class="dash-stat-card__icon" style="background:rgba(201,168,76,0.12);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+          </div>
+          <div>
+            <p class="dash-stat-card__value">12</p>
+            <p class="dash-stat-card__label">Renderings Ready</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-card__icon" style="background:rgba(34,197,94,0.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5" width="22"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p class="dash-stat-card__value">8 / 14</p>
+            <p class="dash-stat-card__label">Materials Approved</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-card__icon" style="background:rgba(59,130,246,0.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" width="22"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <p class="dash-stat-card__value">3</p>
+            <p class="dash-stat-card__label">Unread Messages</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-card__icon" style="background:rgba(249,115,22,0.1);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.5" width="22"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <p class="dash-stat-card__value">67%</p>
+            <p class="dash-stat-card__label">Project Progress</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline + Upcoming -->
+      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+
+        <!-- Timeline -->
+        <div class="dash-card">
+          <div class="dash-card__header">
+            <h3 class="dash-card__title">Project Timeline</h3>
+            <span class="dash-badge dash-badge--green">On Track</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div class="dash-timeline-item dash-timeline-item--done">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">Brief &amp; Discovery</p><p class="dash-timeline-date">Oct 5, 2025 · Complete</p></div>
+            </div>
+            <div class="dash-timeline-item dash-timeline-item--done">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">Concept Design</p><p class="dash-timeline-date">Nov 18, 2025 · Complete</p></div>
+            </div>
+            <div class="dash-timeline-item dash-timeline-item--done">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">3D Renders — Batch 1</p><p class="dash-timeline-date">Jan 10, 2026 · Complete</p></div>
+            </div>
+            <div class="dash-timeline-item dash-timeline-item--active">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">Material Selection &amp; Sign-off</p><p class="dash-timeline-date">In progress · Due Apr 15, 2026</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">Construction Documentation</p><p class="dash-timeline-date">Upcoming · May 2026</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">Construction Phase</p><p class="dash-timeline-date">Upcoming · Jun–Oct 2026</p></div>
+            </div>
+            <div class="dash-timeline-item">
+              <div class="dash-timeline-dot"></div>
+              <div class="dash-timeline-content"><p class="dash-timeline-title">Installation &amp; Handover</p><p class="dash-timeline-date">Upcoming · Nov 2026</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Actions -->
+        <div style="display:flex;flex-direction:column;gap:1.5rem;">
+          <div class="dash-card">
+            <div class="dash-card__header">
+              <h3 class="dash-card__title">Action Required</h3>
+              <span style="font-size:0.75rem;color:var(--clr-gold);font-weight:600;">3 pending</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1rem;">
+              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(201,168,76,0.06);border-radius:8px;border:1px solid rgba(201,168,76,0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><circle cx="12" cy="12" r="3"/></svg>
+                <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Approve kitchen stone</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Sample arriving Mar 28</p></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(201,168,76,0.06);border-radius:8px;border:1px solid rgba(201,168,76,0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+                <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Review Render Batch 2</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">4 renders awaiting feedback</p></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(201,168,76,0.06);border-radius:8px;border:1px solid rgba(201,168,76,0.2);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Sign lighting proposal</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Document ready to sign</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Ring -->
+          <div class="dash-card" style="text-align:center;">
+            <h3 class="dash-card__title" style="margin-bottom:1.5rem;">Overall Progress</h3>
+            <div style="position:relative;width:120px;height:120px;margin:0 auto 1rem;">
+              <svg viewBox="0 0 120 120" width="120" height="120">
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--clr-border)" stroke-width="10"/>
+                <circle cx="60" cy="60" r="50" fill="none" stroke="var(--clr-gold)" stroke-width="10" stroke-dasharray="314" stroke-dashoffset="104" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+              </svg>
+              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:400;color:var(--clr-text);">67%</span>
+              </div>
+            </div>
+            <p style="font-size:0.8rem;color:var(--clr-text-muted);">Design Development Phase</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Renderings Preview -->
+      <div class="dash-card">
+        <div class="dash-card__header">
+          <h3 class="dash-card__title">Latest Renderings</h3>
+          <a href="renderings.html" style="font-size:0.8rem;color:var(--clr-gold);font-weight:600;text-decoration:none;">View All →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
+          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=75" alt="Living Room" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Living Room v2</p></div>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=75" alt="Master Bedroom" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Master Bedroom</p></div>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=75" alt="Kitchen" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Kitchen</p></div>
+          </div>
+          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=75" alt="Entrance Hall" style="width:100%;height:100%;object-fit:cover;" />
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Entrance Hall</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /dash-content -->
+  </div><!-- /dash-main -->
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

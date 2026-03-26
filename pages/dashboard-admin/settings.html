@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — Admin · Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .settings-layout { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; }
+    .settings-nav { position: sticky; top: 90px; }
+    .settings-nav a { display: block; padding: 0.6rem 0.875rem; border-radius: 8px; font-size: 0.875rem; color: var(--clr-text-muted); text-decoration: none; transition: all 0.15s; margin-bottom: 0.25rem; }
+    .settings-nav a:hover { background: var(--clr-gray-100); color: var(--clr-text); }
+    .settings-nav a.active { background: var(--clr-black); color: white; }
+    .settings-section { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); padding: 2rem; margin-bottom: 1.5rem; }
+    .settings-section h2 { font-family: var(--font-display); font-size: 1.125rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--clr-text); }
+    .settings-section p.desc { font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--clr-border); }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid var(--clr-border); }
+    .toggle-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .toggle-info h4 { font-size: 0.875rem; font-weight: 600; color: var(--clr-text); margin: 0 0 0.2rem; }
+    .toggle-info p { font-size: 0.78rem; color: var(--clr-text-muted); margin: 0; }
+    .toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider { position: absolute; inset: 0; background: var(--clr-gray-200); border-radius: 100px; cursor: pointer; transition: 0.3s; }
+    .toggle-slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: 0.3s; }
+    .toggle input:checked + .toggle-slider { background: var(--clr-gold); }
+    .toggle input:checked + .toggle-slider::before { transform: translateX(20px); }
+    .danger-zone { border-color: #fca5a5; }
+    .danger-zone h2 { color: #dc2626; }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Client View</a></div>
+    </nav>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Settings</h1><p class="dash-page-subtitle">Studio &amp; account preferences</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /></div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+      <div class="settings-layout">
+
+        <!-- Settings Nav -->
+        <div class="settings-nav">
+          <a href="#studio" class="active">Studio Profile</a>
+          <a href="#account">My Account</a>
+          <a href="#notifications">Notifications</a>
+          <a href="#portal">Client Portal</a>
+          <a href="#integrations">Integrations</a>
+          <a href="#danger">Danger Zone</a>
+        </div>
+
+        <!-- Settings Content -->
+        <div>
+
+          <!-- Studio Profile -->
+          <div class="settings-section" id="studio">
+            <h2>Studio Profile</h2>
+            <p class="desc">Information shown on invoices, proposals, and client communications.</p>
+            <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.75rem;">
+              <div style="width:80px;height:80px;background:var(--clr-black);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.75rem;font-weight:600;color:white;flex-shrink:0;">SN</div>
+              <div><button style="padding:0.5rem 1rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.85rem;background:transparent;cursor:pointer;color:var(--clr-text);margin-right:0.75rem;">Upload Logo</button><p style="font-size:0.75rem;color:var(--clr-text-muted);margin-top:0.5rem;">SVG, PNG or JPG · Max 2MB</p></div>
+            </div>
+            <div class="field-row">
+              <div class="form-group"><label class="form-label">Studio Name</label><input class="form-input" type="text" value="Studio Noir LLC" /></div>
+              <div class="form-group"><label class="form-label">Website</label><input class="form-input" type="url" value="https://studionoir.com" /></div>
+            </div>
+            <div class="field-row">
+              <div class="form-group"><label class="form-label">Primary Email</label><input class="form-input" type="email" value="hello@studionoir.com" /></div>
+              <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" value="+1 (212) 000-0000" /></div>
+            </div>
+            <div class="form-group" style="margin-bottom:1.25rem;"><label class="form-label">Studio Address</label><textarea class="form-input" rows="2" style="resize:vertical;">150 West 28th Street, Suite 1200, New York, NY 10001</textarea></div>
+            <button class="btn btn--primary">Save Changes</button>
+          </div>
+
+          <!-- Account -->
+          <div class="settings-section" id="account">
+            <h2>My Account</h2>
+            <p class="desc">Update your personal details and change your password.</p>
+            <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.75rem;">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&q=80" alt="Profile" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--clr-gold);" />
+              <button style="padding:0.5rem 1rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.85rem;background:transparent;cursor:pointer;">Change Photo</button>
+            </div>
+            <div class="field-row">
+              <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" value="David" /></div>
+              <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" value="Kim" /></div>
+            </div>
+            <div class="field-row">
+              <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" value="david@studionoir.com" /></div>
+              <div class="form-group"><label class="form-label">Role</label><input class="form-input" type="text" value="Founding Partner &amp; Architect" readonly style="background:var(--clr-gray-50);" /></div>
+            </div>
+            <div style="margin-top:0.5rem;padding-top:1.25rem;border-top:1px solid var(--clr-border);margin-bottom:1.25rem;">
+              <p style="font-size:0.85rem;font-weight:600;margin-bottom:1rem;">Change Password</p>
+              <div class="field-row">
+                <div class="form-group"><label class="form-label">Current Password</label><input class="form-input" type="password" placeholder="••••••••" /></div>
+                <div class="form-group"><label class="form-label">New Password</label><input class="form-input" type="password" placeholder="Min 8 characters" /></div>
+              </div>
+            </div>
+            <button class="btn btn--primary">Save Account</button>
+          </div>
+
+          <!-- Notifications -->
+          <div class="settings-section" id="notifications">
+            <h2>Notifications</h2>
+            <p class="desc">Choose what you receive updates about and how.</p>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>New client message</h4><p>Notify when a client sends a new message</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Material selection approved</h4><p>Alert when a client approves a material</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Project milestone reached</h4><p>Alert when a project hits a milestone date</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>New rendering uploaded</h4><p>Notify team when renders are added to a project</p></div>
+              <label class="toggle"><input type="checkbox" /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Weekly digest email</h4><p>Summary of project activity every Monday</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+          </div>
+
+          <!-- Client Portal -->
+          <div class="settings-section" id="portal">
+            <h2>Client Portal Settings</h2>
+            <p class="desc">Configure what clients can see and do in their portal.</p>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Show project cost breakdown</h4><p>Allow clients to see itemised procurement costs</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Enable client messaging</h4><p>Allow clients to send messages directly to designers</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Enable feedback on renderings</h4><p>Let clients comment on individual render frames</p></div>
+              <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
+            </div>
+            <div class="toggle-row">
+              <div class="toggle-info"><h4>Watermark renderings</h4><p>Apply Studio Noir watermark to all downloaded renders</p></div>
+              <label class="toggle"><input type="checkbox" /><span class="toggle-slider"></span></label>
+            </div>
+            <div style="margin-top:1.25rem;"><button class="btn btn--primary">Save Portal Settings</button></div>
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="settings-section danger-zone" id="danger">
+            <h2>Danger Zone</h2>
+            <p class="desc">These actions are permanent and cannot be undone. Proceed with caution.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <div><p style="font-size:0.875rem;font-weight:600;color:var(--clr-text);">Export All Data</p><p style="font-size:0.8rem;color:var(--clr-text-muted);margin-top:0.2rem;">Download a complete archive of all studio data</p></div>
+              <button style="padding:0.5rem 1.25rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.85rem;background:transparent;cursor:pointer;">Export</button>
+            </div>
+            <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #fca5a5;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <div><p style="font-size:0.875rem;font-weight:600;color:#dc2626;">Reset Portal</p><p style="font-size:0.8rem;color:var(--clr-text-muted);margin-top:0.2rem;">Remove all client accounts and project data</p></div>
+              <button style="padding:0.5rem 1.25rem;border:1px solid #fca5a5;border-radius:8px;font-size:0.85rem;background:transparent;cursor:pointer;color:#dc2626;">Reset Portal</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

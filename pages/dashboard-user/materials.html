@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materials — Studio Noir Client Portal</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .material-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .material-card { background: var(--clr-white); border-radius: 12px; overflow: hidden; border: 2px solid var(--clr-border); transition: all 0.25s; cursor: pointer; }
+    .material-card:hover { border-color: var(--clr-gold); box-shadow: 0 4px 20px rgba(201,168,76,0.15); }
+    .material-card.approved { border-color: #22c55e; }
+    .material-card.rejected { border-color: #ef4444; opacity: 0.6; }
+    .material-card__swatch { height: 160px; overflow: hidden; }
+    .material-card__swatch img { width: 100%; height: 100%; object-fit: cover; }
+    .material-card__body { padding: 1.25rem; }
+    .material-card__name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .material-card__spec { font-size: 0.75rem; color: var(--clr-text-muted); margin-bottom: 1rem; }
+    .material-card__actions { display: flex; gap: 0.5rem; }
+    .mat-btn { flex: 1; padding: 0.45rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s; }
+    .mat-btn--approve { background: rgba(34,197,94,0.1); color: #22c55e; }
+    .mat-btn--approve:hover { background: #22c55e; color: white; }
+    .mat-btn--reject { background: rgba(239,68,68,0.08); color: #ef4444; }
+    .mat-btn--reject:hover { background: #ef4444; color: white; }
+    .mat-btn--comment { background: var(--clr-gray-100); color: var(--clr-text-muted); }
+    .mat-btn--comment:hover { background: var(--clr-gray-200); }
+    .mat-section { margin-bottom: 2.5rem; }
+    .mat-section-title { font-family: var(--font-display); font-size: 1.125rem; font-weight: 500; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--clr-border); display: flex; align-items: center; gap: 0.75rem; }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a></div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Overview</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="renderings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>3D Renderings</a>
+      <a href="materials.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>Materials</a>
+      <a href="feedback.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Feedback</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Account</p>
+      <a href="documents.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Documents</a>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">3</span></a>
+      <a href="profile.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+    </nav>
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Material Selections</h1><p class="dash-page-subtitle">8 of 14 approved · 6 pending your review</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="User" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" />
+      </div>
+    </header>
+    <div class="dash-content">
+
+      <!-- Progress Summary -->
+      <div class="dash-card" style="margin-bottom:1.5rem;">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;">
+          <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--clr-text);">14</p><p style="font-size:0.75rem;color:var(--clr-text-muted);">Total Items</p></div>
+          <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:#22c55e;">8</p><p style="font-size:0.75rem;color:var(--clr-text-muted);">Approved</p></div>
+          <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--clr-gold);">6</p><p style="font-size:0.75rem;color:var(--clr-text-muted);">Awaiting Review</p></div>
+          <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:#ef4444;">0</p><p style="font-size:0.75rem;color:var(--clr-text-muted);">Rejected</p></div>
+        </div>
+        <div style="margin-top:1.25rem;background:var(--clr-gray-100);border-radius:100px;height:8px;overflow:hidden;">
+          <div style="width:57%;height:100%;background:linear-gradient(90deg,var(--clr-gold),#d4a843);border-radius:100px;"></div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--clr-text-muted);margin-top:0.5rem;">57% complete — please review pending items below</p>
+      </div>
+
+      <!-- Living Areas -->
+      <div class="mat-section">
+        <h2 class="mat-section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Living &amp; Dining Areas
+          <span style="font-size:0.75rem;font-weight:500;color:var(--clr-text-muted);font-family:var(--font-body);">5 items · 3 approved</span>
+        </h2>
+        <div class="material-grid">
+          <div class="material-card approved">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Herringbone Oak" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Herringbone White Oak</p>
+              <p class="material-card__spec">Flooring · 120mm × 600mm · Bespoke Oil Finish</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" style="background:#22c55e;color:white;">✓ Approved</button>
+              </div>
+            </div>
+          </div>
+          <div class="material-card approved">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=80" alt="Calacatta Marble" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Calacatta Oro Marble</p>
+              <p class="material-card__spec">Feature Wall · Polished · 20mm slab</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" style="background:#22c55e;color:white;">✓ Approved</button>
+              </div>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80" alt="Linen Sofa" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Belgian Linen — Stone</p>
+              <p class="material-card__spec">Main Sofa Upholstery · Dedar Milano</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" onclick="approveMat(this)">✓ Approve</button>
+                <button class="mat-btn mat-btn--reject" onclick="rejectMat(this)">✕ Reject</button>
+                <button class="mat-btn mat-btn--comment">💬</button>
+              </div>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Brass Hardware" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Unlacquered Brass</p>
+              <p class="material-card__spec">Door Hardware &amp; Joinery Pulls</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" onclick="approveMat(this)">✓ Approve</button>
+                <button class="mat-btn mat-btn--reject" onclick="rejectMat(this)">✕ Reject</button>
+                <button class="mat-btn mat-btn--comment">💬</button>
+              </div>
+            </div>
+          </div>
+          <div class="material-card approved">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Plaster Walls" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Venetian Plaster — Warm White</p>
+              <p class="material-card__spec">All Walls · Tadelakt technique</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" style="background:#22c55e;color:white;">✓ Approved</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kitchen -->
+      <div class="mat-section">
+        <h2 class="mat-section-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          Kitchen
+          <span style="font-size:0.75rem;font-weight:500;color:var(--clr-text-muted);font-family:var(--font-body);">4 items · 2 approved</span>
+        </h2>
+        <div class="material-grid">
+          <div class="material-card approved">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80" alt="Kitchen Cabinetry" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Matte Black Cabinetry</p>
+              <p class="material-card__spec">Handleless · Lacquered MDF · bespoke joinery</p>
+              <div class="material-card__actions"><button class="mat-btn mat-btn--approve" style="background:#22c55e;color:white;">✓ Approved</button></div>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=80" alt="Quartzite Counter" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Patagonia Quartzite</p>
+              <p class="material-card__spec">Countertop · Leather Finish · 30mm</p>
+              <p style="font-size:0.7rem;color:var(--clr-gold);font-weight:600;margin-bottom:0.5rem;">⚠ Sample arriving Mar 28</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" onclick="approveMat(this)">✓ Approve</button>
+                <button class="mat-btn mat-btn--reject" onclick="rejectMat(this)">✕ Reject</button>
+                <button class="mat-btn mat-btn--comment">💬</button>
+              </div>
+            </div>
+          </div>
+          <div class="material-card">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80" alt="Kitchen Tiles" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Zellige Tile — Ivory</p>
+              <p class="material-card__spec">Splashback · Handmade Moroccan</p>
+              <div class="material-card__actions">
+                <button class="mat-btn mat-btn--approve" onclick="approveMat(this)">✓ Approve</button>
+                <button class="mat-btn mat-btn--reject" onclick="rejectMat(this)">✕ Reject</button>
+                <button class="mat-btn mat-btn--comment">💬</button>
+              </div>
+            </div>
+          </div>
+          <div class="material-card approved">
+            <div class="material-card__swatch"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80" alt="Sink" /></div>
+            <div class="material-card__body">
+              <p class="material-card__name">Fireclay Butler Sink</p>
+              <p class="material-card__spec">Villeroy &amp; Boch · Double Bowl · White</p>
+              <div class="material-card__actions"><button class="mat-btn mat-btn--approve" style="background:#22c55e;color:white;">✓ Approved</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    function approveMat(btn) {
+      const card = btn.closest('.material-card');
+      card.classList.add('approved');
+      btn.parentElement.innerHTML = '<button class="mat-btn mat-btn--approve" style="background:#22c55e;color:white;">✓ Approved</button>';
+    }
+    function rejectMat(btn) {
+      const card = btn.closest('.material-card');
+      card.classList.add('rejected');
+      btn.parentElement.innerHTML = '<button class="mat-btn mat-btn--reject" style="background:#ef4444;color:white;">✕ Rejected</button>';
+    }
+  </script>
+</body>
+</html>

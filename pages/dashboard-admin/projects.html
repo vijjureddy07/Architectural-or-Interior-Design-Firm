@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Admin · Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .project-table { width: 100%; border-collapse: collapse; }
+    .project-table th { text-align: left; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clr-text-muted); padding: 0.75rem 1rem; border-bottom: 1px solid var(--clr-border); }
+    .project-table td { padding: 1rem; border-bottom: 1px solid var(--clr-border); font-size: 0.875rem; color: var(--clr-text); vertical-align: middle; }
+    .project-table tr:last-child td { border-bottom: none; }
+    .project-table tr:hover td { background: var(--clr-gray-50); }
+    .status-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+    .status-pill.active { background: rgba(201,168,76,0.12); color: #92680a; }
+    .status-pill.complete { background: #dcfce7; color: #166534; }
+    .status-pill.planning { background: rgba(59,130,246,0.1); color: #1d4ed8; }
+    .status-pill.on-hold { background: rgba(249,115,22,0.1); color: #c2410c; }
+    .avatar-stack { display: flex; }
+    .avatar-stack img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; margin-left: -8px; object-fit: cover; }
+    .avatar-stack img:first-child { margin-left: 0; }
+    .prog-mini { height: 4px; background: var(--clr-gray-100); border-radius: 100px; width: 80px; overflow: hidden; }
+    .prog-mini__fill { height: 100%; background: var(--clr-gold); border-radius: 100px; }
+    .filter-bar { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .filter-pill { padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--clr-border); background: transparent; color: var(--clr-text-muted); cursor: pointer; transition: all 0.2s; }
+    .filter-pill.active, .filter-pill:hover { background: var(--clr-black); color: white; border-color: var(--clr-black); }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Client View</a></div>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Projects</h1><p class="dash-page-subtitle">12 active projects</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <div class="dash-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" placeholder="Search projects..." aria-label="Search" /></div>
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /><div><p style="font-size:0.875rem;font-weight:600;margin:0;line-height:1.2;">David Kim</p><p style="font-size:0.7rem;color:var(--clr-gold);margin:0;">Administrator</p></div></div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <!-- Header Actions -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
+        <div class="filter-bar" style="margin-bottom:0;">
+          <button class="filter-pill active">All (12)</button>
+          <button class="filter-pill">Active (8)</button>
+          <button class="filter-pill">Planning (3)</button>
+          <button class="filter-pill">Complete (1)</button>
+        </div>
+        <button class="btn btn--primary" style="gap:0.5rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          New Project
+        </button>
+      </div>
+
+      <!-- Projects Table -->
+      <div class="dash-card" style="padding:0;overflow:hidden;">
+        <table class="project-table">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Client</th>
+              <th>Type</th>
+              <th>Team</th>
+              <th>Progress</th>
+              <th>Deadline</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><div><p style="font-weight:600;margin:0;">Park Slope Residence</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Brooklyn, NY</p></div></td>
+              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>A. Chen</span></div></td>
+              <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Interior</span></td>
+              <td><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" /></div></td>
+              <td><div><p style="font-size:0.78rem;margin:0 0 4px;">72%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:72%;"></div></div></div></td>
+              <td><span style="font-size:0.8rem;">Jun 12, 2026</span></td>
+              <td><span class="status-pill active">Active</span></td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;" title="View"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><div><p style="font-weight:600;margin:0;">Tribeca Penthouse</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Manhattan, NY</p></div></td>
+              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>J. Hartley</span></div></td>
+              <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Architecture + Interior</span></td>
+              <td><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="" /></div></td>
+              <td><div><p style="font-size:0.78rem;margin:0 0 4px;">45%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:45%;"></div></div></div></td>
+              <td><span style="font-size:0.8rem;">Sep 30, 2026</span></td>
+              <td><span class="status-pill active">Active</span></td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><div><p style="font-weight:600;margin:0;">Saffron Club Dubai</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">DIFC, Dubai UAE</p></div></td>
+              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>Al-Mansoor Group</span></div></td>
+              <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Hospitality</span></td>
+              <td><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" /></div></td>
+              <td><div><p style="font-size:0.78rem;margin:0 0 4px;">90%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:90%;"></div></div></div></td>
+              <td><span style="font-size:0.8rem;">Apr 5, 2026</span></td>
+              <td><span class="status-pill active">Active</span></td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><div><p style="font-weight:600;margin:0;">Meridian Capital HQ</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Mayfair, London</p></div></td>
+              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>Meridian Capital</span></div></td>
+              <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Commercial</span></td>
+              <td><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="" /></div></td>
+              <td><div><p style="font-size:0.78rem;margin:0 0 4px;">100%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:100%;background:#22c55e;"></div></div></div></td>
+              <td><span style="font-size:0.8rem;">Dec 15, 2025</span></td>
+              <td><span class="status-pill complete">Complete</span></td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><div><p style="font-weight:600;margin:0;">Gramercy Villa</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Manhattan, NY</p></div></td>
+              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>S. Patel</span></div></td>
+              <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Residential</span></td>
+              <td><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="" /></div></td>
+              <td><div><p style="font-size:0.78rem;margin:0 0 4px;">12%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:12%;"></div></div></div></td>
+              <td><span style="font-size:0.8rem;">Jan 20, 2027</span></td>
+              <td><span class="status-pill planning">Planning</span></td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+            </tr>
+            <tr>
+              <td><div><p style="font-weight:600;margin:0;">Noma Restaurant Fit-out</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">SoHo, NY</p></div></td>
+              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>Noma Group</span></div></td>
+              <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Hospitality</span></td>
+              <td><div class="avatar-stack"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="" /><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="" /></div></td>
+              <td><div><p style="font-size:0.78rem;margin:0 0 4px;">60%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:60%;"></div></div></div></td>
+              <td><span style="font-size:0.8rem;">Jul 8, 2026</span></td>
+              <td><span class="status-pill active">Active</span></td>
+              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;font-size:0.8rem;color:var(--clr-text-muted);">
+        <span>Showing 6 of 12 projects</span>
+        <div style="display:flex;gap:0.5rem;">
+          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:none;cursor:pointer;font-size:0.8rem;">Previous</button>
+          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:var(--clr-black);color:white;cursor:pointer;font-size:0.8rem;">1</button>
+          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:none;cursor:pointer;font-size:0.8rem;">2</button>
+          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:none;cursor:pointer;font-size:0.8rem;">Next</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    document.querySelectorAll('.filter-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* ============================================================
+   STUDIO NOIR — RTL (Right-to-Left) Support
+   ============================================================ */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .navbar__inner {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__dropdown {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .navbar__dropdown a:hover {
+  padding-left: var(--sp-5);
+  padding-right: var(--sp-6);
+}
+
+[dir="rtl"] .navbar__actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .section-label {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero__eyebrow {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero__cta {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer__link:hover {
+  padding-right: var(--sp-2);
+  padding-left: 0;
+}
+
+[dir="rtl"] .footer__bottom {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .breadcrumb {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .blog-card__link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .testimonial-card::before {
+  left: auto;
+  right: var(--sp-6);
+  content: '\201D';
+}
+
+[dir="rtl"] .process-steps::before {
+  left: 10%;
+  right: 10%;
+  background: linear-gradient(to left, var(--clr-gold), transparent);
+}
+
+[dir="rtl"] .service-card::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .accordion-btn {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .portfolio-item__overlay {
+  text-align: right;
+}
+
+[dir="rtl"] .stats-bar__item {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .stats-bar__item:last-child {
+  border-left: none;
+}
+
+[dir="rtl"] .tabs__nav {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer__socials {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__hamburger {
+  order: -1;
+}
+
+/* Dashboard RTL */
+[dir="rtl"] .dashboard-layout {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .sidebar__nav-link {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 260px;
+}

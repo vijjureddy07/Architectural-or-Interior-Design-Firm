@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clients — Admin · Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <style>
+    .client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .client-card { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .client-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .client-card__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+    .client-card__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--clr-border); }
+    .client-card__name { font-weight: 600; font-size: 0.9375rem; color: var(--clr-text); margin: 0 0 0.2rem; }
+    .client-card__since { font-size: 0.75rem; color: var(--clr-text-muted); }
+    .client-card__stat { display: flex; justify-content: space-between; padding: 0.6rem 0; border-top: 1px solid var(--clr-border); font-size: 0.8rem; }
+    .client-card__stat:first-of-type { margin-top: 1rem; }
+    .client-card__stat-label { color: var(--clr-text-muted); }
+    .client-card__stat-val { font-weight: 600; color: var(--clr-text); }
+    .client-tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 12px; margin-top: 0.75rem; }
+    @media (max-width: 1100px) { .client-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 680px) { .client-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Client View</a></div>
+    </nav>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Clients</h1><p class="dash-page-subtitle">34 total clients</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <div class="dash-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" placeholder="Search clients..." aria-label="Search" /></div>
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /></div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:none;background:var(--clr-black);color:white;cursor:pointer;">All (34)</button>
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">Active (12)</button>
+          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">Past (22)</button>
+        </div>
+        <button class="btn btn--primary" style="gap:0.5rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Client</button>
+      </div>
+
+      <div class="client-grid">
+        <div class="client-card">
+          <div class="client-card__head">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Alexandra Chen" class="client-card__avatar" />
+            <div><p class="client-card__name">Alexandra Chen</p><p class="client-card__since">Client since Jan 2026</p></div>
+          </div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">Park Slope Residence</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$145,000</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">Isabel Voss</span></div>
+          <span class="client-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Active</span>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card__head">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="James Hartley" class="client-card__avatar" />
+            <div><p class="client-card__name">James &amp; Caroline Hartley</p><p class="client-card__since">Client since Oct 2025</p></div>
+          </div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">Tribeca Penthouse</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$380,000</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">David Kim</span></div>
+          <span class="client-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Active</span>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card__head">
+            <div style="width:52px;height:52px;background:var(--clr-black);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);color:white;font-size:1rem;font-weight:500;">AM</div>
+            <div><p class="client-card__name">Al-Mansoor Group</p><p class="client-card__since">Client since Mar 2025</p></div>
+          </div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">The Saffron Club</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$720,000</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">Marcus Trent</span></div>
+          <span class="client-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Active</span>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card__head">
+            <div style="width:52px;height:52px;background:var(--clr-gray-800);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-display);color:white;font-size:1rem;font-weight:500;">MC</div>
+            <div><p class="client-card__name">Meridian Capital LLC</p><p class="client-card__since">Client since Aug 2024</p></div>
+          </div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">Mayfair HQ</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$1.1M</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">Isabel Voss</span></div>
+          <span class="client-tag" style="background:#dcfce7;color:#166534;">Complete</span>
+        </div>
+
+        <div class="client-card">
+          <div class="client-card__head">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Sunita Patel" class="client-card__avatar" />
+            <div><p class="client-card__name">Sunita &amp; Rohan Patel</p><p class="client-card__since">Client since Feb 2026</p></div>
+          </div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">Gramercy Villa</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$210,000</span></div>
+          <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">Marcus Trent</span></div>
+          <span class="client-tag" style="background:rgba(59,130,246,0.1);color:#1d4ed8;">Planning</span>
+        </div>
+
+        <div class="client-card" style="background:var(--clr-gray-50);border-style:dashed;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;cursor:pointer;min-height:220px;">
+          <div style="width:48px;height:48px;background:rgba(201,168,76,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <p style="font-size:0.875rem;font-weight:500;color:var(--clr-text-muted);">Add New Client</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+</body>
+</html>

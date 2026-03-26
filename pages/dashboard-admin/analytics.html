@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — Admin · Studio Noir</title>
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../../assets/css/rtl.css" />
+  <link rel="stylesheet" href="../../assets/css/dashboard.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <style>
+    .analytics-kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .kpi-card { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; }
+    .kpi-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .kpi-value { font-family: var(--font-display); font-size: 1.875rem; font-weight: 400; color: var(--clr-text); margin-bottom: 0.2rem; line-height: 1; }
+    .kpi-label { font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 0.5rem; }
+    .kpi-change { font-size: 0.75rem; font-weight: 600; }
+    .kpi-change.up { color: #22c55e; }
+    .kpi-change.down { color: #ef4444; }
+    @media (max-width: 1100px) { .analytics-kpi { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body class="dashboard-layout">
+
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+    <div class="dash-sidebar__brand">
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+    </div>
+    <nav class="dash-nav">
+      <p class="dash-nav__section">Studio</p>
+      <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</a>
+      <a href="projects.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Projects<span class="dash-badge">12</span></a>
+      <a href="clients.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients</a>
+      <a href="team.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Team</a>
+      <a href="analytics.html" class="dash-nav__link active" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Analytics</a>
+      <p class="dash-nav__section" style="margin-top:1.5rem;">Communication</p>
+      <a href="messages.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Messages<span class="dash-badge">7</span></a>
+      <a href="settings.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</a>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--clr-border);"><a href="../dashboard-user/index.html" class="dash-nav__link" style="font-size:0.8rem;color:var(--clr-text-muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Client View</a></div>
+    </nav>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-topbar">
+      <div class="dash-topbar__left">
+        <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+        <div><h1 class="dash-page-title">Analytics</h1><p class="dash-page-subtitle">YTD Performance · 2026</p></div>
+      </div>
+      <div class="dash-topbar__right">
+        <select style="font-size:0.8rem;padding:0.4rem 0.75rem;border-radius:8px;border:1px solid var(--clr-border);background:var(--clr-surface);color:var(--clr-text);cursor:pointer;">
+          <option>2026 YTD</option><option>2025 Full Year</option><option>Last 12 Months</option>
+        </select>
+        <button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <div style="display:flex;align-items:center;gap:0.75rem;"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Admin" style="width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" /></div>
+      </div>
+    </header>
+
+    <div class="dash-content">
+
+      <!-- KPIs -->
+      <div class="analytics-kpi">
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(201,168,76,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <p class="kpi-value">$2.4M</p>
+          <p class="kpi-label">Revenue YTD</p>
+          <p class="kpi-change up">↑ 18% vs prior year</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(34,197,94,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5" width="20"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+          <p class="kpi-value">12</p>
+          <p class="kpi-label">Active Projects</p>
+          <p class="kpi-change up">↑ 2 new this quarter</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(59,130,246,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" width="20"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <p class="kpi-value">34</p>
+          <p class="kpi-label">Total Clients</p>
+          <p class="kpi-change up">↑ 6 new clients</p>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon" style="background:rgba(168,85,247,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5" width="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <p class="kpi-value">94%</p>
+          <p class="kpi-label">Client Satisfaction</p>
+          <p class="kpi-change up">↑ 2pts vs Q4 2025</p>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Monthly Revenue</h3></div>
+          <canvas id="revenueChart" height="240"></canvas>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Projects by Type</h3></div>
+          <canvas id="typeChart" height="240"></canvas>
+        </div>
+      </div>
+
+      <!-- Second row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Lead Sources</h3></div>
+          <canvas id="sourceChart" height="200"></canvas>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card__header"><h3 class="dash-card__title">Project Geography</h3></div>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;padding:0.5rem 0;">
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>New York</span><span style="font-weight:600;">58%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:58%;background:var(--clr-gold);border-radius:100px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>London</span><span style="font-weight:600;">17%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:17%;background:var(--clr-black);border-radius:100px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Dubai / UAE</span><span style="font-weight:600;">14%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:14%;background:var(--clr-black);border-radius:100px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Paris</span><span style="font-weight:600;">7%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:7%;background:var(--clr-gray-400);border-radius:100px;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Other</span><span style="font-weight:600;">4%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:4%;background:var(--clr-gray-400);border-radius:100px;"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/dashboard.js"></script>
+  <script>
+    const gold = '#c9a84c';
+    const black = '#0a0a0a';
+    const gridColor = 'rgba(0,0,0,0.06)';
+    const font = { family: 'DM Sans, sans-serif', size: 11 };
+
+    // Revenue Chart
+    new Chart(document.getElementById('revenueChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        datasets: [{
+          label: '2026',
+          data: [210,185,320,290,380,450,410,0,0,0,0,0],
+          backgroundColor: (ctx) => {
+            const v = ctx.raw;
+            return v > 0 ? gold : 'rgba(201,168,76,0.15)';
+          },
+          borderRadius: 6,
+          borderSkipped: false
+        },{
+          label: '2025',
+          data: [185,160,280,245,310,390,360,290,420,380,410,440],
+          backgroundColor: 'rgba(0,0,0,0.06)',
+          borderRadius: 6,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', labels: { font, color: '#666', boxWidth: 10, padding: 16 } } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font, color: '#888' } },
+          y: { grid: { color: gridColor }, ticks: { font, color: '#888', callback: v => '$' + (v/1000) + 'k' } }
+        }
+      }
+    });
+
+    // Type donut
+    new Chart(document.getElementById('typeChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Residential','Commercial','Hospitality','Architecture'],
+        datasets: [{ data: [45, 22, 18, 15], backgroundColor: [gold, '#1a1a1a', '#555', '#999'], borderWidth: 0, hoverOffset: 8 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '65%',
+        plugins: { legend: { position: 'bottom', labels: { font, padding: 14, boxWidth: 10 } } }
+      }
+    });
+
+    // Source
+    new Chart(document.getElementById('sourceChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Referrals','Website','Awards','Repeat','Press'],
+        datasets: [{ data: [42, 28, 12, 10, 8], backgroundColor: [gold, gold+'99', gold+'66', gold+'44', gold+'22'], borderRadius: 6, borderSkipped: false }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { font, color: '#888', callback: v => v + '%' } },
+          y: { grid: { display: false }, ticks: { font, color: '#666' } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

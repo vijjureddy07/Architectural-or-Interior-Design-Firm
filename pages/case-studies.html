@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Studio Noir Case Studies — in-depth stories behind our most transformative architectural and interior design projects." />
+  <title>Case Studies — Studio Noir</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../assets/css/rtl.css" />
+  <style>
+    .case-card { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 16px; overflow: hidden; background: var(--clr-white); box-shadow: 0 4px 30px rgba(0,0,0,0.08); margin-bottom: 3.5rem; transition: transform 0.3s; }
+    .case-card:hover { transform: translateY(-4px); }
+    .case-card:nth-child(even) { direction: rtl; }
+    .case-card:nth-child(even) > * { direction: ltr; }
+    .case-card__visual { position: relative; min-height: 400px; overflow: hidden; }
+    .case-card__visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .case-card:hover .case-card__visual img { transform: scale(1.04); }
+    .case-card__overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.3), transparent); }
+    .case-card__category { position: absolute; top: 1.5rem; left: 1.5rem; background: var(--clr-gold); color: white; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 20px; }
+    .case-card__body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .case-card__year { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clr-gold); margin-bottom: 1rem; }
+    .case-card__title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; color: var(--clr-text); margin-bottom: 1rem; line-height: 1.3; }
+    .case-card__summary { color: var(--clr-text-muted); line-height: 1.7; font-size: 0.9rem; margin-bottom: 2rem; }
+    .case-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; border-top: 1px solid var(--clr-border); padding-top: 1.5rem; }
+    .case-stat__value { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--clr-text); }
+    .case-stat__label { font-size: 0.75rem; color: var(--clr-text-muted); margin-top: 0.15rem; }
+    @media (max-width: 900px) { .case-card { grid-template-columns: 1fr; } .case-card:nth-child(even) { direction: ltr; } .case-card__visual { min-height: 280px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <ul class="navbar__nav" role="list">
+        <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
+        <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
+        <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
+        <li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link">Portfolio</a></li>
+        <li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li>
+        <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
+        <li class="navbar__nav-item"><a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="dashboard-user/index.html">User Dashboard</a><a href="dashboard-admin/index.html">Admin Dashboard</a></div></li>
+      </ul>
+      <div class="navbar__actions">
+        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
+        <button class="navbar__icon-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
+        <a href="login.html" class="btn btn--ghost">Login</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="navbar__mobile"><a href="../index.html" class="navbar__mobile-link">Home</a><a href="about.html" class="navbar__mobile-link">About</a><a href="portfolio.html" class="navbar__mobile-link">Portfolio</a><a href="contact.html" class="navbar__mobile-link">Contact</a><a href="login.html" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Login</a></div>
+
+  <!-- HERO -->
+  <section style="padding: 140px 0 80px; background: var(--clr-black); text-align: center;">
+    <div class="container">
+      <p class="section-label" style="color:var(--clr-gold);">Deep Dives</p>
+      <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--clr-white);font-weight:300;margin:0.5rem 0 1rem;">Case <em>Studies</em></h1>
+      <p style="color:var(--clr-gray-400);max-width:520px;margin:0 auto;">The thinking, process, and craft behind our most complex and transformative commissions — told in detail.</p>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section style="padding: var(--space-5xl) 0; background: var(--clr-surface);">
+    <div class="container">
+
+      <!-- Case 1 -->
+      <article class="case-card reveal">
+        <div class="case-card__visual">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Hudson Valley Residence" />
+          <div class="case-card__overlay"></div>
+          <span class="case-card__category">Residential</span>
+        </div>
+        <div class="case-card__body">
+          <p class="case-card__year">2025 · Hudson Valley, New York</p>
+          <h2 class="case-card__title">The Hudson Valley Residence — Rewilding a 1920s Estate</h2>
+          <p class="case-card__summary">A Grade II listed farmhouse on 40 acres of woodland demanded a dual mandate: preserve the original stone fabric while creating a contemporary family home for the 21st century. We introduced a new east-facing pavilion in weathering steel and glass that dialogues with — rather than mimics — the original structure. Biophilic principles guided the interior, dissolving boundaries between the living spaces and the surrounding meadow.</p>
+          <div class="case-stats">
+            <div><p class="case-stat__value">14,200</p><p class="case-stat__label">Sq ft total area</p></div>
+            <div><p class="case-stat__value">18 mo</p><p class="case-stat__label">Project duration</p></div>
+            <div><p class="case-stat__value">4</p><p class="case-stat__label">Design Awards</p></div>
+          </div>
+          <a href="contact.html" class="btn btn--primary">Discuss a Similar Project</a>
+        </div>
+      </article>
+
+      <!-- Case 2 -->
+      <article class="case-card reveal">
+        <div class="case-card__visual">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80" alt="Manhattan Penthouse" />
+          <div class="case-card__overlay"></div>
+          <span class="case-card__category">Residential</span>
+        </div>
+        <div class="case-card__body">
+          <p class="case-card__year">2025 · Tribeca, New York</p>
+          <h2 class="case-card__title">The Tribeca Penthouse — Where Art Meets Architecture</h2>
+          <p class="case-card__summary">This 6,400 sq ft full-floor penthouse required us to work around an extraordinary private art collection. The spatial arrangement became curatorial — walls, lighting, and circulation were designed to frame artworks rather than occupy them. Materials were selected for visual quiet: fluted limestone, raw silk, aged brass, and hand-polished concrete floors that recede rather than compete.</p>
+          <div class="case-stats">
+            <div><p class="case-stat__value">6,400</p><p class="case-stat__label">Sq ft interior</p></div>
+            <div><p class="case-stat__value">11 mo</p><p class="case-stat__label">Project duration</p></div>
+            <div><p class="case-stat__value">38</p><p class="case-stat__label">Artworks integrated</p></div>
+          </div>
+          <a href="contact.html" class="btn btn--primary">Discuss a Similar Project</a>
+        </div>
+      </article>
+
+      <!-- Case 3 -->
+      <article class="case-card reveal">
+        <div class="case-card__visual">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80" alt="Dubai Villa" />
+          <div class="case-card__overlay"></div>
+          <span class="case-card__category">Hospitality</span>
+        </div>
+        <div class="case-card__body">
+          <p class="case-card__year">2024 · Dubai, UAE</p>
+          <h2 class="case-card__title">The Saffron Club — Hospitality With Cultural Depth</h2>
+          <p class="case-card__summary">Commissioned by a private members' club in Dubai's DIFC, this 12,000 sq ft interior weaves traditional Arab geometric motifs with a contemporary material palette of blackened steel, Calacatta marble, and handwoven textiles sourced from Moroccan artisans. The brief demanded spaces that could host intimate meetings by day and evolve into vibrant social environments by evening — achieved through a sophisticated dimmable lighting architecture.</p>
+          <div class="case-stats">
+            <div><p class="case-stat__value">12,000</p><p class="case-stat__label">Sq ft total</p></div>
+            <div><p class="case-stat__value">14 mo</p><p class="case-stat__label">Duration</p></div>
+            <div><p class="case-stat__value">6</p><p class="case-stat__label">Countries, suppliers from</p></div>
+          </div>
+          <a href="contact.html" class="btn btn--primary">Discuss a Similar Project</a>
+        </div>
+      </article>
+
+      <!-- Case 4 -->
+      <article class="case-card reveal">
+        <div class="case-card__visual">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80" alt="London Office" />
+          <div class="case-card__overlay"></div>
+          <span class="case-card__category">Commercial</span>
+        </div>
+        <div class="case-card__body">
+          <p class="case-card__year">2024 · Mayfair, London</p>
+          <h2 class="case-card__title">Meridian Capital HQ — Where Finance Meets Fine Design</h2>
+          <p class="case-card__summary">A 22,000 sq ft headquarters for a boutique investment firm occupying the full upper three floors of a Georgian townhouse conversion. The challenge: preserve listed period features — original plasterwork, shutters, fireplaces — while inserting a fully modern workplace. The result is a layered dialogue between eras, where a contemporary open trading floor sits beneath restored Victorian cornicing.</p>
+          <div class="case-stats">
+            <div><p class="case-stat__value">22,000</p><p class="case-stat__label">Sq ft</p></div>
+            <div><p class="case-stat__value">16 mo</p><p class="case-stat__label">Duration</p></div>
+            <div><p class="case-stat__value">340</p><p class="case-stat__label">Occupants</p></div>
+          </div>
+          <a href="contact.html" class="btn btn--primary">Discuss a Similar Project</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: var(--space-5xl) 0; background: var(--clr-black); text-align: center;">
+    <div class="container">
+      <p class="section-label" style="color:var(--clr-gold);">Start Your Chapter</p>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--clr-white);font-weight:300;margin:0.5rem 0 1.5rem;">Ready to begin your <em>case study?</em></h2>
+      <a href="contact.html" class="btn btn--primary">Book a Consultation</a>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Studio Noir</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces worldwide.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links" style="margin-bottom:1.5rem;"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul><div class="footer__col-title">Newsletter</div><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email" required /><button type="submit" class="footer__newsletter-btn">Subscribe</button></form></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Studio Noir. All rights reserved.</p><div class="footer__contact-row"><span>hello@studionoir.com</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

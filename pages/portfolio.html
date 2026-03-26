@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Studio Noir portfolio — browse our completed residential, commercial, and hospitality design projects." />
+  <title>Portfolio — Studio Noir</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+  <link rel="stylesheet" href="../assets/css/rtl.css" />
+  <style>
+    .portfolio-filter { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:var(--sp-8); }
+    .filter-btn { padding:0.5rem 1.25rem; border:1px solid var(--border-color); border-radius:50px; font-size:0.8rem; font-weight:500; letter-spacing:0.06em; color:var(--text-secondary); transition:all var(--transition); cursor:pointer; background:var(--bg-primary); }
+    .filter-btn:hover,.filter-btn.active { border-color:var(--clr-gold); color:var(--clr-gold); background:rgba(201,168,76,0.06); }
+    .portfolio-filterable { transition:opacity 0.4s ease, transform 0.4s ease; }
+    .proj-card { border-radius:4px; overflow:hidden; position:relative; cursor:pointer; }
+    .proj-card img { width:100%; aspect-ratio:4/3; object-fit:cover; transition:transform 0.5s ease; display:block; }
+    .proj-card:hover img { transform:scale(1.04); }
+    .proj-card__info { padding:var(--sp-5); background:var(--bg-primary); border:1px solid var(--border-color); border-top:none; }
+    .proj-card__cat { font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--clr-gold); margin-bottom:0.25rem; }
+    .proj-card__title { font-family:var(--font-display); font-size:1.2rem; color:var(--text-primary); }
+    .proj-card__meta { font-size:0.8rem; color:var(--text-secondary); margin-top:0.25rem; }
+  </style>
+</head>
+<body>
+<nav class="navbar"><div class="navbar__inner"><a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a><ul class="navbar__nav"><li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home</a></li><li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li><li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li><li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link" style="color:var(--clr-gold)">Portfolio</a></li><li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li><li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li><li class="navbar__nav-item"><a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="dashboard-user/index.html">User Dashboard</a><a href="dashboard-admin/index.html">Admin Dashboard</a></div></li></ul><div class="navbar__actions"><button class="navbar__icon-btn theme-btn"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></button><button class="navbar__icon-btn rtl-btn">RTL</button><a href="login.html" class="btn btn--ghost">Login</a></div><button class="navbar__hamburger"><span></span><span></span><span></span></button></div></nav>
+<div class="navbar__mobile"><a href="../index.html" class="navbar__mobile-link">Home</a><a href="about.html" class="navbar__mobile-link">About</a><a href="services.html" class="navbar__mobile-link">Services</a><a href="portfolio.html" class="navbar__mobile-link">Portfolio</a><a href="blog.html" class="navbar__mobile-link">Journal</a><a href="contact.html" class="navbar__mobile-link">Contact</a></div>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span style="color:var(--text-primary)">Portfolio</span></div>
+      <div class="section-label"><span>Our Work</span></div>
+      <h1>Selected <em>Projects</em></h1>
+      <p>240+ projects across residential, commercial, and hospitality sectors worldwide.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <!-- Filter Tabs -->
+      <div class="portfolio-filter" role="tablist" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all" role="tab">All Projects</button>
+        <button class="filter-btn" data-filter="residential" role="tab">Residential</button>
+        <button class="filter-btn" data-filter="commercial" role="tab">Commercial</button>
+        <button class="filter-btn" data-filter="hospitality" role="tab">Hospitality</button>
+        <button class="filter-btn" data-filter="interior" role="tab">Interior</button>
+      </div>
+
+      <div class="grid-3 reveal">
+        <div class="proj-card portfolio-filterable" data-category="residential" data-lightbox="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80" data-lightbox-caption="The Meridian Residence">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=80" alt="The Meridian Residence" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Residential</div><div class="proj-card__title">The Meridian Residence</div><div class="proj-card__meta">New York, NY · 2025</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="commercial" data-lightbox="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=700&q=80" alt="Obsidian Office" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Commercial</div><div class="proj-card__title">Obsidian Office</div><div class="proj-card__meta">Chicago, IL · 2024</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="interior" data-lightbox="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=700&q=80" alt="Azure Terrace" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Interior</div><div class="proj-card__title">Azure Terrace</div><div class="proj-card__meta">Miami, FL · 2025</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="hospitality" data-lightbox="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=700&q=80" alt="Hotel Noir Lisbon" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Hospitality</div><div class="proj-card__title">Hotel Noir Lisbon</div><div class="proj-card__meta">Lisbon, Portugal · 2024</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="residential" data-lightbox="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80" alt="Hamptons Beach House" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Residential</div><div class="proj-card__title">Hamptons Beach House</div><div class="proj-card__meta">Hamptons, NY · 2024</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="interior" data-lightbox="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80" alt="Ivory Penthouse" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Interior</div><div class="proj-card__title">Ivory Penthouse</div><div class="proj-card__meta">Los Angeles, CA · 2023</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="commercial" data-lightbox="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80" alt="Voss & Laurent HQ" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Commercial</div><div class="proj-card__title">Voss &amp; Laurent HQ</div><div class="proj-card__meta">Boston, MA · 2023</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="hospitality" data-lightbox="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=80" alt="Maison Côte d'Azur" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Hospitality</div><div class="proj-card__title">Maison Côte d'Azur</div><div class="proj-card__meta">Nice, France · 2023</div></div>
+        </div>
+        <div class="proj-card portfolio-filterable" data-category="residential" data-lightbox="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1615529328331-f8917597711f?w=700&q=80" alt="Glass House Chicago" loading="lazy" />
+          <div class="proj-card__info"><div class="proj-card__cat">Residential</div><div class="proj-card__title">Glass House Chicago</div><div class="proj-card__meta">Chicago, IL · 2022</div></div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top:3rem;">
+        <a href="contact.html" class="btn btn--ghost">Commission a Project</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Studio Noir</span></div><p class="footer__brand-text">Award-winning architectural and interior design firm.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="blog.html" class="footer__link">Journal</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li></ul></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Studio Noir. All rights reserved.</p></div></div></footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
