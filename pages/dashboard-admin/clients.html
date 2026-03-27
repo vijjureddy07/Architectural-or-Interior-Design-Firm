@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clients — Admin · Studio Noir</title>
+  <title>Clients — Admin · Aura Arch</title>
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
   <link rel="stylesheet" href="../../assets/css/dashboard.css" />
   <style>
     .client-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    .client-card { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .client-card { background: var(--surface-elevated); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
     .client-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
     .client-card__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
     .client-card__avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--clr-border); }
@@ -27,10 +27,10 @@
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -79,7 +79,7 @@
           <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">Park Slope Residence</span></div>
           <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$145,000</span></div>
           <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">Isabel Voss</span></div>
-          <span class="client-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Active</span>
+          <span class="client-tag" style="background:rgba(211,160,109,0.12);color:#9b6a3a;">Active</span>
         </div>
 
         <div class="client-card">
@@ -90,7 +90,7 @@
           <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">Tribeca Penthouse</span></div>
           <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$380,000</span></div>
           <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">David Kim</span></div>
-          <span class="client-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Active</span>
+          <span class="client-tag" style="background:rgba(211,160,109,0.12);color:#9b6a3a;">Active</span>
         </div>
 
         <div class="client-card">
@@ -101,7 +101,7 @@
           <div class="client-card__stat"><span class="client-card__stat-label">Project</span><span class="client-card__stat-val">The Saffron Club</span></div>
           <div class="client-card__stat"><span class="client-card__stat-label">Project Value</span><span class="client-card__stat-val">$720,000</span></div>
           <div class="client-card__stat"><span class="client-card__stat-label">Lead Designer</span><span class="client-card__stat-val">Marcus Trent</span></div>
-          <span class="client-tag" style="background:rgba(201,168,76,0.12);color:#92680a;">Active</span>
+          <span class="client-tag" style="background:rgba(211,160,109,0.12);color:#9b6a3a;">Active</span>
         </div>
 
         <div class="client-card">
@@ -127,7 +127,7 @@
         </div>
 
         <div class="client-card" style="background:var(--clr-gray-50);border-style:dashed;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;cursor:pointer;min-height:220px;">
-          <div style="width:48px;height:48px;background:rgba(201,168,76,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <div style="width:48px;height:48px;background:rgba(211,160,109,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </div>
           <p style="font-size:0.875rem;font-weight:500;color:var(--clr-text-muted);">Add New Client</p>

@@ -2,9 +2,9 @@
 const NAVBAR_HTML = `
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar__inner">
-    <a href="../index.html" class="navbar__logo" aria-label="Studio Noir Home">
+    <a href="../index.html" class="navbar__logo" aria-label="Aura Arch Home">
       <div class="navbar__logo-mark">SN</div>
-      <span class="navbar__logo-text">Studio Noir</span>
+      <span class="navbar__logo-text">Aura Arch</span>
     </a>
     <ul class="navbar__nav" role="list">
       <li class="navbar__nav-item">

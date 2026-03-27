@@ -1,5 +1,5 @@
 /* ============================================================
-   STUDIO NOIR — RTL (Right-to-Left) Support
+   AURA ARCH — RTL (Right-to-Left) Support
    ============================================================ */
 
 [dir="rtl"] {
@@ -26,6 +26,11 @@
 
 [dir="rtl"] .navbar__actions {
   flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar__mobile-sub {
+  padding-left: 0;
+  padding-right: var(--sp-4);
 }
 
 [dir="rtl"] .section-label {
@@ -82,7 +87,8 @@
   right: 0;
 }
 
-[dir="rtl"] .accordion-btn {
+[dir="rtl"] .accordion-btn,
+[dir="rtl"] .accordion__trigger {
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -117,17 +123,66 @@
   flex-direction: row-reverse;
 }
 
+[dir="rtl"] .dash-sidebar,
 [dir="rtl"] .sidebar {
   border-right: none;
-  border-left: 1px solid var(--border-color);
+  border-left: 1px solid rgba(255,255,255,0.07);
+  left: auto;
+  right: 0;
 }
 
-[dir="rtl"] .sidebar__nav-link {
+[dir="rtl"] .dash-nav__link,
+[dir="rtl"] .sidebar__link {
   flex-direction: row-reverse;
   text-align: right;
 }
 
+[dir="rtl"] .dash-nav__link.active::before,
+[dir="rtl"] .dash-nav__link[aria-current="page"]::before,
+[dir="rtl"] .sidebar__link--active::before,
+[dir="rtl"] .sidebar__link.active::before {
+  left: auto;
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+[dir="rtl"] .dash-main,
 [dir="rtl"] .dashboard-main {
   margin-left: 0;
-  margin-right: 260px;
+  margin-right: 240px;
+}
+
+[dir="rtl"] .dash-topbar__left,
+[dir="rtl"] .dash-topbar__right,
+[dir="rtl"] .auth-tools,
+[dir="rtl"] .auth-row,
+[dir="rtl"] .password-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .password-toggle {
+  right: auto;
+  left: 0.85rem;
+}
+
+[dir="rtl"] .password-wrap .form-input {
+  padding-right: var(--sp-4);
+  padding-left: 3rem;
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .dash-sidebar,
+  [dir="rtl"] .sidebar {
+    transform: translateX(100%);
+  }
+
+  [dir="rtl"] .dash-sidebar.open,
+  [dir="rtl"] .sidebar.open {
+    transform: translateX(0);
+  }
+
+  [dir="rtl"] .dash-main,
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0 !important;
+  }
 }

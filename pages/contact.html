@@ -3,20 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Studio Noir — Get in touch to discuss your architectural and interior design project." />
-  <title>Contact — Studio Noir</title>
+  <meta name="description" content="Contact Aura Arch — Get in touch to discuss your architectural and interior design project." />
+  <title>Contact — Aura Arch</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-card {
+      background: var(--surface-elevated);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    }
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .contact-card {
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 640px) {
+      .contact-card form > div[style*="grid-template-columns:1fr 1fr"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- ══ NAVBAR ══ -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo" aria-label="Studio Noir Home">
+      <a href="../index.html" class="navbar__logo" aria-label="Aura Arch Home">
         <div class="navbar__logo-mark" aria-hidden="true">SN</div>
-        <span class="navbar__logo-text">Studio Noir</span>
+        <span class="navbar__logo-text">Aura Arch</span>
       </a>
       <ul class="navbar__nav" role="list">
         <li class="navbar__nav-item">
@@ -66,7 +95,7 @@
   <!-- ══ CONTACT GRID ══ -->
   <section style="padding: var(--space-5xl) 0; background: var(--clr-surface);">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;">
+      <div class="contact-layout">
 
         <!-- Info Column -->
         <div class="reveal">
@@ -97,7 +126,7 @@
               </div>
               <div>
                 <p style="font-weight:600;color:var(--clr-text);margin-bottom:0.25rem;">Email</p>
-                <p style="color:var(--clr-text-muted);font-size:0.9rem;">hello@studionoir.com</p>
+                <p style="color:var(--clr-text-muted);font-size:0.9rem;">hello@auraarch.com</p>
               </div>
             </div>
             <div style="display:flex;gap:1rem;align-items:flex-start;">
@@ -121,7 +150,7 @@
         </div>
 
         <!-- Form Column -->
-        <div class="reveal" style="background:var(--clr-white);border-radius:16px;padding:3rem;box-shadow:0 4px 40px rgba(0,0,0,0.06);">
+        <div class="reveal contact-card">
           <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:400;margin-bottom:0.5rem;color:var(--clr-text);">Start Your Project</h2>
           <p style="color:var(--clr-text-muted);font-size:0.9rem;margin-bottom:2rem;">Fill in the details below and we'll respond within 24 hours.</p>
 
@@ -202,7 +231,7 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Studio Noir</span></div>
+          <div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div>
           <p class="footer__brand-text">Architectural &amp; interior design firm creating timeless, intentional spaces for discerning clients worldwide.</p>
           <div class="footer__socials" aria-label="Social media links">
             <a href="#" class="footer__social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
@@ -220,8 +249,8 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__bottom-left">© 2026 Studio Noir. All rights reserved.</p>
-        <div class="footer__contact-row"><span>hello@studionoir.com</span><span>+1 (212) 000-0000</span><span>150 West 28th St, New York NY</span></div>
+        <p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p>
+        <div class="footer__contact-row"><span>hello@auraarch.com</span><span>+1 (212) 000-0000</span><span>150 West 28th St, New York NY</span></div>
         <div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
       </div>
     </div>

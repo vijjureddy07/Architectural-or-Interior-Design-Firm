@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Studio Noir — Award-winning architectural and interior design firm. Transforming spaces into timeless experiences." />
-  <title>Studio Noir — Home Page 2</title>
+  <meta name="description" content="Aura Arch — Award-winning architectural and interior design firm. Transforming spaces into timeless experiences." />
+  <title>Aura Arch — Home Page 2</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
@@ -12,8 +12,8 @@
     /* Split hero */
     .hero2 { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
     .hero2__left { background: var(--clr-black); display: flex; flex-direction: column; justify-content: center; padding: 10rem 5rem 5rem; position: relative; overflow: hidden; }
-    .hero2__left::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border: 1px solid rgba(201,168,76,0.15); border-radius: 50%; }
-    .hero2__left::after { content: ''; position: absolute; bottom: 40px; left: -80px; width: 200px; height: 200px; border: 1px solid rgba(201,168,76,0.08); border-radius: 50%; }
+    .hero2__left::before { content: ''; position: absolute; top: -60px; right: -60px; width: 320px; height: 320px; border: 1px solid rgba(211,160,109,0.15); border-radius: 50%; }
+    .hero2__left::after { content: ''; position: absolute; bottom: 40px; left: -80px; width: 200px; height: 200px; border: 1px solid rgba(211,160,109,0.08); border-radius: 50%; }
     .hero2__right { position: relative; overflow: hidden; }
     .hero2__right img { width: 100%; height: 100%; object-fit: cover; }
     .hero2__right-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,10,0.3) 0%, transparent 60%); }
@@ -48,15 +48,15 @@
     /* Horizontal scroll services */
     .services-scroll { display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1rem; scrollbar-width: none; }
     .services-scroll::-webkit-scrollbar { display: none; }
-    .service-chip { background: var(--clr-white); border-radius: 16px; padding: 2.5rem 2rem; min-width: 280px; border: 1px solid var(--clr-border); flex-shrink: 0; transition: all 0.3s; cursor: pointer; }
-    .service-chip:hover { border-color: var(--clr-gold); box-shadow: 0 8px 30px rgba(201,168,76,0.12); transform: translateY(-4px); }
+    .service-chip { background: var(--surface-elevated); border-radius: 16px; padding: 2.5rem 2rem; min-width: 280px; border: 1px solid var(--clr-border); flex-shrink: 0; transition: all 0.3s; cursor: pointer; }
+    .service-chip:hover { border-color: var(--clr-gold); box-shadow: 0 8px 30px rgba(211,160,109,0.12); transform: translateY(-4px); }
     .service-chip__num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; color: var(--clr-gold); opacity: 0.4; margin-bottom: 1rem; line-height: 1; }
     .service-chip__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; margin-bottom: 0.75rem; }
     .service-chip__text { font-size: 0.85rem; color: var(--clr-text-muted); line-height: 1.6; }
 
     /* Testimonial carousel */
     .testi-carousel { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .testi-item { background: var(--clr-white); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--clr-border); }
+    .testi-item { background: var(--surface-elevated); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--clr-border); }
     .testi-stars { color: var(--clr-gold); font-size: 1rem; margin-bottom: 1rem; letter-spacing: 2px; }
     .testi-quote { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; font-weight: 400; line-height: 1.7; color: var(--clr-text); margin-bottom: 1.5rem; }
     .testi-person { display: flex; align-items: center; gap: 0.75rem; }
@@ -69,7 +69,16 @@
       .feature-strip { grid-template-columns: 1fr 1fr; }
       .masonry { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .masonry__item { grid-column: auto !important; grid-row: auto !important; height: 200px; }
+      .masonry__overlay { opacity: 1; }
       .testi-carousel { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .feature-strip { grid-template-columns: 1fr; }
+      .hero2__left { padding: 7rem 1.25rem 3rem; }
+      .hero2__scroll-indicator { display: none; }
+      .hero2__left div[style*="display:flex;gap:3rem"] { flex-wrap: wrap; gap: 1.5rem !important; }
+      section div[style*="grid-template-columns:1fr 1fr;gap:5rem"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+      section div[style*="display:flex;gap:1.5rem;"] { flex-direction: column; }
     }
   </style>
 </head>
@@ -78,7 +87,7 @@
   <!-- ══ NAVBAR ══ -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
       <ul class="navbar__nav" role="list">
         <li class="navbar__nav-item">
           <a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -123,7 +132,7 @@
       </div>
     </div>
     <div class="hero2__right">
-      <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1200&q=85" alt="Studio Noir signature interior" />
+      <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1200&q=85" alt="Aura Arch signature interior" />
       <div class="hero2__right-overlay"></div>
       <div class="hero2__scroll-indicator">
         <span style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);writing-mode:vertical-rl;">Scroll</span>
@@ -189,7 +198,7 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
         <div class="reveal">
           <div style="position:relative;">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&q=80" alt="Studio Noir studio" style="border-radius:16px;width:100%;object-fit:cover;height:500px;" />
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=700&q=80" alt="Aura Arch studio" style="border-radius:16px;width:100%;object-fit:cover;height:500px;" />
             <div style="position:absolute;bottom:-2rem;right:-2rem;background:var(--clr-gold);color:white;padding:2rem;border-radius:12px;width:180px;">
               <p style="font-family:var(--font-display);font-size:2.5rem;font-weight:300;line-height:1;">16+</p>
               <p style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;">Years of Excellence</p>
@@ -199,7 +208,7 @@
         <div class="reveal">
           <p class="section-label">Our Studio</p>
           <h2 style="font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.75rem);font-weight:300;margin:0.75rem 0 1.5rem;">Designing spaces that <em>stand the test of time</em></h2>
-          <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.25rem;">Founded in 2010 by architects Marcus Trent and Isabel Voss, Studio Noir has grown from a two-person practice to a 28-strong studio recognised across the Americas, Europe, and the Middle East.</p>
+          <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:1.25rem;">Founded in 2010 by architects Marcus Trent and Isabel Voss, Aura Arch has grown from a two-person practice to a 28-strong studio recognised across the Americas, Europe, and the Middle East.</p>
           <p style="color:var(--clr-text-muted);line-height:1.8;margin-bottom:2.5rem;">Our approach is rooted in a belief that architecture and interior design are inseparable — that the envelope and its contents must be conceived as a unified experience. We call this integrated design.</p>
           <div style="display:flex;gap:1.5rem;">
             <a href="about.html" class="btn btn--primary">About the Studio</a>
@@ -220,12 +229,12 @@
       <div class="testi-carousel reveal">
         <div class="testi-item">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"The team at Studio Noir didn't just design our home — they listened to how we live, how we move through space, what we love. The result is a house that feels like it has always existed, and yet it couldn't be more contemporary."</p>
+          <p class="testi-quote">"The team at Aura Arch didn't just design our home — they listened to how we live, how we move through space, what we love. The result is a house that feels like it has always existed, and yet it couldn't be more contemporary."</p>
           <div class="testi-person"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Sarah M." /><div><p style="font-weight:600;font-size:0.875rem;margin:0;">Sarah Mitchell</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Hudson Valley Residence</p></div></div>
         </div>
         <div class="testi-item">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Working with Studio Noir on our headquarters was a transformative experience. They understood the brand, the culture, the way our teams work — and translated all of it into a space our people are genuinely proud of."</p>
+          <p class="testi-quote">"Working with Aura Arch on our headquarters was a transformative experience. They understood the brand, the culture, the way our teams work — and translated all of it into a space our people are genuinely proud of."</p>
           <div class="testi-person"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="James K." /><div><p style="font-weight:600;font-size:0.875rem;margin:0;">James Keller</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Meridian Capital HQ</p></div></div>
         </div>
         <div class="testi-item">
@@ -235,7 +244,7 @@
         </div>
         <div class="testi-item">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"From brief to final styling, every decision was considered, reasoned, and beautiful. Our Mayfair office draws comments from every single visitor. Studio Noir doesn't just meet expectations — they redefine them."</p>
+          <p class="testi-quote">"From brief to final styling, every decision was considered, reasoned, and beautiful. Our Mayfair office draws comments from every single visitor. Aura Arch doesn't just meet expectations — they redefine them."</p>
           <div class="testi-person"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Thomas B." /><div><p style="font-weight:600;font-size:0.875rem;margin:0;">Thomas Beaumont</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Mayfair Office</p></div></div>
         </div>
       </div>
@@ -248,7 +257,7 @@
       <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:white;margin-bottom:0.75rem;">Your space. <em>Our obsession.</em></h2>
       <p style="color:rgba(255,255,255,0.8);max-width:480px;margin:0 auto 2.5rem;">Begin with a conversation — we'll take care of the rest.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" style="background:white;color:var(--clr-black);padding:0.875rem 2.25rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.9rem;">Book a Consultation</a>
+        <a href="contact.html" style="background:var(--surface-elevated);color:var(--clr-black);padding:0.875rem 2.25rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.9rem;">Book a Consultation</a>
         <a href="portfolio.html" style="background:transparent;color:white;padding:0.875rem 2.25rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:0.9rem;border:1.5px solid rgba(255,255,255,0.6);">View Our Portfolio</a>
       </div>
     </div>
@@ -258,13 +267,13 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__grid">
-        <div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Studio Noir</span></div><p class="footer__brand-text">Architectural &amp; interior design firm creating timeless, intentional spaces for discerning clients worldwide.</p></div>
+        <div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div><p class="footer__brand-text">Architectural &amp; interior design firm creating timeless, intentional spaces for discerning clients worldwide.</p></div>
         <div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="case-studies.html" class="footer__link">Case Studies</a></li><li><a href="blog.html" class="footer__link">Journal</a></li><li><a href="contact.html" class="footer__link">Contact</a></li></ul></div>
         <div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architectural Design</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li><li><a href="services.html" class="footer__link">3D Visualization</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li></ul></div>
         <div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">User Dashboard</a></li><li><a href="dashboard-admin/index.html" class="footer__link">Admin Dashboard</a></li></ul></div>
         <div><div class="footer__col-title">Support &amp; Legal</div><ul class="footer__links" style="margin-bottom:1.5rem;"><li><a href="privacy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul><div class="footer__col-title">Newsletter</div><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email" required /><button type="submit" class="footer__newsletter-btn">Subscribe</button></form></div>
       </div>
-      <div class="footer__bottom"><p class="footer__bottom-left">© 2026 Studio Noir. All rights reserved.</p><div class="footer__contact-row"><span>hello@studionoir.com</span><span>+1 (212) 000-0000</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+      <div class="footer__bottom"><p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p><div class="footer__contact-row"><span>hello@auraarch.com</span><span>+1 (212) 000-0000</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
     </div>
   </footer>
 

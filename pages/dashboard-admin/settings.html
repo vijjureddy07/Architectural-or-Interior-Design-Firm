@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings — Admin · Studio Noir</title>
+  <title>Settings — Admin · Aura Arch</title>
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -14,7 +14,7 @@
     .settings-nav a { display: block; padding: 0.6rem 0.875rem; border-radius: 8px; font-size: 0.875rem; color: var(--clr-text-muted); text-decoration: none; transition: all 0.15s; margin-bottom: 0.25rem; }
     .settings-nav a:hover { background: var(--clr-gray-100); color: var(--clr-text); }
     .settings-nav a.active { background: var(--clr-black); color: white; }
-    .settings-section { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); padding: 2rem; margin-bottom: 1.5rem; }
+    .settings-section { background: var(--surface-elevated); border-radius: 12px; border: 1px solid var(--clr-border); padding: 2rem; margin-bottom: 1.5rem; }
     .settings-section h2 { font-family: var(--font-display); font-size: 1.125rem; font-weight: 500; margin-bottom: 0.4rem; color: var(--clr-text); }
     .settings-section p.desc { font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--clr-border); }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
@@ -25,7 +25,7 @@
     .toggle { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
     .toggle input { opacity: 0; width: 0; height: 0; }
     .toggle-slider { position: absolute; inset: 0; background: var(--clr-gray-200); border-radius: 100px; cursor: pointer; transition: 0.3s; }
-    .toggle-slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: white; border-radius: 50%; transition: 0.3s; }
+    .toggle-slider::before { content: ''; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; background: var(--surface-elevated); border-radius: 50%; transition: 0.3s; }
     .toggle input:checked + .toggle-slider { background: var(--clr-gold); }
     .toggle input:checked + .toggle-slider::before { transform: translateX(20px); }
     .danger-zone { border-color: #fca5a5; }
@@ -34,10 +34,10 @@
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -90,11 +90,11 @@
               <div><button style="padding:0.5rem 1rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.85rem;background:transparent;cursor:pointer;color:var(--clr-text);margin-right:0.75rem;">Upload Logo</button><p style="font-size:0.75rem;color:var(--clr-text-muted);margin-top:0.5rem;">SVG, PNG or JPG · Max 2MB</p></div>
             </div>
             <div class="field-row">
-              <div class="form-group"><label class="form-label">Studio Name</label><input class="form-input" type="text" value="Studio Noir LLC" /></div>
-              <div class="form-group"><label class="form-label">Website</label><input class="form-input" type="url" value="https://studionoir.com" /></div>
+              <div class="form-group"><label class="form-label">Studio Name</label><input class="form-input" type="text" value="Aura Arch LLC" /></div>
+              <div class="form-group"><label class="form-label">Website</label><input class="form-input" type="url" value="https://auraarch.com" /></div>
             </div>
             <div class="field-row">
-              <div class="form-group"><label class="form-label">Primary Email</label><input class="form-input" type="email" value="hello@studionoir.com" /></div>
+              <div class="form-group"><label class="form-label">Primary Email</label><input class="form-input" type="email" value="hello@auraarch.com" /></div>
               <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" value="+1 (212) 000-0000" /></div>
             </div>
             <div class="form-group" style="margin-bottom:1.25rem;"><label class="form-label">Studio Address</label><textarea class="form-input" rows="2" style="resize:vertical;">150 West 28th Street, Suite 1200, New York, NY 10001</textarea></div>
@@ -114,7 +114,7 @@
               <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" value="Kim" /></div>
             </div>
             <div class="field-row">
-              <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" value="david@studionoir.com" /></div>
+              <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" value="david@auraarch.com" /></div>
               <div class="form-group"><label class="form-label">Role</label><input class="form-input" type="text" value="Founding Partner &amp; Architect" readonly style="background:var(--clr-gray-50);" /></div>
             </div>
             <div style="margin-top:0.5rem;padding-top:1.25rem;border-top:1px solid var(--clr-border);margin-bottom:1.25rem;">
@@ -170,7 +170,7 @@
               <label class="toggle"><input type="checkbox" checked /><span class="toggle-slider"></span></label>
             </div>
             <div class="toggle-row">
-              <div class="toggle-info"><h4>Watermark renderings</h4><p>Apply Studio Noir watermark to all downloaded renders</p></div>
+              <div class="toggle-info"><h4>Watermark renderings</h4><p>Apply Aura Arch watermark to all downloaded renders</p></div>
               <label class="toggle"><input type="checkbox" /><span class="toggle-slider"></span></label>
             </div>
             <div style="margin-top:1.25rem;"><button class="btn btn--primary">Save Portal Settings</button></div>

@@ -1,5 +1,5 @@
 /* ============================================================
-   STUDIO NOIR — Dark Mode Stylesheet
+   AURA ARCH — Dark Mode Stylesheet
    ============================================================ */
 
 [data-theme="dark"] {
@@ -12,17 +12,17 @@
 }
 
 [data-theme="dark"] .card {
-  background: var(--clr-gray-900);
+  background: var(--surface-elevated);
   border-color: var(--clr-gray-700);
 }
 
 [data-theme="dark"] .service-card {
-  background: var(--clr-gray-900);
+  background: var(--surface-elevated);
   border-color: var(--clr-gray-700);
 }
 
 [data-theme="dark"] .testimonial-card {
-  background: var(--clr-gray-900);
+  background: var(--surface-elevated);
   border-color: var(--clr-gray-700);
 }
 
@@ -57,7 +57,8 @@
   border-bottom-color: var(--clr-gray-700);
 }
 
-[data-theme="dark"] .accordion-item {
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .accordion__item {
   border-bottom-color: var(--clr-gray-700);
 }
 
@@ -79,6 +80,81 @@
   border-bottom-color: var(--clr-gray-700);
 }
 
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .case-card,
+[data-theme="dark"] .pricing-card,
+[data-theme="dark"] .service-chip,
+[data-theme="dark"] .testi-item,
+[data-theme="dark"] .render-card,
+[data-theme="dark"] .material-card,
+[data-theme="dark"] .client-card,
+[data-theme="dark"] .kpi-card,
+[data-theme="dark"] .settings-section,
+[data-theme="dark"] .legal-toc,
+[data-theme="dark"] .related-card,
+[data-theme="dark"] .feedback-msg__bubble,
+[data-theme="dark"] .thread-header,
+[data-theme="dark"] .thread-input,
+[data-theme="dark"] .inbox-list,
+[data-theme="dark"] .auth-card,
+[data-theme="dark"] .contact-panel,
+[data-theme="dark"] .contact-card {
+  background: var(--surface-elevated);
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .filter-btn,
+[data-theme="dark"] .proj-card__info,
+[data-theme="dark"] .msg-bubble.from-client .msg-bubble__text,
+[data-theme="dark"] .thread-input textarea {
+  background: var(--surface-elevated);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .page-hero,
+[data-theme="dark"] .page-header,
+[data-theme="dark"] .dashboard-layout,
+[data-theme="dark"] .auth-shell {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .footer__newsletter-input,
+[data-theme="dark"] .dash-search,
+[data-theme="dark"] .dash-topbar,
+[data-theme="dark"] .dash-card,
+[data-theme="dark"] .dash-stat-card {
+  background: var(--surface-elevated);
+}
+
+[data-theme="dark"] .feature-strip,
+[data-theme="dark"] .dash-project-banner {
+  background: linear-gradient(135deg, rgba(var(--clr-black-rgb), 0.96), rgba(var(--clr-black-rgb), 0.82));
+}
+
+[data-theme="dark"] .feature-strip__icon,
+[data-theme="dark"] .auth-logo__mark {
+  background-color: rgba(var(--clr-gold-rgb), 0.12);
+}
+
+[data-theme="dark"] .feature-strip__sub,
+[data-theme="dark"] .kpi-label,
+[data-theme="dark"] .dash-page-subtitle,
+[data-theme="dark"] .dash-stat-card__label {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .masonry__overlay,
+[data-theme="dark"] .portfolio-item__overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.84) 0%, transparent 60%);
+}
+
+[data-theme="dark"] .theme-btn,
+[data-theme="dark"] .rtl-btn {
+  background: var(--surface-elevated);
+}
+
 [data-theme="dark"] .map-placeholder {
   background: var(--clr-gray-900);
   border-color: var(--clr-gray-700);
@@ -92,7 +168,3 @@
   background: var(--clr-gray-700);
   color: var(--clr-gray-200);
 }
-
-/* Theme toggle button active state */
-.theme-btn.dark-active svg.moon-icon { display: none; }
-.theme-btn.dark-active svg.sun-icon { display: block !important; }

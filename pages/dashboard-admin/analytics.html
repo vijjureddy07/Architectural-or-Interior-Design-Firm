@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analytics — Admin · Studio Noir</title>
+  <title>Analytics — Admin · Aura Arch</title>
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -11,7 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   <style>
     .analytics-kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
-    .kpi-card { background: var(--clr-white); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; }
+    .kpi-card { background: var(--surface-elevated); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; }
     .kpi-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
     .kpi-value { font-family: var(--font-display); font-size: 1.875rem; font-weight: 400; color: var(--clr-text); margin-bottom: 0.2rem; line-height: 1; }
     .kpi-label { font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 0.5rem; }
@@ -23,10 +23,10 @@
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #c9a84c;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -62,7 +62,7 @@
       <!-- KPIs -->
       <div class="analytics-kpi">
         <div class="kpi-card">
-          <div class="kpi-icon" style="background:rgba(201,168,76,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="kpi-icon" style="background:rgba(211,160,109,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <p class="kpi-value">$2.4M</p>
           <p class="kpi-label">Revenue YTD</p>
           <p class="kpi-change up">↑ 18% vs prior year</p>
@@ -123,7 +123,7 @@
   <script src="../../assets/js/main.js"></script>
   <script src="../../assets/js/dashboard.js"></script>
   <script>
-    const gold = '#c9a84c';
+    const gold = '#d3a06d';
     const black = '#0a0a0a';
     const gridColor = 'rgba(0,0,0,0.06)';
     const font = { family: 'DM Sans, sans-serif', size: 11 };
@@ -138,7 +138,7 @@
           data: [210,185,320,290,380,450,410,0,0,0,0,0],
           backgroundColor: (ctx) => {
             const v = ctx.raw;
-            return v > 0 ? gold : 'rgba(201,168,76,0.15)';
+            return v > 0 ? gold : 'rgba(211,160,109,0.15)';
           },
           borderRadius: 6,
           borderSkipped: false

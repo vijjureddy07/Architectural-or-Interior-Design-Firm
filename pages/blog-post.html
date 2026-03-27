@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Case for Biophilic Design: Why Nature Belongs in Every Room — Studio Noir Journal." />
-  <title>The Case for Biophilic Design — Studio Noir Journal</title>
+  <meta name="description" content="The Case for Biophilic Design: Why Nature Belongs in Every Room — Aura Arch Journal." />
+  <title>The Case for Biophilic Design — Aura Arch Journal</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
@@ -16,19 +16,28 @@
     .article-body { max-width: 720px; margin: 0 auto; padding: var(--space-4xl) var(--space-lg); }
     .article-body h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; margin: 2.5rem 0 1rem; color: var(--clr-text); }
     .article-body p { color: var(--clr-text-muted); line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.0625rem; }
-    .article-body blockquote { border-left: 3px solid var(--clr-gold); padding: 1rem 1.5rem; margin: 2.5rem 0; background: rgba(201,168,76,0.06); border-radius: 0 8px 8px 0; }
+    .article-body blockquote { border-left: 3px solid var(--clr-gold); padding: 1rem 1.5rem; margin: 2.5rem 0; background: rgba(211,160,109,0.06); border-radius: 0 8px 8px 0; }
     .article-body blockquote p { color: var(--clr-text); font-family: var(--font-display); font-size: 1.25rem; font-style: italic; font-weight: 400; margin: 0; }
     .article-body figure { margin: 2.5rem 0; }
     .article-body figure img { width: 100%; border-radius: 12px; }
     .article-body figure figcaption { font-size: 0.8rem; color: var(--clr-text-muted); text-align: center; margin-top: 0.75rem; font-style: italic; }
     .article-sidebar { position: sticky; top: 100px; }
-    .related-card { background: var(--clr-white); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; display: flex; gap: 1rem; padding: 0.75rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+    .related-card { background: var(--surface-elevated); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; display: flex; gap: 1rem; padding: 0.75rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
     .related-card img { width: 72px; height: 72px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
     .related-card__text { flex: 1; }
     .related-card__text h4 { font-size: 0.875rem; font-weight: 600; color: var(--clr-text); margin-bottom: 0.25rem; line-height: 1.4; }
     .related-card__text span { font-size: 0.75rem; color: var(--clr-text-muted); }
     .share-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; border: 1px solid var(--clr-border); border-radius: 8px; font-size: 0.85rem; background: none; cursor: pointer; color: var(--clr-text); transition: all 0.2s; }
     .share-btn:hover { background: var(--clr-black); color: white; border-color: var(--clr-black); }
+    .article-layout { display:grid; grid-template-columns:1fr 320px; gap:4rem; align-items:start; }
+    @media (max-width: 960px) {
+      .article-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .article-body { padding: 2rem 0; }
+      .article-sidebar { position: static; padding-top: 0; }
+    }
+    @media (max-width: 640px) {
+      .article-hero-content { padding: 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -36,7 +45,7 @@
   <!-- ══ NAVBAR ══ -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Studio Noir</span></a>
+      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
       <ul class="navbar__nav" role="list">
         <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
         <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
@@ -62,7 +71,7 @@
     <div class="article-hero-overlay">
       <div class="article-hero-content">
         <a href="blog.html" style="color:var(--clr-gold);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;margin-bottom:1rem;">← Back to Journal</a>
-        <span style="display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold);background:rgba(201,168,76,0.2);padding:0.25rem 0.75rem;border-radius:20px;margin-bottom:1rem;">Interior Design</span>
+        <span style="display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.2);padding:0.25rem 0.75rem;border-radius:20px;margin-bottom:1rem;">Interior Design</span>
         <h1 style="font-family:var(--font-display);font-size:clamp(1.75rem,4vw,3rem);color:white;font-weight:300;line-height:1.2;margin-bottom:1rem;">The Case for Biophilic Design:<br><em>Why Nature Belongs in Every Room</em></h1>
         <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
           <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -84,7 +93,7 @@
   <!-- ══ ARTICLE LAYOUT ══ -->
   <section style="background: var(--clr-surface); padding: 0 0 var(--space-5xl);">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:start;">
+      <div class="article-layout">
 
         <!-- Article Body -->
         <article class="article-body" style="max-width:100%;padding:3rem 0;">
@@ -96,13 +105,13 @@
 
           <h2>The Three Dimensions of Biophilic Design</h2>
 
-          <p>At Studio Noir, we approach biophilic design across three interconnected dimensions: direct nature contact, indirect nature representation, and spatial conditions that evoke natural environments.</p>
+          <p>At Aura Arch, we approach biophilic design across three interconnected dimensions: direct nature contact, indirect nature representation, and spatial conditions that evoke natural environments.</p>
 
           <p>Direct contact means literal integration — living moss walls, interior water features, plants that have genuine presence in the spatial composition. Indirect representation encompasses natural materials like stone, timber, and leather; forms that echo organic shapes; and the use of texture that rewards close inspection the way bark or stone does.</p>
 
           <figure>
             <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="Living wall installation in contemporary interior" />
-            <figcaption>Living wall installation in the Park Slope Residence, New York. Plant selection by Studio Noir in collaboration with Botanica NYC.</figcaption>
+            <figcaption>Living wall installation in the Park Slope Residence, New York. Plant selection by Aura Arch in collaboration with Botanica NYC.</figcaption>
           </figure>
 
           <h2>Spatial Conditions and the Psychology of Refuge</h2>
@@ -132,12 +141,12 @@
           </div>
 
           <!-- Author Bio -->
-          <div style="background:var(--clr-white);border-radius:12px;padding:2rem;margin-top:2.5rem;display:flex;gap:1.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.05);">
+          <div style="background:var(--surface-elevated);border-radius:12px;padding:2rem;margin-top:2.5rem;display:flex;gap:1.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.05);">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&q=80" alt="Isabel Voss" style="width:80px;height:80px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
             <div>
               <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:500;margin-bottom:0.35rem;">Isabel Voss</h3>
-              <p style="font-size:0.8rem;color:var(--clr-gold);margin-bottom:0.75rem;">Principal Designer, Studio Noir</p>
-              <p style="font-size:0.875rem;color:var(--clr-text-muted);line-height:1.7;margin:0;">Isabel has led interior design at Studio Noir for over a decade, with a focus on integrating natural materials, biophilic principles, and bespoke craftsmanship into residential and hospitality projects globally.</p>
+              <p style="font-size:0.8rem;color:var(--clr-gold);margin-bottom:0.75rem;">Principal Designer, Aura Arch</p>
+              <p style="font-size:0.875rem;color:var(--clr-text-muted);line-height:1.7;margin:0;">Isabel has led interior design at Aura Arch for over a decade, with a focus on integrating natural materials, biophilic principles, and bespoke craftsmanship into residential and hospitality projects globally.</p>
             </div>
           </div>
 
@@ -153,7 +162,7 @@
 
         <!-- Sidebar -->
         <aside class="article-sidebar" style="padding-top:3rem;">
-          <div style="background:var(--clr-white);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 16px rgba(0,0,0,0.05);">
+          <div style="background:var(--surface-elevated);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 16px rgba(0,0,0,0.05);">
             <h3 style="font-family:var(--font-display);font-size:1rem;font-weight:500;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--clr-border);">Related Articles</h3>
             <div class="related-card">
               <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&q=80" alt="Japandi" />
@@ -180,7 +189,7 @@
   </section>
 
   <!-- ══ FOOTER ══ -->
-  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Studio Noir</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Studio Noir. All rights reserved.</p><div class="footer__contact-row"><span>hello@studionoir.com</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
+  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="blog.html" class="footer__link">Journal</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p><div class="footer__contact-row"><span>hello@auraarch.com</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
 
   <script src="../assets/js/main.js"></script>
 </body>
