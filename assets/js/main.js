@@ -47,7 +47,7 @@ function initBrandAssets() {
   const base = getScriptBase();
   if (!base) return;
 
-  const faviconHref = new URL('../images/aura-arch-favicon.svg', base).href;
+  const faviconHref = new URL('../images/aura-arch-favicon.svg?v=20260328', base).href;
   const iconSelectors = [
     'link[rel="icon"]',
     'link[rel="shortcut icon"]',
@@ -81,7 +81,7 @@ function getPublicLinkMap() {
     services: page('services.html'),
     serviceDetails: page('service-details.html'),
     portfolio: page('portfolio.html'),
-    blog: page('blog.html'),
+    journal: page('journal.html'),
     contact: page('contact.html'),
     pricing: page('pricing.html'),
     cases: page('case-studies.html'),
@@ -121,7 +121,7 @@ function buildPublicNavbar(paths) {
           <li class="navbar__nav-item"><a href="${paths.about}" class="navbar__nav-link">About</a></li>
           <li class="navbar__nav-item"><a href="${paths.services}" class="navbar__nav-link">Services</a></li>
           <li class="navbar__nav-item"><a href="${paths.portfolio}" class="navbar__nav-link">Portfolio</a></li>
-          <li class="navbar__nav-item"><a href="${paths.blog}" class="navbar__nav-link">Journal</a></li>
+          <li class="navbar__nav-item"><a href="${paths.journal}" class="navbar__nav-link">Journal</a></li>
           <li class="navbar__nav-item"><a href="${paths.contact}" class="navbar__nav-link">Contact</a></li>
           <li class="navbar__nav-item">
             <a href="${paths.userDash}" class="navbar__nav-link" data-nav-group="dashboard">
@@ -159,7 +159,7 @@ function buildPublicNavbar(paths) {
       <a href="${paths.about}" class="navbar__mobile-link">About</a>
       <a href="${paths.services}" class="navbar__mobile-link">Services</a>
       <a href="${paths.portfolio}" class="navbar__mobile-link">Portfolio</a>
-      <a href="${paths.blog}" class="navbar__mobile-link">Journal</a>
+      <a href="${paths.journal}" class="navbar__mobile-link">Journal</a>
       <a href="${paths.contact}" class="navbar__mobile-link">Contact</a>
       <a href="${paths.userDash}" class="navbar__mobile-link">User Dashboard</a>
       <a href="${paths.adminDash}" class="navbar__mobile-link">Admin Dashboard</a>
@@ -200,7 +200,7 @@ function buildPublicFooter(paths) {
               <li><a href="${paths.services}" class="footer__link">Services</a></li>
               <li><a href="${paths.portfolio}" class="footer__link">Portfolio</a></li>
               <li><a href="${paths.cases}" class="footer__link">Case Studies</a></li>
-              <li><a href="${paths.blog}" class="footer__link">Journal</a></li>
+              <li><a href="${paths.journal}" class="footer__link">Journal</a></li>
               <li><a href="${paths.contact}" class="footer__link">Contact</a></li>
             </ul>
           </div>
@@ -900,7 +900,8 @@ function initActiveNav() {
     const targetPath = normalizePath(new URL(href, window.location.href).pathname);
     const isHomeGroup = link.dataset.navGroup === 'home' && (currentFile === 'index.html' || currentFile === 'home2.html' || currentPath === '/');
     const isServicesGroup = currentFile === 'service-details.html' && targetPath.endsWith('/services');
-    const isMatch = targetPath === currentPath || isHomeGroup || isServicesGroup;
+    const isJournalGroup = currentFile === 'journal-post.html' && targetPath.endsWith('/journal');
+    const isMatch = targetPath === currentPath || isHomeGroup || isServicesGroup || isJournalGroup;
     link.classList.toggle('is-active', isMatch);
   });
 }

@@ -254,13 +254,14 @@
 
 /* ── Content area ── */
 .dash-content {
-  padding: 2rem 2rem 2.5rem;
+  padding: 2.5rem 2.5rem 3rem;
   flex: 1;
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
   align-content: start;
 }
 .dash-content > * { min-width: 0; }
+.dash-content [style*="grid-template-columns"] > * { min-width: 0; }
 
 /* ── Stat Grid (admin, 5-col) ── */
 .dash-stat-grid {
@@ -272,13 +273,14 @@
 .dash-stat-card {
   background: var(--surface-elevated);
   border: 1px solid var(--border-color);
-  border-radius: 18px;
+  border-radius: 22px;
   padding: 1.25rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
   transition: transform 0.2s, box-shadow 0.2s;
   min-width: 0;
+  box-shadow: 0 18px 36px rgba(17,14,16,0.05);
 }
 
 .dash-stat-card:hover {
@@ -322,14 +324,16 @@
 .dash-card {
   background: var(--surface-elevated);
   border: 1px solid var(--border-color);
-  border-radius: 18px;
-  padding: 1.5rem;
+  border-radius: 22px;
+  padding: 1.65rem;
   min-width: 0;
+  box-shadow: 0 18px 36px rgba(17,14,16,0.05);
 }
 
 [data-theme="dark"] .dash-card {
   background: var(--surface-elevated);
   border-color: var(--border-color);
+  box-shadow: none;
 }
 
 .dash-card__header {
@@ -353,6 +357,7 @@
   width: 100%;
   min-height: 220px;
   height: 220px;
+  overflow: hidden;
 }
 
 .dash-chart-frame--lg {
@@ -369,6 +374,7 @@
   display: block !important;
   width: 100% !important;
   height: 100% !important;
+  max-height: 100% !important;
 }
 
 /* ══════════════════════════════════════════
@@ -596,7 +602,7 @@
   .dash-main { margin-left: 0 !important; }
   .dashboard-main { margin-left: 0 !important; }
   .dash-hamburger { display: flex; }
-  .dash-content { padding: 1.5rem; }
+  .dash-content { padding: 1.75rem; }
   .dashboard-layout [style*="grid-template-columns:1.6fr 1fr"],
   .dashboard-layout [style*="grid-template-columns:1fr 1fr"],
   .dashboard-layout [style*="grid-template-columns:repeat(2"],
@@ -607,8 +613,22 @@
 
 @media (max-width: 768px) {
   .dash-stat-grid[style*="repeat(5"] { grid-template-columns: 1fr 1fr !important; }
-  .dash-content { padding: 1.25rem; }
-  .dash-topbar { padding: 0 1.25rem; }
+  .dash-content { padding: 1.5rem 1.25rem; }
+  .dash-topbar {
+    height: auto;
+    padding: 0.95rem 1.25rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .dash-topbar__right {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
   .dash-search { display: none; }
   .dash-chart-frame--lg { min-height: 220px; height: 220px; }
+  .dashboard-layout [style*="display:flex;justify-content:space-between"] {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
 }

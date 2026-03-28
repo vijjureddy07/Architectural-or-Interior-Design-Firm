@@ -21,9 +21,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Architecture at Aura Arch begins with circulation, proportion, daylight, and threshold moments so the project feels emotionally coherent before material layers are resolved.',
       metaDescription: 'Architectural design by Aura Arch covering concept strategy, planning packages, construction coordination, and design-led site review.',
       quote: 'We use architecture to set the project’s emotional discipline before any decorative choice is made.',
-      heroImage: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/architecture-hero.jpg',
       heroAlt: 'Minimal architectural residence with sculpted concrete and glass volumes.',
-      spotlightImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/architecture-spotlight.jpg',
       spotlightAlt: 'Architectural model and finish boards on a studio table.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'The architectural package establishes spatial hierarchy, envelope logic, daylight behavior, and the overall calm of the finished project.',
@@ -68,9 +68,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'The service is built around light, proportion, and threshold quality.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1400&q=85&auto=format&fit=crop', alt: 'Architectural courtyard with sculpted walls and natural light.' },
-        { src: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1200&q=85&auto=format&fit=crop', alt: 'Refined modern residence exterior with strong geometry.' },
-        { src: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=85&auto=format&fit=crop', alt: 'Architectural stair and lightwell detail inside a residence.' }
+        { src: '../assets/images/pages/service-details/architecture-gallery-01.jpg', alt: 'Architectural courtyard with sculpted walls and natural light.' },
+        { src: '../assets/images/pages/service-details/architecture-gallery-02.jpg', alt: 'Refined modern residence exterior with strong geometry.' },
+        { src: '../assets/images/pages/service-details/architecture-gallery-03.jpg', alt: 'Architectural stair and lightwell detail inside a residence.' }
       ],
       related: ['interior-design', 'visualization', 'project-delivery'],
       ctaTitle: 'Planning a new build or a structural renovation?',
@@ -82,9 +82,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Our interior design work is about lived atmosphere, material intelligence, and spatial choreography, not surface styling layered on at the end.',
       metaDescription: 'Interior design by Aura Arch covering planning, bespoke joinery, finish palettes, furniture direction, procurement, and final styling.',
       quote: 'Interiors should feel inevitable inside the architecture, not loosely attached to it.',
-      heroImage: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/interior-hero.jpg',
       heroAlt: 'Warm interior lounge with sculptural seating and natural materials.',
-      spotlightImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/interior-spotlight.jpg',
       spotlightAlt: 'Interior materials, textiles, and samples arranged on a desk.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'We edit rooms as complete compositions, aligning planning, joinery, finishes, and furniture into one visual rhythm.',
@@ -129,9 +129,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'The service is strongest when every room feels quiet, tactile, and fully considered.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1400&q=85&auto=format&fit=crop', alt: 'High-end interior living room with sculptural furniture.' },
-        { src: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=85&auto=format&fit=crop', alt: 'Minimal dining room with refined materials and soft light.' },
-        { src: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=85&auto=format&fit=crop', alt: 'Premium bedroom interior with layered textures and calm lighting.' }
+        { src: '../assets/images/pages/service-details/interior-gallery-01.jpg', alt: 'High-end interior living room with sculptural furniture.' },
+        { src: '../assets/images/pages/service-details/interior-gallery-02.jpg', alt: 'Minimal dining room with refined materials and soft light.' },
+        { src: '../assets/images/pages/service-details/interior-gallery-03.jpg', alt: 'Premium bedroom interior with layered textures and calm lighting.' }
       ],
       related: ['architectural-design', 'procurement', 'styling'],
       ctaTitle: 'Need interiors that feel resolved before procurement starts?',
@@ -143,9 +143,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Visualization at Aura Arch is used to test atmosphere and material hierarchy early, so approvals and procurement decisions happen with more certainty.',
       metaDescription: '3D visualization by Aura Arch with still renders, review packs, and atmosphere-led imagery for architecture and interior projects.',
       quote: 'A rendering should clarify the emotional truth of a design, not just represent it.',
-      heroImage: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/visualization-hero.jpg',
       heroAlt: 'Design studio workspace with large screen showing architectural rendering.',
-      spotlightImage: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/visualization-spotlight.jpg',
       spotlightAlt: 'Interior rendering boards pinned during a design review.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'We use renders as decision tools, not just presentation assets, verifying material balance and focal points before costly commitments are made.',
@@ -190,9 +190,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'The output is strongest when imagery feels atmospheric, precise, and useful in real decision-making.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=85&auto=format&fit=crop', alt: 'Design workstation displaying detailed architectural renderings.' },
-        { src: 'https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=1200&q=85&auto=format&fit=crop', alt: 'Interior rendering process with dual monitor setup in a studio.' },
-        { src: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&q=85&auto=format&fit=crop', alt: 'Rendered building façade with cinematic lighting.' }
+        { src: '../assets/images/pages/service-details/visualization-gallery-01.jpg', alt: 'Design workstation displaying detailed architectural renderings.' },
+        { src: '../assets/images/pages/service-details/visualization-gallery-02.jpg', alt: 'Interior rendering process with dual monitor setup in a studio.' },
+        { src: '../assets/images/pages/service-details/visualization-gallery-03.jpg', alt: 'Rendered building façade with cinematic lighting.' }
       ],
       related: ['architectural-design', 'interior-design', 'lighting-design'],
       ctaTitle: 'Need approval-ready visuals before major selections are locked?',
@@ -204,9 +204,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Our lighting work is about shaping how a space transitions through the day, how materials read at night, and how calm or drama is introduced scene by scene.',
       metaDescription: 'Lighting design by Aura Arch covering fixture plans, mood layering, dimming logic, and integrated scene direction for architecture and interiors.',
       quote: 'Light is often the final layer that decides whether a room feels composed or unfinished.',
-      heroImage: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/lighting-hero.jpg',
       heroAlt: 'Moody architectural interior with layered lighting and textured surfaces.',
-      spotlightImage: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/lighting-spotlight.jpg',
       spotlightAlt: 'Warm lit living space showing ambient, task, and accent lighting.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'We design light in layers so task needs, architecture, and evening atmosphere all remain balanced rather than competing.',
@@ -251,9 +251,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'The result should make the space feel more architectural, more tactile, and more alive after dark.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1400&q=85&auto=format&fit=crop', alt: 'Evening interior with layered architectural lighting.' },
-        { src: 'https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=85&auto=format&fit=crop', alt: 'Dining room lit with warm pendant and wall-wash lighting.' },
-        { src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=85&auto=format&fit=crop', alt: 'Residential lounge with soft accent lighting and texture.' }
+        { src: '../assets/images/pages/service-details/lighting-gallery-01.jpg', alt: 'Evening interior with layered architectural lighting.' },
+        { src: '../assets/images/pages/service-details/lighting-gallery-02.jpg', alt: 'Dining room lit with warm pendant and wall-wash lighting.' },
+        { src: '../assets/images/pages/service-details/lighting-gallery-03.jpg', alt: 'Residential lounge with soft accent lighting and texture.' }
       ],
       related: ['interior-design', 'visualization', 'project-delivery'],
       ctaTitle: 'Want the final space to feel as strong at night as it does in daylight?',
@@ -265,9 +265,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Project delivery keeps the built outcome aligned with the drawings, the procurement schedule, and the level of finish quality the concept requires.',
       metaDescription: 'Project delivery by Aura Arch covering procurement support, contractor coordination, site review, installation checks, and final handover.',
       quote: 'Design quality is protected by what happens after drawings are issued, not before.',
-      heroImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/delivery-hero.jpg',
       heroAlt: 'Architecture team reviewing a project site during construction.',
-      spotlightImage: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/delivery-spotlight.jpg',
       spotlightAlt: 'Construction drawings, sample boards, and schedules laid out for coordination.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'This scope translates intent into execution by staying close to suppliers, contractors, and installation milestones where quality can drift.',
@@ -312,9 +312,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'The goal is a built result that still feels intentional at the last meter.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=85&auto=format&fit=crop', alt: 'Architects reviewing build progress on an active project site.' },
-        { src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=85&auto=format&fit=crop', alt: 'Procurement samples and schedules prepared for delivery coordination.' },
-        { src: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=85&auto=format&fit=crop', alt: 'Completed architectural project with refined material execution.' }
+        { src: '../assets/images/pages/service-details/delivery-gallery-01.jpg', alt: 'Architects reviewing build progress on an active project site.' },
+        { src: '../assets/images/pages/service-details/delivery-gallery-02.jpg', alt: 'Procurement samples and schedules prepared for delivery coordination.' },
+        { src: '../assets/images/pages/service-details/delivery-gallery-03.jpg', alt: 'Completed architectural project with refined material execution.' }
       ],
       related: ['architectural-design', 'lighting-design', 'procurement'],
       ctaTitle: 'Need the build phase to stay aligned with the approved design?',
@@ -326,9 +326,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Procurement support keeps premium selections moving with clarity, so the project is not slowed down by fragmented supplier communication or approval gaps.',
       metaDescription: 'Procurement support by Aura Arch covering supplier alignment, approvals, tracking, and installation readiness across furniture, finishes, and accessories.',
       quote: 'Procurement works best when it feels almost invisible to the client.',
-      heroImage: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/procurement-hero.jpg',
       heroAlt: 'Curated architectural materials and furniture samples arranged on a desk.',
-      spotlightImage: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/procurement-spotlight.jpg',
       spotlightAlt: 'Procurement schedules and finish samples prepared for review.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'We simplify approvals, track movement across vendors, and keep the material and furniture package consistent with the design intent.',
@@ -373,9 +373,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'Procurement succeeds when the selection package stays premium and predictable at the same time.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1400&q=85&auto=format&fit=crop', alt: 'Furniture and material selections curated for a premium interior project.' },
-        { src: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=85&auto=format&fit=crop', alt: 'Sample boards and procurement schedules on a design table.' },
-        { src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=85&auto=format&fit=crop', alt: 'Interior finishes and fixtures arranged for procurement review.' }
+        { src: '../assets/images/pages/service-details/procurement-gallery-01.jpg', alt: 'Furniture and material selections curated for a premium interior project.' },
+        { src: '../assets/images/pages/service-details/procurement-gallery-02.jpg', alt: 'Sample boards and procurement schedules on a design table.' },
+        { src: '../assets/images/pages/service-details/procurement-gallery-03.jpg', alt: 'Interior finishes and fixtures arranged for procurement review.' }
       ],
       related: ['interior-design', 'project-delivery', 'styling'],
       ctaTitle: 'Need help keeping selections and suppliers under control?',
@@ -387,9 +387,9 @@ const ServiceDetailsPage = (() => {
       lead: 'Styling is the final editing layer that gives a space softness, personality, and visual restraint once the major architecture and interior moves are already complete.',
       metaDescription: 'Styling by Aura Arch covering art placement, object curation, soft furnishings, and final room composition before handover or photography.',
       quote: 'The final layer should feel quiet and precise, never over-explained.',
-      heroImage: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1800&q=85&auto=format&fit=crop',
+      heroImage: '../assets/images/pages/service-details/styling-hero.jpg',
       heroAlt: 'Refined styled interior with art, textiles, and sculptural accessories.',
-      spotlightImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1000&q=85&auto=format&fit=crop',
+      spotlightImage: '../assets/images/pages/service-details/styling-spotlight.jpg',
       spotlightAlt: 'Styled shelf vignette with books, ceramics, and soft material layers.',
       spotlightLabel: 'Studio Focus',
       spotlightText: 'We style to reinforce the architecture and interior palette, not to distract from it with unnecessary density or trend-driven objects.',
@@ -434,9 +434,9 @@ const ServiceDetailsPage = (() => {
       ],
       galleryTitle: 'The aim is a room that feels finished without looking over-styled.',
       gallery: [
-        { src: 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1400&q=85&auto=format&fit=crop', alt: 'Styled premium bedroom with art, textiles, and sculptural furniture.' },
-        { src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=85&auto=format&fit=crop', alt: 'Curated living room shelf styling with ceramics and books.' },
-        { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1200&q=85&auto=format&fit=crop', alt: 'Premium hospitality interior prepared for final photography.' }
+        { src: '../assets/images/pages/service-details/styling-gallery-01.jpg', alt: 'Styled premium bedroom with art, textiles, and sculptural furniture.' },
+        { src: '../assets/images/pages/service-details/styling-gallery-02.jpg', alt: 'Curated living room shelf styling with ceramics and books.' },
+        { src: '../assets/images/pages/service-details/styling-gallery-03.jpg', alt: 'Premium hospitality interior prepared for final photography.' }
       ],
       related: ['interior-design', 'procurement', 'project-delivery'],
       ctaTitle: 'Need the last layer to feel as resolved as the architecture itself?',

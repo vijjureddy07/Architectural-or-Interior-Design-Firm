@@ -1,0 +1,1750 @@
+{
+  "pages": [
+    {
+      "page": "index.html",
+      "label": "Home 1",
+      "folder": "assets/images/pages/home-1",
+      "display_slots": 11,
+      "unique_files": 10,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1800&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2",
+          "alt": "Refined contemporary interior by Aura Arch",
+          "kind": "hero",
+          "type": "Hero interior / architecture image",
+          "orientation": "landscape",
+          "file_name": "hero-01.webp",
+          "target_path": "assets/images/pages/home-1/hero-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+          "alt": "Aura Arch studio living room concept",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-01.webp",
+          "target_path": "assets/images/pages/home-1/project-01.webp",
+          "slots": [
+            "slot-02",
+            "slot-08"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+          "alt": "Hudson Ridge residence living space",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-02.webp",
+          "target_path": "assets/images/pages/home-1/project-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+          "alt": "Harbor House hospitality lounge",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-03.webp",
+          "target_path": "assets/images/pages/home-1/project-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366412874-3415097a27e7",
+          "alt": "Executive office interior by Aura Arch",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-04.webp",
+          "target_path": "assets/images/pages/home-1/project-04.webp",
+          "slots": [
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Client portrait of Alexandra Chen",
+          "kind": "client-portrait",
+          "type": "Client portrait",
+          "orientation": "square",
+          "file_name": "client-portrait-01.webp",
+          "target_path": "assets/images/pages/home-1/client-portrait-01.webp",
+          "slots": [
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Client portrait of Daniel Hart",
+          "kind": "client-portrait",
+          "type": "Client portrait",
+          "orientation": "square",
+          "file_name": "client-portrait-02.webp",
+          "target_path": "assets/images/pages/home-1/client-portrait-02.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4",
+          "alt": "Luxury entry hall with sculptural lighting",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-05.webp",
+          "target_path": "assets/images/pages/home-1/project-05.webp",
+          "slots": [
+            "slot-09"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+          "alt": "Boutique hospitality lounge interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-06.webp",
+          "target_path": "assets/images/pages/home-1/project-06.webp",
+          "slots": [
+            "slot-10"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+          "alt": "Elegant executive office interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-07.webp",
+          "target_path": "assets/images/pages/home-1/project-07.webp",
+          "slots": [
+            "slot-11"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/about.html",
+      "label": "About",
+      "folder": "assets/images/pages/about",
+      "display_slots": 5,
+      "unique_files": 5,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+          "alt": "Aura Arch design team reviewing drawings",
+          "kind": "studio",
+          "type": "Studio / team workspace",
+          "orientation": "landscape",
+          "file_name": "studio-01.webp",
+          "target_path": "assets/images/pages/about/studio-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Margaux Thierry",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-01.webp",
+          "target_path": "assets/images/pages/about/team-portrait-01.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1560250097-0b93528c311a",
+          "alt": "James Alderton",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-02.webp",
+          "target_path": "assets/images/pages/about/team-portrait-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+          "alt": "Priya Mehta",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-03.webp",
+          "target_path": "assets/images/pages/about/team-portrait-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+          "alt": "Marcus Chen",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-04.webp",
+          "target_path": "assets/images/pages/about/team-portrait-04.webp",
+          "slots": [
+            "slot-05"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/blog-post.html",
+      "label": "Blog Post",
+      "folder": "assets/images/pages/blog-post",
+      "display_slots": 8,
+      "unique_files": 7,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+          "alt": "Biophilic design living room interior",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-01.webp",
+          "target_path": "assets/images/pages/blog-post/article-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Isabel Voss",
+          "kind": "author-avatar",
+          "type": "Author portrait",
+          "orientation": "square",
+          "file_name": "author-avatar-01.webp",
+          "target_path": "assets/images/pages/blog-post/author-avatar-01.webp",
+          "slots": [
+            "slot-02",
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+          "alt": "Natural daylight in a calm bedroom interior",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-02.webp",
+          "target_path": "assets/images/pages/blog-post/article-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616594039964-3d4f0b2fb9f5?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1616594039964-3d4f0b2fb9f5",
+          "alt": "Layered living room with textured materials",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-03.webp",
+          "target_path": "assets/images/pages/blog-post/article-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+          "alt": "Japandi interior article",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-04.webp",
+          "target_path": "assets/images/pages/blog-post/article-04.webp",
+          "slots": [
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+          "alt": "Materials article",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-05.webp",
+          "target_path": "assets/images/pages/blog-post/article-05.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1586105251261-72a756497a11",
+          "alt": "Lighting article",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-06.webp",
+          "target_path": "assets/images/pages/blog-post/article-06.webp",
+          "slots": [
+            "slot-08"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/blog.html",
+      "label": "Blog",
+      "folder": "assets/images/pages/blog",
+      "display_slots": 14,
+      "unique_files": 10,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+          "alt": "Biophilic design living room",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-01.webp",
+          "target_path": "assets/images/pages/blog/article-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Isabel Voss",
+          "kind": "author-avatar",
+          "type": "Author portrait",
+          "orientation": "square",
+          "file_name": "author-avatar-01.webp",
+          "target_path": "assets/images/pages/blog/author-avatar-01.webp",
+          "slots": [
+            "slot-02",
+            "slot-08"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1511818966892-d7d671e672a2",
+          "alt": "Architectural threshold and entry design",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-02.webp",
+          "target_path": "assets/images/pages/blog/article-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Marcus Trent",
+          "kind": "author-avatar",
+          "type": "Author portrait",
+          "orientation": "square",
+          "file_name": "author-avatar-02.webp",
+          "target_path": "assets/images/pages/blog/author-avatar-02.webp",
+          "slots": [
+            "slot-04",
+            "slot-12"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+          "alt": "Japandi-inspired interior details",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-03.webp",
+          "target_path": "assets/images/pages/blog/article-03.webp",
+          "slots": [
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "David Kim",
+          "kind": "author-avatar",
+          "type": "Author portrait",
+          "orientation": "square",
+          "file_name": "author-avatar-03.webp",
+          "target_path": "assets/images/pages/blog/author-avatar-03.webp",
+          "slots": [
+            "slot-06",
+            "slot-10",
+            "slot-14"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1586105251261-72a756497a11?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1586105251261-72a756497a11",
+          "alt": "Layered lighting interior",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-04.webp",
+          "target_path": "assets/images/pages/blog/article-04.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687644-aac79e87bbde?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687644-aac79e87bbde",
+          "alt": "Design process workspace",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-05.webp",
+          "target_path": "assets/images/pages/blog/article-05.webp",
+          "slots": [
+            "slot-09"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+          "alt": "Modern kitchen design",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-06.webp",
+          "target_path": "assets/images/pages/blog/article-06.webp",
+          "slots": [
+            "slot-11"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+          "alt": "Studio award recognition event",
+          "kind": "article",
+          "type": "Editorial article image",
+          "orientation": "landscape",
+          "file_name": "article-07.webp",
+          "target_path": "assets/images/pages/blog/article-07.webp",
+          "slots": [
+            "slot-13"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/case-studies.html",
+      "label": "Case Studies",
+      "folder": "assets/images/pages/case-studies",
+      "display_slots": 4,
+      "unique_files": 4,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+          "alt": "Hudson Valley Residence exterior and landscape",
+          "kind": "case-study",
+          "type": "Case study project image",
+          "orientation": "landscape",
+          "file_name": "case-study-01.webp",
+          "target_path": "assets/images/pages/case-studies/case-study-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+          "alt": "Tribeca Penthouse living area",
+          "kind": "case-study",
+          "type": "Case study project image",
+          "orientation": "landscape",
+          "file_name": "case-study-02.webp",
+          "target_path": "assets/images/pages/case-studies/case-study-02.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+          "alt": "Private club hospitality interior",
+          "kind": "case-study",
+          "type": "Case study project image",
+          "orientation": "landscape",
+          "file_name": "case-study-03.webp",
+          "target_path": "assets/images/pages/case-studies/case-study-03.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+          "alt": "Meridian Capital HQ office design",
+          "kind": "case-study",
+          "type": "Case study project image",
+          "orientation": "landscape",
+          "file_name": "case-study-04.webp",
+          "target_path": "assets/images/pages/case-studies/case-study-04.webp",
+          "slots": [
+            "slot-04"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/contact.html",
+      "label": "Contact",
+      "folder": "assets/images/pages/contact",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/dashboard-admin/analytics.html",
+      "label": "Admin / Analytics",
+      "folder": "assets/images/pages/dashboard-admin/analytics",
+      "display_slots": 1,
+      "unique_files": 1,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/analytics/avatar-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-admin/clients.html",
+      "label": "Admin / Clients",
+      "folder": "assets/images/pages/dashboard-admin/clients",
+      "display_slots": 4,
+      "unique_files": 3,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/clients/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Alexandra Chen",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-02.webp",
+          "target_path": "assets/images/pages/dashboard-admin/clients/avatar-02.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Sunita Patel",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-03.webp",
+          "target_path": "assets/images/pages/dashboard-admin/clients/avatar-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-admin/index.html",
+      "label": "Admin / Index",
+      "folder": "assets/images/pages/dashboard-admin/index",
+      "display_slots": 5,
+      "unique_files": 4,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/index/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Isabel",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-02.webp",
+          "target_path": "assets/images/pages/dashboard-admin/index/avatar-02.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Marcus",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-03.webp",
+          "target_path": "assets/images/pages/dashboard-admin/index/avatar-03.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f",
+          "alt": "Priya",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-04.webp",
+          "target_path": "assets/images/pages/dashboard-admin/index/avatar-04.webp",
+          "slots": [
+            "slot-05"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-admin/messages.html",
+      "label": "Admin / Messages",
+      "folder": "assets/images/pages/dashboard-admin/messages",
+      "display_slots": 5,
+      "unique_files": 3,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/messages/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Alexandra",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-02.webp",
+          "target_path": "assets/images/pages/dashboard-admin/messages/avatar-02.webp",
+          "slots": [
+            "slot-02",
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Sunita",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-03.webp",
+          "target_path": "assets/images/pages/dashboard-admin/messages/avatar-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-admin/projects.html",
+      "label": "Admin / Projects",
+      "folder": "assets/images/pages/dashboard-admin/projects",
+      "display_slots": 18,
+      "unique_files": 3,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/projects/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-05",
+            "slot-06",
+            "slot-07",
+            "slot-11",
+            "slot-12",
+            "slot-16",
+            "slot-17"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-02.webp",
+          "target_path": "assets/images/pages/dashboard-admin/projects/avatar-02.webp",
+          "slots": [
+            "slot-02",
+            "slot-03",
+            "slot-08",
+            "slot-13",
+            "slot-14",
+            "slot-18"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-03.webp",
+          "target_path": "assets/images/pages/dashboard-admin/projects/avatar-03.webp",
+          "slots": [
+            "slot-04",
+            "slot-09",
+            "slot-10",
+            "slot-15"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-admin/settings.html",
+      "label": "Admin / Settings",
+      "folder": "assets/images/pages/dashboard-admin/settings",
+      "display_slots": 2,
+      "unique_files": 1,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/settings/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-02"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-admin/team.html",
+      "label": "Admin / Team",
+      "folder": "assets/images/pages/dashboard-admin/team",
+      "display_slots": 8,
+      "unique_files": 7,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+          "alt": "Admin",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Isabel Voss",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-01.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/team-portrait-01.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Marcus Trent",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-02.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/team-portrait-02.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+          "alt": "Priya Sharma",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-03.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/team-portrait-03.webp",
+          "slots": [
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+          "alt": "Tom Laurent",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-04.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/team-portrait-04.webp",
+          "slots": [
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1580489944761-15a19d654956",
+          "alt": "Yuki Tanaka",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-05.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/team-portrait-05.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1557862921-37829c790f19",
+          "alt": "Carlos Reyes",
+          "kind": "team-portrait",
+          "type": "Team portrait",
+          "orientation": "portrait",
+          "file_name": "team-portrait-06.webp",
+          "target_path": "assets/images/pages/dashboard-admin/team/team-portrait-06.webp",
+          "slots": [
+            "slot-08"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/documents.html",
+      "label": "User / Documents",
+      "folder": "assets/images/pages/dashboard-user/documents",
+      "display_slots": 1,
+      "unique_files": 1,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/documents/avatar-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/feedback.html",
+      "label": "User / Feedback",
+      "folder": "assets/images/pages/dashboard-user/feedback",
+      "display_slots": 4,
+      "unique_files": 2,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/feedback/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-02",
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+          "alt": "Alexandra",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-02.webp",
+          "target_path": "assets/images/pages/dashboard-user/feedback/avatar-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/index.html",
+      "label": "User / Index",
+      "folder": "assets/images/pages/dashboard-user/index",
+      "display_slots": 5,
+      "unique_files": 5,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "Alexandra Chen",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/index/avatar-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=75",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+          "alt": "Living Room",
+          "kind": "render-preview",
+          "type": "Render preview / project thumbnail",
+          "orientation": "landscape",
+          "file_name": "render-preview-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/index/render-preview-01.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=75",
+          "normalized_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+          "alt": "Master Bedroom",
+          "kind": "render-preview",
+          "type": "Render preview / project thumbnail",
+          "orientation": "landscape",
+          "file_name": "render-preview-02.webp",
+          "target_path": "assets/images/pages/dashboard-user/index/render-preview-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=75",
+          "normalized_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+          "alt": "Kitchen",
+          "kind": "render-preview",
+          "type": "Render preview / project thumbnail",
+          "orientation": "landscape",
+          "file_name": "render-preview-03.webp",
+          "target_path": "assets/images/pages/dashboard-user/index/render-preview-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=75",
+          "normalized_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+          "alt": "Entrance Hall",
+          "kind": "render-preview",
+          "type": "Render preview / project thumbnail",
+          "orientation": "landscape",
+          "file_name": "render-preview-04.webp",
+          "target_path": "assets/images/pages/dashboard-user/index/render-preview-04.webp",
+          "slots": [
+            "slot-05"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/materials.html",
+      "label": "User / Materials",
+      "folder": "assets/images/pages/dashboard-user/materials",
+      "display_slots": 10,
+      "unique_files": 9,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/avatar-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64",
+          "alt": "Herringbone Oak",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-01.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+          "alt": "Calacatta Marble",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-02.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-02.webp",
+          "slots": [
+            "slot-03",
+            "slot-08"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+          "alt": "Linen Sofa",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-03.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+          "alt": "Brass Hardware",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-04.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-04.webp",
+          "slots": [
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1524758631624-e2822e304c36",
+          "alt": "Plaster Walls",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-05.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-05.webp",
+          "slots": [
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+          "alt": "Kitchen Cabinetry",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-06.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-06.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+          "alt": "Kitchen Tiles",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-07.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-07.webp",
+          "slots": [
+            "slot-09"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+          "alt": "Sink",
+          "kind": "material",
+          "type": "Material / finish close-up",
+          "orientation": "landscape",
+          "file_name": "material-08.webp",
+          "target_path": "assets/images/pages/dashboard-user/materials/material-08.webp",
+          "slots": [
+            "slot-10"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/messages.html",
+      "label": "User / Messages",
+      "folder": "assets/images/pages/dashboard-user/messages",
+      "display_slots": 3,
+      "unique_files": 2,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/messages/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+          "alt": "Marcus",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-02.webp",
+          "target_path": "assets/images/pages/dashboard-user/messages/avatar-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/profile.html",
+      "label": "User / Profile",
+      "folder": "assets/images/pages/dashboard-user/profile",
+      "display_slots": 2,
+      "unique_files": 1,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/profile/avatar-01.webp",
+          "slots": [
+            "slot-01",
+            "slot-02"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/renderings.html",
+      "label": "User / Renderings",
+      "folder": "assets/images/pages/dashboard-user/renderings",
+      "display_slots": 13,
+      "unique_files": 9,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/avatar-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+          "alt": "Living Room",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-01.webp",
+          "slots": [
+            "slot-02",
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+          "alt": "Master Bedroom",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-02.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-02.webp",
+          "slots": [
+            "slot-03",
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+          "alt": "Kitchen",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-03.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-03.webp",
+          "slots": [
+            "slot-04",
+            "slot-08"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+          "alt": "Entrance Hall",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-04.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-04.webp",
+          "slots": [
+            "slot-05",
+            "slot-09"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+          "alt": "Dining Room",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-05.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-05.webp",
+          "slots": [
+            "slot-10"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+          "alt": "Terrace",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-06.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-06.webp",
+          "slots": [
+            "slot-11"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1616137466211-f939a420be84",
+          "alt": "Guest Room",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-07.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-07.webp",
+          "slots": [
+            "slot-12"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1524758631624-e2822e304c36",
+          "alt": "Hallway",
+          "kind": "render",
+          "type": "Interior rendering",
+          "orientation": "landscape",
+          "file_name": "render-08.webp",
+          "target_path": "assets/images/pages/dashboard-user/renderings/render-08.webp",
+          "slots": [
+            "slot-13"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/dashboard-user/settings.html",
+      "label": "User / Settings",
+      "folder": "assets/images/pages/dashboard-user/settings",
+      "display_slots": 1,
+      "unique_files": 1,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+          "alt": "User",
+          "kind": "avatar",
+          "type": "Avatar / profile photo",
+          "orientation": "square",
+          "file_name": "avatar-01.webp",
+          "target_path": "assets/images/pages/dashboard-user/settings/avatar-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/faq.html",
+      "label": "Faq",
+      "folder": "assets/images/pages/faq",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/home2.html",
+      "label": "Home 2",
+      "folder": "assets/images/pages/home-2",
+      "display_slots": 11,
+      "unique_files": 10,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
+          "alt": "Premium Aura Arch residential interior",
+          "kind": "hero",
+          "type": "Hero interior / architecture image",
+          "orientation": "landscape",
+          "file_name": "hero-01.webp",
+          "target_path": "assets/images/pages/home-2/hero-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616594039964-3d4f0b2fb9f5?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1616594039964-3d4f0b2fb9f5",
+          "alt": "Aura Arch premium showcase interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-01.webp",
+          "target_path": "assets/images/pages/home-2/project-01.webp",
+          "slots": [
+            "slot-02",
+            "slot-10"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+          "alt": "Mercer Penthouse interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-02.webp",
+          "target_path": "assets/images/pages/home-2/project-02.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616137466211-f939a420be84?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1616137466211-f939a420be84",
+          "alt": "Cove House retreat interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-03.webp",
+          "target_path": "assets/images/pages/home-2/project-03.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e",
+          "alt": "Aura Arch premium bedroom design",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-04.webp",
+          "target_path": "assets/images/pages/home-2/project-04.webp",
+          "slots": [
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+          "alt": "Client portrait of Sofia Laurent",
+          "kind": "client-portrait",
+          "type": "Client portrait",
+          "orientation": "square",
+          "file_name": "client-portrait-01.webp",
+          "target_path": "assets/images/pages/home-2/client-portrait-01.webp",
+          "slots": [
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&q=80",
+          "normalized_src": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
+          "alt": "Client portrait of Marcus Vale",
+          "kind": "client-portrait",
+          "type": "Client portrait",
+          "orientation": "square",
+          "file_name": "client-portrait-02.webp",
+          "target_path": "assets/images/pages/home-2/client-portrait-02.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+          "alt": "Premium entry hall interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-05.webp",
+          "target_path": "assets/images/pages/home-2/project-05.webp",
+          "slots": [
+            "slot-08"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+          "alt": "Elegant premium lounge interior",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-06.webp",
+          "target_path": "assets/images/pages/home-2/project-06.webp",
+          "slots": [
+            "slot-09"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+          "alt": "Premium dining room for entertaining",
+          "kind": "project",
+          "type": "Project / interior image",
+          "orientation": "landscape",
+          "file_name": "project-07.webp",
+          "target_path": "assets/images/pages/home-2/project-07.webp",
+          "slots": [
+            "slot-11"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/index.html",
+      "label": "Redirect Index",
+      "folder": "assets/images/pages/redirect-index",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/login.html",
+      "label": "Login",
+      "folder": "assets/images/pages/login",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/portfolio.html",
+      "label": "Portfolio",
+      "folder": "assets/images/pages/portfolio",
+      "display_slots": 9,
+      "unique_files": 9,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
+          "alt": "The Meridian Residence",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-01.webp",
+          "target_path": "assets/images/pages/portfolio/project-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d",
+          "alt": "Obsidian Office",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-02.webp",
+          "target_path": "assets/images/pages/portfolio/project-02.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1",
+          "alt": "Azure Terrace",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-03.webp",
+          "target_path": "assets/images/pages/portfolio/project-03.webp",
+          "slots": [
+            "slot-03"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9",
+          "alt": "Lisbon Hotel Lounge",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-04.webp",
+          "target_path": "assets/images/pages/portfolio/project-04.webp",
+          "slots": [
+            "slot-04"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1613977257363-707ba9348227",
+          "alt": "Hamptons Beach House",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-05.webp",
+          "target_path": "assets/images/pages/portfolio/project-05.webp",
+          "slots": [
+            "slot-05"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+          "alt": "Voss & Laurent headquarters",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-06.webp",
+          "target_path": "assets/images/pages/portfolio/project-06.webp",
+          "slots": [
+            "slot-06"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
+          "alt": "Ivory Penthouse",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-07.webp",
+          "target_path": "assets/images/pages/portfolio/project-07.webp",
+          "slots": [
+            "slot-07"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+          "alt": "Maison Cote d'Azur",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-08.webp",
+          "target_path": "assets/images/pages/portfolio/project-08.webp",
+          "slots": [
+            "slot-08"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1400&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
+          "alt": "Tribeca penthouse living space",
+          "kind": "project",
+          "type": "Project / portfolio image",
+          "orientation": "landscape",
+          "file_name": "project-09.webp",
+          "target_path": "assets/images/pages/portfolio/project-09.webp",
+          "slots": [
+            "slot-09"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/pricing.html",
+      "label": "Pricing",
+      "folder": "assets/images/pages/pricing",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/privacy.html",
+      "label": "Privacy",
+      "folder": "assets/images/pages/privacy",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/service-details.html",
+      "label": "Service Details",
+      "folder": "assets/images/pages/service-details",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/services.html",
+      "label": "Services",
+      "folder": "assets/images/pages/services",
+      "display_slots": 3,
+      "unique_files": 3,
+      "images": [
+        {
+          "current_src": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+          "alt": "Architectural design presentation board",
+          "kind": "service",
+          "type": "Service showcase image",
+          "orientation": "landscape",
+          "file_name": "service-01.webp",
+          "target_path": "assets/images/pages/services/service-01.webp",
+          "slots": [
+            "slot-01"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+          "alt": "Interior design mood and materials",
+          "kind": "service",
+          "type": "Service showcase image",
+          "orientation": "landscape",
+          "file_name": "service-02.webp",
+          "target_path": "assets/images/pages/services/service-02.webp",
+          "slots": [
+            "slot-02"
+          ]
+        },
+        {
+          "current_src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85",
+          "normalized_src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64",
+          "alt": "3D visualization on large display",
+          "kind": "service",
+          "type": "Service showcase image",
+          "orientation": "landscape",
+          "file_name": "service-03.webp",
+          "target_path": "assets/images/pages/services/service-03.webp",
+          "slots": [
+            "slot-03"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "pages/signup.html",
+      "label": "Signup",
+      "folder": "assets/images/pages/signup",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    },
+    {
+      "page": "pages/terms.html",
+      "label": "Terms",
+      "folder": "assets/images/pages/terms",
+      "display_slots": 0,
+      "unique_files": 0,
+      "images": []
+    }
+  ]
+}

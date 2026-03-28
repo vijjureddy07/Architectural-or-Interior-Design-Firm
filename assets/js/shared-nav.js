@@ -3,7 +3,7 @@ const NAVBAR_HTML = `
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar__inner">
     <a href="../index.html" class="navbar__logo" aria-label="Aura Arch Home">
-      <div class="navbar__logo-mark">AA</div>
+      <div class="navbar__logo-mark" aria-hidden="true"></div>
       <span class="navbar__logo-text">Aura Arch</span>
     </a>
     <ul class="navbar__nav" role="list">
@@ -17,7 +17,7 @@ const NAVBAR_HTML = `
       <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
       <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
       <li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link">Portfolio</a></li>
-      <li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li>
+      <li class="navbar__nav-item"><a href="journal.html" class="navbar__nav-link">Journal</a></li>
       <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
       <li class="navbar__nav-item">
         <a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -43,7 +43,7 @@ const NAVBAR_HTML = `
   <a href="about.html" class="navbar__mobile-link">About</a>
   <a href="services.html" class="navbar__mobile-link">Services</a>
   <a href="portfolio.html" class="navbar__mobile-link">Portfolio</a>
-  <a href="blog.html" class="navbar__mobile-link">Journal</a>
+  <a href="journal.html" class="navbar__mobile-link">Journal</a>
   <a href="contact.html" class="navbar__mobile-link">Contact</a>
   <a href="dashboard-user/index.html" class="navbar__mobile-link">User Dashboard</a>
   <a href="dashboard-admin/index.html" class="navbar__mobile-link">Admin Dashboard</a>

@@ -49,7 +49,7 @@ Then visit `http://localhost:8000`.
 - `index.html`: Home 1
 - `pages/home2.html`: Home 2
 - `pages/about.html`, `pages/services.html`, `pages/service-details.html`, `pages/portfolio.html`
-- `pages/blog.html`, `pages/blog-post.html`
+- `pages/journal.html`, `pages/journal-post.html`
 - `pages/contact.html`, `pages/pricing.html`, `pages/faq.html`
 - `pages/login.html`, `pages/signup.html`
 - `pages/dashboard-admin/*.html`
