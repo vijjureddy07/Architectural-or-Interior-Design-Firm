@@ -3,137 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aura Arch Privacy Policy — how we collect, use, and protect your personal information." />
+  <meta name="description" content="Aura Arch Privacy Policy — how we collect, use, and protect personal information across our website and client portal." />
   <title>Privacy Policy — Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
-  <style>
-    .legal-body { max-width: 760px; margin: 0 auto; }
-    .legal-body h2 { font-family: var(--font-display); font-size: 1.375rem; font-weight: 500; margin: 2.5rem 0 0.75rem; color: var(--clr-text); }
-    .legal-body p, .legal-body li { color: var(--clr-text-muted); line-height: 1.85; font-size: 0.9375rem; }
-    .legal-body ul { padding-left: 1.5rem; margin-bottom: 1rem; }
-    .legal-body ul li { margin-bottom: 0.4rem; }
-    .legal-toc { background: var(--surface-elevated); border: 1px solid var(--clr-border); border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 3rem; }
-    .legal-toc ol { padding-left: 1.25rem; margin: 0; }
-    .legal-toc li { margin-bottom: 0.35rem; }
-    .legal-toc a { color: var(--clr-gold); font-size: 0.875rem; text-decoration: none; }
-    .legal-toc a:hover { text-decoration: underline; }
-  </style>
 </head>
 <body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation"></nav>
+  <div class="navbar__mobile" aria-hidden="true"></div>
 
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <ul class="navbar__nav" role="list">
-        <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
-        <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
-        <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
-        <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
-      </ul>
-      <div class="navbar__actions">
-        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
-        <a href="login.html" class="btn btn--ghost">Login</a>
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Privacy Policy</span></div>
+        <div class="section-label"><span>Legal</span></div>
+        <h1>Privacy Policy</h1>
+        <p>Last updated: March 1, 2026</p>
       </div>
-      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+    </header>
 
-  <section style="padding: 140px 0 60px; background: var(--clr-black); text-align:center;">
-    <div class="container">
-      <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--clr-white);font-weight:300;">Privacy <em>Policy</em></h1>
-      <p style="color:var(--clr-gray-400);margin-top:0.75rem;font-size:0.875rem;">Last updated: March 1, 2026</p>
-    </div>
-  </section>
+    <section class="page-section">
+      <div class="container legal-layout">
+        <aside class="sticky-side">
+          <div class="legal-toc">
+            <div class="legal-toc__title">Contents</div>
+            <nav class="legal-anchor-list" aria-label="Privacy policy contents">
+              <a href="#who-we-are">Who We Are</a>
+              <a href="#data-we-collect">Data We Collect</a>
+              <a href="#how-we-use">How We Use Your Data</a>
+              <a href="#sharing">Sharing Your Data</a>
+              <a href="#cookies">Cookies</a>
+              <a href="#retention">Data Retention</a>
+              <a href="#your-rights">Your Rights</a>
+              <a href="#security">Security</a>
+              <a href="#contact-privacy">Contact Us</a>
+            </nav>
+          </div>
+        </aside>
 
-  <section style="padding: var(--space-5xl) 0; background: var(--clr-surface);">
-    <div class="container">
-      <div class="legal-body">
-        <div class="legal-toc">
-          <p style="font-weight:600;font-size:0.875rem;margin-bottom:0.75rem;color:var(--clr-text);">Contents</p>
-          <ol>
-            <li><a href="#who-we-are">Who We Are</a></li>
-            <li><a href="#data-we-collect">Data We Collect</a></li>
-            <li><a href="#how-we-use">How We Use Your Data</a></li>
-            <li><a href="#sharing">Sharing Your Data</a></li>
-            <li><a href="#cookies">Cookies</a></li>
-            <li><a href="#retention">Data Retention</a></li>
-            <li><a href="#your-rights">Your Rights</a></li>
-            <li><a href="#security">Security</a></li>
-            <li><a href="#contact-privacy">Contact Us</a></li>
-          </ol>
+        <div class="legal-body">
+          <section id="intro">
+            <p>Aura Arch LLC ("Aura Arch", "we", "our", or "us") is committed to protecting your personal information. This Privacy Policy explains what data we collect, how we use it, and the rights available to you in relation to that data.</p>
+          </section>
+
+          <section id="who-we-are">
+            <h2>1. Who We Are</h2>
+            <p>Aura Arch LLC is an architectural and interior design firm registered in New York, USA. Our principal place of business is 150 West 28th Street, Suite 1200, New York, NY 10001. You can contact us at <a href="mailto:privacy@auraarch.com" style="color:var(--clr-gold);">privacy@auraarch.com</a>.</p>
+          </section>
+
+          <section id="data-we-collect">
+            <h2>2. Data We Collect</h2>
+            <p>We may collect the following categories of information:</p>
+            <ul>
+              <li>Identity data such as first name, last name, or account username</li>
+              <li>Contact data such as email address, telephone number, and mailing address</li>
+              <li>Project data including your brief, design preferences, and communications with our team</li>
+              <li>Financial and billing information processed through approved third-party platforms</li>
+              <li>Technical data such as IP address, browser type, device details, and referral source</li>
+              <li>Usage data about how you interact with our website and client portal</li>
+            </ul>
+          </section>
+
+          <section id="how-we-use">
+            <h2>3. How We Use Your Data</h2>
+            <p>We use personal information to deliver our design services, communicate about active projects, manage billing, improve the website and portal experience, and comply with legal obligations.</p>
+          </section>
+
+          <section id="sharing">
+            <h2>4. Sharing Your Data</h2>
+            <p>We do not sell personal data. We may share relevant data with service providers, project collaborators, specialist consultants, and legal authorities where necessary and lawful.</p>
+          </section>
+
+          <section id="cookies">
+            <h2>5. Cookies</h2>
+            <p>We use essential cookies to maintain sessions and preferences, and may use analytics cookies to understand how visitors use the website. You can manage cookie preferences through your browser settings.</p>
+          </section>
+
+          <section id="retention">
+            <h2>6. Data Retention</h2>
+            <p>We retain personal information for as long as required to deliver services, maintain project records, and meet accounting or legal retention requirements. Archived project data may be retained longer where necessary.</p>
+          </section>
+
+          <section id="your-rights">
+            <h2>7. Your Rights</h2>
+            <p>Depending on your jurisdiction, you may have rights to access, correct, delete, restrict, or object to the processing of your personal data, and to request a copy of it in a portable format.</p>
+          </section>
+
+          <section id="security">
+            <h2>8. Security</h2>
+            <p>We use reasonable technical and organizational safeguards, including encrypted connections, controlled access, and security review practices. No system is absolutely secure, but we take proportionate steps to protect the data we handle.</p>
+          </section>
+
+          <section id="contact-privacy">
+            <h2>9. Contact Us</h2>
+            <p>If you have privacy-related questions or want to exercise your rights, contact our privacy team at <a href="mailto:privacy@auraarch.com" style="color:var(--clr-gold);">privacy@auraarch.com</a> or write to Aura Arch LLC, 150 West 28th Street, Suite 1200, New York, NY 10001.</p>
+          </section>
         </div>
-
-        <p>Aura Arch LLC ("Aura Arch", "we", "our", or "us") is committed to protecting your personal information. This Privacy Policy explains what data we collect, why we collect it, how we use it, and your rights in relation to it. By using our website or client portal, you agree to the practices described in this policy.</p>
-
-        <h2 id="who-we-are">1. Who We Are</h2>
-        <p>Aura Arch LLC is an architectural and interior design firm registered in New York, USA. Our principal place of business is 150 West 28th Street, Suite 1200, New York, NY 10001. We can be reached at <a href="mailto:privacy@auraarch.com" style="color:var(--clr-gold);">privacy@auraarch.com</a>.</p>
-
-        <h2 id="data-we-collect">2. Data We Collect</h2>
-        <p>We collect the following categories of personal information:</p>
-        <ul>
-          <li><strong>Identity data:</strong> first name, last name, username, or similar identifiers</li>
-          <li><strong>Contact data:</strong> email address, telephone number, and postal address</li>
-          <li><strong>Project data:</strong> information about your project brief, preferences, feedback, and communications with our team</li>
-          <li><strong>Financial data:</strong> billing address; payment is processed via third-party processors (Stripe) and we do not store card details</li>
-          <li><strong>Technical data:</strong> IP address, browser type and version, time zone, operating system, and referral sources</li>
-          <li><strong>Usage data:</strong> information about how you use our website and client portal</li>
-          <li><strong>Marketing data:</strong> your preferences in receiving marketing from us and your communication preferences</li>
-        </ul>
-
-        <h2 id="how-we-use">3. How We Use Your Data</h2>
-        <p>We use your personal data for the following purposes:</p>
-        <ul>
-          <li>To deliver our design services and manage your project</li>
-          <li>To communicate project updates, renderings, and material approvals via the client portal</li>
-          <li>To process payments and manage billing</li>
-          <li>To send you the Aura Arch newsletter and studio updates (with your consent)</li>
-          <li>To improve our website and portal experience through analytics</li>
-          <li>To comply with legal obligations</li>
-        </ul>
-
-        <h2 id="sharing">4. Sharing Your Data</h2>
-        <p>We do not sell your personal data. We may share it with:</p>
-        <ul>
-          <li><strong>Service providers:</strong> hosting, payment processing (Stripe), email (Mailchimp), and project management tools operating under our instruction</li>
-          <li><strong>Design collaborators:</strong> contractors, suppliers, or specialist consultants working on your project, subject to confidentiality agreements</li>
-          <li><strong>Legal authorities:</strong> where required by law, court order, or regulatory requirement</li>
-        </ul>
-
-        <h2 id="cookies">5. Cookies</h2>
-        <p>We use essential cookies to maintain your session and preferences, and optional analytics cookies (Google Analytics) to understand how visitors use our website. You may decline analytics cookies via your browser settings. Our website will function normally without them.</p>
-
-        <h2 id="retention">6. Data Retention</h2>
-        <p>We retain your personal data for as long as you have a client relationship with us, plus seven years thereafter (in accordance with legal and accounting requirements). Portal accounts are archived rather than deleted to preserve project records. You may request deletion of your account at any time, subject to legal retention requirements.</p>
-
-        <h2 id="your-rights">7. Your Rights</h2>
-        <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
-        <ul>
-          <li>Right to access the data we hold about you</li>
-          <li>Right to correct inaccurate data</li>
-          <li>Right to erasure ("right to be forgotten")</li>
-          <li>Right to restrict or object to processing</li>
-          <li>Right to data portability</li>
-          <li>Right to withdraw consent at any time</li>
-          <li>Right to lodge a complaint with a supervisory authority</li>
-        </ul>
-        <p>To exercise any of these rights, email <a href="mailto:privacy@auraarch.com" style="color:var(--clr-gold);">privacy@auraarch.com</a>. We will respond within 30 days.</p>
-
-        <h2 id="security">8. Security</h2>
-        <p>We employ industry-standard technical and organisational measures to protect your data, including TLS encryption for data in transit, access controls, and regular security reviews. No method of transmission over the internet is 100% secure — we cannot guarantee absolute security, but we take reasonable precautions and will notify you if a breach affecting your data occurs.</p>
-
-        <h2 id="contact-privacy">9. Contact Us</h2>
-        <p>For any privacy-related questions or to exercise your rights, contact our Privacy Team:</p>
-        <p><strong>Email:</strong> <a href="mailto:privacy@auraarch.com" style="color:var(--clr-gold);">privacy@auraarch.com</a><br>
-        <strong>Post:</strong> Aura Arch LLC, Attn: Privacy, 150 West 28th Street Suite 1200, New York NY 10001</p>
-        <p>We may update this policy from time to time. Material changes will be communicated to registered portal users by email. Continued use of our services after updates constitutes acceptance of the revised policy.</p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces worldwide.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="blog.html" class="footer__link">Journal</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links"><li><a href="privacy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul></div><div><div class="footer__col-title">Newsletter</div><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email" required /><button type="submit" class="footer__newsletter-btn">Subscribe</button></form></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p><div class="footer__contact-row"><span>hello@auraarch.com</span></div><div class="footer__bottom-right"><a href="terms.html">Terms</a></div></div></div></footer>
-
+  <footer class="footer"></footer>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

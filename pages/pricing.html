@@ -3,214 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aura Arch pricing — transparent investment tiers for architectural and interior design services." />
+  <meta name="description" content="Aura Arch pricing — architecture, interiors, and full-studio packages with clear deliverables and support add-ons." />
   <title>Pricing — Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
-  <style>
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .pricing-card { background: var(--surface-elevated); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--clr-border); position: relative; transition: transform 0.3s, box-shadow 0.3s; }
-    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
-    .pricing-card--featured { background: var(--clr-black); border-color: var(--clr-gold); transform: scale(1.03); }
-    .pricing-card--featured:hover { transform: scale(1.03) translateY(-4px); }
-    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--clr-gold); color: white; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; white-space: nowrap; }
-    .pricing-tier { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clr-gold); margin-bottom: 0.75rem; }
-    .pricing-name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.5rem; }
-    .pricing-card--featured .pricing-name { color: white; }
-    .pricing-desc { font-size: 0.875rem; line-height: 1.6; margin-bottom: 2rem; color: var(--clr-text-muted); }
-    .pricing-card--featured .pricing-desc { color: rgba(255,255,255,0.6); }
-    .pricing-amount { font-family: var(--font-display); font-size: 2.5rem; font-weight: 300; margin-bottom: 0.25rem; }
-    .pricing-card--featured .pricing-amount { color: white; }
-    .pricing-note { font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 2rem; }
-    .pricing-card--featured .pricing-note { color: rgba(255,255,255,0.5); }
-    .pricing-features { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
-    .pricing-features li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.875rem; color: var(--clr-text-muted); }
-    .pricing-card--featured .pricing-features li { color: rgba(255,255,255,0.7); }
-    .pricing-features li::before { content: ''; width: 18px; height: 18px; border-radius: 50%; background: var(--clr-gold); flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"); background-size: 10px; background-repeat: no-repeat; background-position: center; margin-top: 1px; }
-    .pricing-divider { border: none; border-top: 1px solid var(--clr-border); margin: 2rem 0; }
-    .pricing-card--featured .pricing-divider { border-color: rgba(255,255,255,0.1); }
-    @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } .pricing-card--featured { transform: none; } }
-  </style>
 </head>
 <body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation"></nav>
+  <div class="navbar__mobile" aria-hidden="true"></div>
 
-  <!-- ══ NAVBAR ══ -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <ul class="navbar__nav" role="list">
-        <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
-        <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
-        <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
-        <li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link">Portfolio</a></li>
-        <li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li>
-        <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
-        <li class="navbar__nav-item"><a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="dashboard-user/index.html">User Dashboard</a><a href="dashboard-admin/index.html">Admin Dashboard</a></div></li>
-      </ul>
-      <div class="navbar__actions">
-        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
-        <button class="navbar__icon-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
-        <a href="login.html" class="btn btn--ghost">Login</a>
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Pricing</span></div>
+        <div class="section-label"><span>Investment</span></div>
+        <h1>Clear studio packages with room to tailor the scope.</h1>
+        <p>Every project is priced precisely after consultation, but these packages show how we usually structure architecture, interior, and full-service design engagements.</p>
       </div>
-      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-  <div class="navbar__mobile"><a href="../index.html" class="navbar__mobile-link">Home</a><a href="about.html" class="navbar__mobile-link">About</a><a href="services.html" class="navbar__mobile-link">Services</a><a href="contact.html" class="navbar__mobile-link">Contact</a><a href="login.html" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Login</a></div>
+    </header>
 
-  <!-- ══ HERO ══ -->
-  <section style="padding: 140px 0 80px; background: var(--clr-black); text-align: center;">
-    <div class="container">
-      <p class="section-label" style="color:var(--clr-gold);">Investment</p>
-      <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--clr-white);font-weight:300;margin:0.5rem 0 1rem;">Transparent <em>Pricing</em></h1>
-      <p style="color:var(--clr-gray-400);max-width:520px;margin:0 auto 2rem;">Every project is unique. Our tiers provide a starting framework — all engagements are scoped precisely after an initial consultation.</p>
-      <div style="display:inline-flex;background:rgba(255,255,255,0.08);border-radius:30px;padding:4px;">
-        <button id="tab-residential" onclick="switchPricing('residential')" style="padding:0.6rem 1.75rem;border-radius:26px;background:var(--clr-gold);color:white;border:none;font-weight:600;cursor:pointer;font-size:0.875rem;transition:all 0.2s;">Residential</button>
-        <button id="tab-commercial" onclick="switchPricing('commercial')" style="padding:0.6rem 1.75rem;border-radius:26px;background:transparent;color:rgba(255,255,255,0.6);border:none;font-weight:500;cursor:pointer;font-size:0.875rem;transition:all 0.2s;">Commercial</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ PRICING CARDS ══ -->
-  <section style="padding: var(--space-5xl) 0; background: var(--clr-surface);">
-    <div class="container">
-      <div class="pricing-grid reveal">
-        <!-- Essential -->
-        <div class="pricing-card">
-          <p class="pricing-tier">Essential</p>
-          <h2 class="pricing-name">Design Consultation</h2>
-          <p class="pricing-desc">For homeowners seeking expert guidance, space planning, and a curated material direction — without full project management.</p>
-          <p class="pricing-amount">From $8,500</p>
-          <p class="pricing-note">One-time engagement, results in 4–6 weeks</p>
-          <hr class="pricing-divider" />
-          <ul class="pricing-features">
-            <li>Initial site visit and brief workshop</li>
-            <li>Space planning and layout options</li>
-            <li>Material palette with sourcing guide</li>
-            <li>3D mood boards (2 concepts)</li>
-            <li>Lighting concept proposal</li>
-            <li>Furniture recommendations with links</li>
-            <li>Email support for 30 days</li>
-          </ul>
-          <a href="contact.html" class="btn btn--outline" style="width:100%;justify-content:center;">Start Consultation</a>
+    <section class="page-section">
+      <div class="container">
+        <div class="section-intro section-intro--center reveal">
+          <div class="section-label" style="justify-content:center;"><span>Three Core Plans</span></div>
+          <h2>Choose the level of authorship and delivery support you need.</h2>
+          <p>The featured plan reflects our most common appointment for clients who want the studio to hold the project from direction through detail resolution.</p>
         </div>
 
-        <!-- Signature - Featured -->
-        <div class="pricing-card pricing-card--featured">
-          <span class="pricing-badge">Most Popular</span>
-          <p class="pricing-tier">Signature</p>
-          <h2 class="pricing-name" style="color:white;">Full Interior Design</h2>
-          <p class="pricing-desc" style="color:rgba(255,255,255,0.6);">Our most comprehensive interior design service. We handle everything from concept development to installation day, with full access to the client portal.</p>
-          <p class="pricing-amount" style="color:white;">From $28,000</p>
-          <p class="pricing-note" style="color:rgba(255,255,255,0.5);">Project-based fee, typically 4–12 months</p>
-          <hr class="pricing-divider" />
-          <ul class="pricing-features">
-            <li>Full brief, discovery, and site analysis</li>
-            <li>Architectural space planning</li>
-            <li>3D visualisations — photo-realistic renders</li>
-            <li>Material selection and procurement</li>
-            <li>Lighting design with electrical plans</li>
-            <li>Bespoke joinery and furniture design</li>
-            <li>Contractor coordination and site visits</li>
-            <li>Client portal access throughout</li>
-            <li>Installation management and styling</li>
-            <li>Post-completion review and snagging</li>
-          </ul>
-          <a href="contact.html" class="btn btn--primary" style="width:100%;justify-content:center;">Begin Your Project</a>
-        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <div class="pricing-tier">Essential</div>
+            <h3 class="pricing-name">Design Consultation</h3>
+            <p class="pricing-desc">For focused residential and interior projects that need a strong concept, room planning, and material direction without full delivery oversight.</p>
+            <p class="pricing-amount">From $8,500</p>
+            <p class="pricing-note">Single-space studies, layout revisions, and early direction packages.</p>
+            <hr class="pricing-divider" />
+            <ul class="pricing-features" role="list">
+              <li>Initial briefing workshop and site review</li>
+              <li>Layout and spatial recommendations</li>
+              <li>Material and fixture direction</li>
+              <li>One round of revision feedback</li>
+              <li>Summary presentation pack</li>
+            </ul>
+            <a href="contact.html" class="btn btn--secondary">Request Essential Scope</a>
+          </article>
 
-        <!-- Architecture -->
-        <div class="pricing-card">
-          <p class="pricing-tier">Architecture</p>
-          <h2 class="pricing-name">New Build &amp; Renovation</h2>
-          <p class="pricing-desc">Full architectural services from planning permission through technical drawings, contractor tender, and construction oversight.</p>
-          <p class="pricing-amount">From $65,000</p>
-          <p class="pricing-note">Fee varies by project scope and complexity</p>
-          <hr class="pricing-divider" />
-          <ul class="pricing-features">
-            <li>Feasibility and planning advice</li>
-            <li>Concept and schematic design</li>
-            <li>Planning permission submission</li>
-            <li>Technical construction drawings</li>
-            <li>Structural coordination</li>
-            <li>Contractor tender management</li>
-            <li>Full construction phase services</li>
-            <li>RIBA Stage 0–7 compliance</li>
-            <li>Interior design integration available</li>
-            <li>BIM-coordinated models</li>
-          </ul>
-          <a href="contact.html" class="btn btn--outline" style="width:100%;justify-content:center;">Discuss Your Build</a>
+          <article class="pricing-card pricing-card--featured reveal reveal-delay-1">
+            <div class="pricing-badge">Popular</div>
+            <div class="pricing-tier">Signature</div>
+            <h3 class="pricing-name">Architecture + Interiors</h3>
+            <p class="pricing-desc">Our most requested package for private residences and hospitality spaces where planning, finishes, lighting, and key custom pieces need one visual logic.</p>
+            <p class="pricing-amount">From $28,000</p>
+            <p class="pricing-note">Best for multi-room projects, premium apartments, and high-detail renovations.</p>
+            <hr class="pricing-divider" />
+            <ul class="pricing-features" role="list">
+              <li>Full concept and design development</li>
+              <li>Interior layouts and bespoke joinery</li>
+              <li>Lighting, finish, and fixture schedules</li>
+              <li>Visualization review pack</li>
+              <li>Procurement shortlist and design oversight</li>
+            </ul>
+            <a href="contact.html" class="btn btn--primary">Book Signature Scope</a>
+          </article>
+
+          <article class="pricing-card reveal reveal-delay-2">
+            <div class="pricing-tier">Full Studio</div>
+            <h3 class="pricing-name">End-to-End Delivery</h3>
+            <p class="pricing-desc">For clients who want Aura Arch to stay involved across architecture, interiors, procurement, site review, and final styling through completion.</p>
+            <p class="pricing-amount">From $56,000</p>
+            <p class="pricing-note">Ideal for large residences, hospitality, and complex multi-phase commissions.</p>
+            <hr class="pricing-divider" />
+            <ul class="pricing-features" role="list">
+              <li>Everything in Signature, expanded projectwide</li>
+              <li>Construction drawing coordination</li>
+              <li>Procurement and supplier management</li>
+              <li>Site reviews and milestone support</li>
+              <li>Final styling and handover direction</li>
+            </ul>
+            <a href="contact.html" class="btn btn--secondary">Build Full-Studio Scope</a>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Add-ons -->
-      <div style="margin-top:5rem;">
-        <div style="text-align:center;margin-bottom:3rem;">
-          <p class="section-label">Enhancements</p>
-          <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:400;">Add-on Services</h2>
+    <section class="page-section section--cream">
+      <div class="container">
+        <div class="section-intro reveal">
+          <div class="section-label"><span>Add-Ons</span></div>
+          <h2>Specialist support that can be layered onto any package.</h2>
+          <p>These options are often added when clients want deeper visualization, refined lighting, or a smoother procurement process.</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;" class="reveal">
-          <div style="background:var(--surface-elevated);padding:1.5rem;border-radius:12px;border:1px solid var(--clr-border);text-align:center;">
-            <div style="width:48px;height:48px;background:rgba(211,160,109,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.4rem;">3D Rendering Package</h3>
-            <p style="font-size:0.8rem;color:var(--clr-text-muted);margin-bottom:0.75rem;">Photo-realistic renders of each key space for client approval</p>
-            <p style="font-weight:700;color:var(--clr-gold);">From $3,500</p>
-          </div>
-          <div style="background:var(--surface-elevated);padding:1.5rem;border-radius:12px;border:1px solid var(--clr-border);text-align:center;">
-            <div style="width:48px;height:48px;background:rgba(211,160,109,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M2 12h2m16 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.4rem;">Lighting Masterplan</h3>
-            <p style="font-size:0.8rem;color:var(--clr-text-muted);margin-bottom:0.75rem;">Detailed fixture specification and control system design</p>
-            <p style="font-weight:700;color:var(--clr-gold);">From $4,200</p>
-          </div>
-          <div style="background:var(--surface-elevated);padding:1.5rem;border-radius:12px;border:1px solid var(--clr-border);text-align:center;">
-            <div style="width:48px;height:48px;background:rgba(211,160,109,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.4rem;">Styling &amp; Photography</h3>
-            <p style="font-size:0.8rem;color:var(--clr-text-muted);margin-bottom:0.75rem;">Professional styling and architectural photography of completed space</p>
-            <p style="font-weight:700;color:var(--clr-gold);">From $2,800</p>
-          </div>
-          <div style="background:var(--surface-elevated);padding:1.5rem;border-radius:12px;border:1px solid var(--clr-border);text-align:center;">
-            <div style="width:48px;height:48px;background:rgba(211,160,109,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1rem;margin-bottom:0.4rem;">Post-Occupancy Review</h3>
-            <p style="font-size:0.8rem;color:var(--clr-text-muted);margin-bottom:0.75rem;">3-month check-in, snagging resolution and space fine-tuning</p>
-            <p style="font-weight:700;color:var(--clr-gold);">From $1,500</p>
+        <div class="pricing-addon-grid">
+          <article class="pricing-addon reveal">
+            <div class="pricing-addon__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M6 3h12v18H6z"/><path d="M9 11h6M9 15h3"/></svg></div>
+            <h3>Render Package</h3>
+            <p>Photo-real stills and room views for key approvals before orders or fabrication begin.</p>
+            <div class="pricing-addon__price">From $3,800</div>
+          </article>
+          <article class="pricing-addon reveal reveal-delay-1">
+            <div class="pricing-addon__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></div>
+            <h3>Lighting Masterplan</h3>
+            <p>Scene-based fixture planning and dimming logic tuned around how the space changes from day to night.</p>
+            <div class="pricing-addon__price">From $4,200</div>
+          </article>
+          <article class="pricing-addon reveal reveal-delay-2">
+            <div class="pricing-addon__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <h3>Styling + Photography</h3>
+            <p>Final room dressing, accessory curation, and completed project photography support.</p>
+            <div class="pricing-addon__price">From $2,800</div>
+          </article>
+          <article class="pricing-addon reveal reveal-delay-3">
+            <div class="pricing-addon__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Post-Occupancy Review</h3>
+            <p>A fine-tuning pass after move-in to resolve snagging, styling drift, and comfort issues.</p>
+            <div class="pricing-addon__price">From $1,500</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="section-intro section-intro--center reveal">
+          <div class="section-label" style="justify-content:center;"><span>FAQs</span></div>
+          <h2>Common questions about fees, timing, and what is included.</h2>
+        </div>
+        <div class="panel-shell" style="max-width:900px;margin:0 auto;">
+          <div class="accordion">
+            <div class="accordion__item">
+              <button class="accordion__trigger">How is the fee usually structured?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion__panel"><p>Most appointments are fixed-fee packages agreed before work begins. For larger architectural commissions we may also structure the fee around project phases or a percentage of construction value.</p></div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__trigger">What does the consultation stage include?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion__panel"><p>We review the brief, budget expectations, timeline, and ambition level of the space. That lets us recommend the right package and identify where extra technical or procurement support may be needed.</p></div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__trigger">Can the package be adjusted after we start?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion__panel"><p>Yes. We regularly scale services up or down if the project evolves. Additional visualization, procurement, or site support is typically added through a scope variation rather than a full contract reset.</p></div>
+            </div>
+            <div class="accordion__item">
+              <button class="accordion__trigger">Do you work internationally?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="accordion__panel"><p>Yes. We support international commissions through remote design reviews, visualization packages, and scheduled site visits. Travel and local consultant coordination are scoped separately where needed.</p></div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- FAQ Row -->
-      <div style="margin-top:5rem;max-width:760px;margin-left:auto;margin-right:auto;">
-        <h2 style="font-family:var(--font-display);font-size:1.75rem;font-weight:400;text-align:center;margin-bottom:2.5rem;">Pricing FAQs</h2>
-        <div class="accordion">
-          <div class="accordion__item"><button class="accordion__trigger">How is the fee structured for a full project?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Most projects are charged on a fixed project fee agreed before work commences. For larger architectural builds, a percentage-of-construction-cost model (typically 8–15%) may be proposed. We will always present the full fee structure in writing before any engagement begins.</p></div></div>
-          <div class="accordion__item"><button class="accordion__trigger">Is VAT / sales tax included in the quoted prices?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>All quoted fees are exclusive of applicable taxes. Your proposal letter will include a full breakdown of fees, expenses allowance, and applicable tax where relevant.</p></div></div>
-          <div class="accordion__item"><button class="accordion__trigger">What is the payment schedule?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>A 30% deposit is required to commence work. Subsequent payments are milestone-based: typically 30% at concept approval, 30% at design development sign-off, and the final 10% on project completion.</p></div></div>
-          <div class="accordion__item"><button class="accordion__trigger">Do you work internationally?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M6 9l6 6 6-6"/></svg></button><div class="accordion__panel"><p>Yes. We have completed projects in the US, UK, Europe, and the Middle East. Travel costs are billed separately at cost. Initial consultations can be conducted via video call before any commitment is required.</p></div></div>
+    <section class="page-section page-section--tight">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div class="section-label" style="justify-content:center;"><span>Start the Scope</span></div>
+          <h2>Need a tailored proposal instead of a generic package?</h2>
+          <p>Share the project type, timeline, and level of support you need, and we will shape a scope around the real brief.</p>
+          <div class="cta-panel__actions">
+            <a href="contact.html" class="btn btn--primary">Request a Proposal</a>
+            <a href="portfolio.html" class="btn btn--ghost-light">View Recent Work</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ══ CTA ══ -->
-  <section style="padding: var(--space-5xl) 0; background: var(--clr-black); text-align: center;">
-    <div class="container">
-      <p class="section-label" style="color:var(--clr-gold);">Ready to Begin?</p>
-      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--clr-white);font-weight:300;margin:0.5rem 0 1.5rem;">Every great space starts with a<br><em>single conversation.</em></h2>
-      <a href="contact.html" class="btn btn--primary" style="margin-right:1rem;">Book a Consultation</a>
-      <a href="portfolio.html" class="btn btn--ghost-light">View Our Work</a>
-    </div>
-  </section>
-
-  <!-- ══ FOOTER ══ -->
-  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces worldwide.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="blog.html" class="footer__link">Journal</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links" style="margin-bottom:1.5rem;"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul><div class="footer__col-title">Newsletter</div><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email" required /><button type="submit" class="footer__newsletter-btn">Subscribe</button></form></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p><div class="footer__contact-row"><span>hello@auraarch.com</span><span>+1 (212) 000-0000</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
-
+  <footer class="footer"></footer>
   <script src="../assets/js/main.js"></script>
-  <script>
-    function switchPricing(type) {
-      document.getElementById('tab-residential').style.background = type === 'residential' ? 'var(--clr-gold)' : 'transparent';
-      document.getElementById('tab-residential').style.color = type === 'residential' ? 'white' : 'rgba(255,255,255,0.6)';
-      document.getElementById('tab-commercial').style.background = type === 'commercial' ? 'var(--clr-gold)' : 'transparent';
-      document.getElementById('tab-commercial').style.color = type === 'commercial' ? 'white' : 'rgba(255,255,255,0.6)';
-    }
-  </script>
 </body>
 </html>

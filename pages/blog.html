@@ -3,246 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Aura Arch Journal — design insights, project stories, and inspiration from our studio." />
+  <meta name="description" content="The Aura Arch Journal — stories, essays, and design thinking from our architecture and interior design studio." />
   <title>Journal — Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
-  <style>
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .blog-card { background: var(--surface-elevated); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
-    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
-    .blog-card--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.4fr 1fr; }
-    .blog-card__img { height: 220px; overflow: hidden; }
-    .blog-card--featured .blog-card__img { height: 100%; min-height: 340px; }
-    .blog-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .blog-card:hover .blog-card__img img { transform: scale(1.04); }
-    .blog-card__body { padding: 1.75rem; display: flex; flex-direction: column; }
-    .blog-card__tag { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--clr-gold); background: rgba(211,160,109,0.1); padding: 0.25rem 0.75rem; border-radius: 20px; margin-bottom: 0.75rem; width: fit-content; }
-    .blog-card__title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; color: var(--clr-text); margin-bottom: 0.75rem; line-height: 1.4; }
-    .blog-card--featured .blog-card__title { font-size: 1.75rem; }
-    .blog-card__excerpt { color: var(--clr-text-muted); font-size: 0.875rem; line-height: 1.7; flex: 1; }
-    .blog-card__meta { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--clr-border); font-size: 0.8rem; color: var(--clr-text-muted); }
-    .blog-card__author { display: flex; align-items: center; gap: 0.5rem; }
-    .blog-card__author img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
-    .categories-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
-    .category-pill { padding: 0.5rem 1.25rem; border-radius: 30px; font-size: 0.85rem; font-weight: 500; cursor: pointer; border: 1px solid var(--clr-border); color: var(--clr-text-muted); background: transparent; transition: all 0.2s; }
-    .category-pill.active, .category-pill:hover { background: var(--clr-black); color: var(--clr-white); border-color: var(--clr-black); }
-    @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } .blog-card--featured { grid-column: 1 / -1; grid-template-columns: 1fr; } .blog-card--featured .blog-card__img { min-height: 280px; } }
-    @media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } }
-  </style>
 </head>
 <body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation"></nav>
+  <div class="navbar__mobile" aria-hidden="true"></div>
 
-  <!-- ══ NAVBAR ══ -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <ul class="navbar__nav" role="list">
-        <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
-        <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
-        <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
-        <li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link">Portfolio</a></li>
-        <li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li>
-        <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
-        <li class="navbar__nav-item"><a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="dashboard-user/index.html">User Dashboard</a><a href="dashboard-admin/index.html">Admin Dashboard</a></div></li>
-      </ul>
-      <div class="navbar__actions">
-        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
-        <button class="navbar__icon-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
-        <a href="login.html" class="btn btn--ghost">Login</a>
+  <main>
+    <header class="page-header">
+      <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Journal</span></div>
+        <div class="section-label"><span>Studio Journal</span></div>
+        <h1>Notes on space, mood, materials, and the way design gets built.</h1>
+        <p>The Aura Arch Journal shares the ideas behind our work, from lighting and planning to hospitality influence, sustainability, and the emotional logic of interiors.</p>
       </div>
-      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-  <div class="navbar__mobile"><a href="../index.html" class="navbar__mobile-link">Home</a><a href="about.html" class="navbar__mobile-link">About</a><a href="services.html" class="navbar__mobile-link">Services</a><a href="portfolio.html" class="navbar__mobile-link">Portfolio</a><a href="blog.html" class="navbar__mobile-link">Journal</a><a href="contact.html" class="navbar__mobile-link">Contact</a><a href="login.html" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Login</a></div>
+    </header>
 
-  <!-- ══ HERO ══ -->
-  <section style="padding: 140px 0 80px; background: var(--clr-black); text-align: center;">
-    <div class="container">
-      <p class="section-label" style="color:var(--clr-gold);">The Aura Arch Journal</p>
-      <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);color:var(--clr-white);font-weight:300;margin:0.5rem 0 1rem;">Design Perspectives &amp; <em>Studio Stories</em></h1>
-      <p style="color:var(--clr-gray-400);max-width:500px;margin:0 auto;">Insights on architecture, interior design, materials, and the craft behind transforming spaces into lasting experiences.</p>
-    </div>
-  </section>
+    <section class="page-section">
+      <div class="container">
+        <div class="categories-bar reveal" aria-label="Journal categories">
+          <button class="category-pill active" type="button">All</button>
+          <button class="category-pill" type="button">Architecture</button>
+          <button class="category-pill" type="button">Interior Design</button>
+          <button class="category-pill" type="button">Materials</button>
+          <button class="category-pill" type="button">Sustainability</button>
+          <button class="category-pill" type="button">Studio News</button>
+          <button class="category-pill" type="button">Process</button>
+        </div>
 
-  <!-- ══ BLOG CONTENT ══ -->
-  <section style="padding: var(--space-5xl) 0; background: var(--clr-surface);">
-    <div class="container">
-      <!-- Categories -->
-      <div class="categories-bar">
-        <button class="category-pill active">All</button>
-        <button class="category-pill">Architecture</button>
-        <button class="category-pill">Interior Design</button>
-        <button class="category-pill">Materials</button>
-        <button class="category-pill">Sustainability</button>
-        <button class="category-pill">Studio News</button>
-        <button class="category-pill">Process</button>
-      </div>
-
-      <div class="blog-grid">
-        <!-- Featured Post -->
-        <article class="blog-card blog-card--featured reveal">
-          <div class="blog-card__img">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80" alt="Biophilic design in modern interiors" />
-          </div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Featured · Interior Design</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">The Case for Biophilic Design: Why Nature Belongs in Every Room</a></h2>
-            <p class="blog-card__excerpt">When we integrate natural elements into architecture and interior space — living walls, raw stone, diffused daylight, water — we tap into something ancient in human psychology. Research confirms what intuition long suspected: proximity to nature reduces cortisol, sharpens focus, and elevates mood. Here's how Aura Arch approaches biophilic principles across every project scale.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Isabel Voss" />
-                <span>Isabel Voss · Principal Designer</span>
+        <div class="journal-grid">
+          <article class="journal-card journal-card--feature reveal">
+            <div class="journal-card__media">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85" alt="Biophilic design living room" loading="lazy" />
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Featured · Interior Design</div>
+              <h2 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">The Case for Biophilic Design: Why Nature Belongs in Every Room</a></h2>
+              <p class="journal-card__excerpt">A look at how plants, daylight, natural materials, and visual softness improve not just aesthetics but stress levels, focus, and long-term livability in modern homes.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=85" alt="Isabel Voss" loading="lazy" />
+                  <span>Isabel Voss</span>
+                </div>
+                <span>March 18 · 8 min</span>
               </div>
-              <span>March 18, 2026 · 8 min read</span>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Post 2 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80" alt="Japandi interior aesthetic" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Interior Design</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Japandi: The Wabi-Sabi Meets Scandi Minimalism</a></h2>
-            <p class="blog-card__excerpt">Two philosophies, one shared obsession with function and quiet beauty. Exploring the fusion that has defined a decade of interior design.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Marcus Trent" /><span>Marcus Trent</span></div>
-              <span>Mar 10 · 5 min</span>
+          <article class="journal-card reveal">
+            <div class="journal-card__media"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=900&q=85" alt="Architectural threshold and entry design" loading="lazy" /></div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Architecture</div>
+              <h3 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Thresholds That Slow You Down in the Best Way</a></h3>
+              <p class="journal-card__excerpt">How entry sequences, compressed moments, and framed views build calm long before you reach the main room.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=85" alt="Marcus Trent" loading="lazy" /><span>Marcus Trent</span></div>
+                <span>March 9 · 6 min</span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Post 3 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Concrete architecture" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Architecture</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Concrete Poetry: How Raw Materials Shape Emotional Space</a></h2>
-            <p class="blog-card__excerpt">Beyond its structural utility, concrete offers architects an expressive canvas — warm in morning light, cool in evening shadow.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="David Kim" /><span>David Kim</span></div>
-              <span>Feb 28 · 6 min</span>
+          <article class="journal-card reveal reveal-delay-1">
+            <div class="journal-card__media"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=85" alt="Japandi-inspired interior details" loading="lazy" /></div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Materials</div>
+              <h3 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Why Mixed Stone Palettes Still Need Restraint</a></h3>
+              <p class="journal-card__excerpt">Luxury interiors fail when too many expressive materials compete. Here is how we keep richness quiet rather than loud.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=85" alt="David Kim" loading="lazy" /><span>David Kim</span></div>
+                <span>Feb 28 · 5 min</span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Post 4 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Luxury materials" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Materials</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">The Material Library: A Guide to Specifying Luxury Finishes</a></h2>
-            <p class="blog-card__excerpt">From quartzite to fluted glass, understanding how material selection drives both aesthetics and budget outcomes.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Isabel Voss" /><span>Isabel Voss</span></div>
-              <span>Feb 20 · 7 min</span>
+          <article class="journal-card reveal reveal-delay-2">
+            <div class="journal-card__media"><img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=900&q=85" alt="Layered lighting interior" loading="lazy" /></div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Interior Design</div>
+              <h3 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Lighting as Architecture: Designing for Evening Mood</a></h3>
+              <p class="journal-card__excerpt">The most memorable rooms change character after sunset. This is how we plan that shift from the first drawings.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=85" alt="Isabel Voss" loading="lazy" /><span>Isabel Voss</span></div>
+                <span>Feb 12 · 7 min</span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Post 5 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Sustainable architecture" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Sustainability</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Building for the Climate: Net-Zero Without Sacrificing Beauty</a></h2>
-            <p class="blog-card__excerpt">Sustainability and high design are no longer at odds. The tools, technologies, and philosophies making both possible today.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Marcus Trent" /><span>Marcus Trent</span></div>
-              <span>Feb 12 · 9 min</span>
+          <article class="journal-card reveal">
+            <div class="journal-card__media"><img src="https://images.unsplash.com/photo-1600607687644-aac79e87bbde?w=900&q=85" alt="Design process workspace" loading="lazy" /></div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Process</div>
+              <h3 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">From Brief to Build: Inside the Aura Arch Workflow</a></h3>
+              <p class="journal-card__excerpt">A breakdown of how our team moves from the first conversation into concept, documentation, procurement, and delivery.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=85" alt="David Kim" loading="lazy" /><span>David Kim</span></div>
+                <span>Jan 30 · 6 min</span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Post 6 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1600607687644-aac79e87bbde?w=600&q=80" alt="Design process" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Process</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">From Brief to Build: Inside the Aura Arch Design Process</a></h2>
-            <p class="blog-card__excerpt">A behind-the-scenes look at how a project moves from initial consultation through schematic design, development, and final delivery.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="David Kim" /><span>David Kim</span></div>
-              <span>Jan 30 · 6 min</span>
+          <article class="journal-card reveal reveal-delay-1">
+            <div class="journal-card__media"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=85" alt="Modern kitchen design" loading="lazy" /></div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Architecture</div>
+              <h3 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">When the Kitchen Becomes the Main Room</a></h3>
+              <p class="journal-card__excerpt">Why open-plan kitchens need stronger sightline control, lighting logic, and material editing than almost any other zone.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=85" alt="Marcus Trent" loading="lazy" /><span>Marcus Trent</span></div>
+                <span>Jan 18 · 6 min</span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- Post 7 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=600&q=80" alt="Lighting design" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Interior Design</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Lighting as Architecture: The Fifth Wall</a></h2>
-            <p class="blog-card__excerpt">Layered lighting transforms ordinary rooms into experiential spaces. Here's how we approach this often-overlooked dimension.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Isabel Voss" /><span>Isabel Voss</span></div>
-              <span>Jan 18 · 5 min</span>
+          <article class="journal-card reveal reveal-delay-2">
+            <div class="journal-card__media"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=900&q=85" alt="Studio award recognition event" loading="lazy" /></div>
+            <div class="journal-card__body">
+              <div class="journal-card__tag">Studio News</div>
+              <h3 class="journal-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Aura Arch Recognized for Residential Design Excellence</a></h3>
+              <p class="journal-card__excerpt">A short studio update on our latest award and the project approach that made the work stand out.</p>
+              <div class="journal-card__meta">
+                <div class="journal-card__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=85" alt="Aura Arch" loading="lazy" /><span>Aura Arch</span></div>
+                <span>Jan 5 · 3 min</span>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
 
-        <!-- Post 8 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Studio news" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Studio News</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">Aura Arch Wins Architectural Digest Design Award 2026</a></h2>
-            <p class="blog-card__excerpt">Our Hudson Valley Residence project has been recognised with one of the industry's most prestigious residential design honours.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Aura Arch" /><span>Aura Arch</span></div>
-              <span>Jan 5 · 3 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 9 -->
-        <article class="blog-card reveal">
-          <div class="blog-card__img"><img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Kitchen design" /></div>
-          <div class="blog-card__body">
-            <span class="blog-card__tag">Interior Design</span>
-            <h2 class="blog-card__title"><a href="blog-post.html" style="color:inherit;text-decoration:none;">The Modern Kitchen: Where Culinary Function Meets Gallery Aesthetics</a></h2>
-            <p class="blog-card__excerpt">Kitchens are no longer hidden rooms. The design principles that make them the centrepiece of contemporary homes.</p>
-            <div class="blog-card__meta">
-              <div class="blog-card__author"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Marcus Trent" /><span>Marcus Trent</span></div>
-              <span>Dec 22 · 6 min</span>
-            </div>
-          </div>
-        </article>
+        <div class="filter-pills" style="justify-content:center;margin-top:var(--sp-12);">
+          <button class="filter-btn active" type="button">1</button>
+          <button class="filter-btn" type="button">2</button>
+          <button class="filter-btn" type="button">3</button>
+          <button class="filter-btn" type="button">Next</button>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <!-- Pagination -->
-      <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:4rem;">
-        <button style="width:44px;height:44px;border:1px solid var(--clr-border);background:none;border-radius:8px;cursor:pointer;color:var(--clr-text-muted);">←</button>
-        <button style="width:44px;height:44px;background:var(--clr-black);border:none;border-radius:8px;cursor:pointer;color:white;font-weight:600;">1</button>
-        <button style="width:44px;height:44px;border:1px solid var(--clr-border);background:none;border-radius:8px;cursor:pointer;color:var(--clr-text);">2</button>
-        <button style="width:44px;height:44px;border:1px solid var(--clr-border);background:none;border-radius:8px;cursor:pointer;color:var(--clr-text);">3</button>
-        <button style="width:44px;height:44px;border:1px solid var(--clr-border);background:none;border-radius:8px;cursor:pointer;color:var(--clr-text-muted);">→</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FOOTER ══ -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces worldwide.</p></div>
-        <div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="case-studies.html" class="footer__link">Case Studies</a></li><li><a href="blog.html" class="footer__link">Journal</a></li></ul></div>
-        <div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architectural Design</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li><li><a href="pricing.html" class="footer__link">Pricing</a></li></ul></div>
-        <div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">User Dashboard</a></li><li><a href="dashboard-admin/index.html" class="footer__link">Admin Dashboard</a></li></ul></div>
-        <div><div class="footer__col-title">Support &amp; Legal</div><ul class="footer__links" style="margin-bottom:1.5rem;"><li><a href="privacy.html" class="footer__link">Privacy Policy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul><div class="footer__col-title">Newsletter</div><form class="footer__newsletter-form"><input type="email" class="footer__newsletter-input" placeholder="Your email" required /><button type="submit" class="footer__newsletter-btn">Subscribe</button></form></div>
-      </div>
-      <div class="footer__bottom"><p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p><div class="footer__contact-row"><span>hello@auraarch.com</span><span>+1 (212) 000-0000</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
-    </div>
-  </footer>
-
+  <footer class="footer"></footer>
   <script src="../assets/js/main.js"></script>
   <script>
     document.querySelectorAll('.category-pill').forEach(pill => {
       pill.addEventListener('click', () => {
-        document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.category-pill').forEach(item => item.classList.remove('active'));
         pill.classList.add('active');
       });
     });

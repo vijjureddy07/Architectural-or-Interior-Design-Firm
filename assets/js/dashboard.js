@@ -4,6 +4,14 @@
 
 'use strict';
 
+function isAdminDashboard() {
+  return /\/dashboard-admin\//.test(window.location.pathname);
+}
+
+function isUserDashboard() {
+  return /\/dashboard-user\//.test(window.location.pathname);
+}
+
 function initDashboardSidebar() {
   const sidebar = document.querySelector('.dash-sidebar, .sidebar');
   const hamburger = document.querySelector('#dashHamburger, .dash-hamburger, .dash-topbar__hamburger');
@@ -95,17 +103,93 @@ function initDashboardNotifications() {
 
 function initDashboardTopbarControls() {
   const topbarRight = document.querySelector('.dash-topbar__right');
-  if (!topbarRight || topbarRight.querySelector('.rtl-btn')) return;
+  if (!topbarRight) return;
 
   const themeBtn = topbarRight.querySelector('.theme-btn');
   if (!themeBtn) return;
 
-  const rtlBtn = document.createElement('button');
-  rtlBtn.type = 'button';
-  rtlBtn.className = 'navbar__icon-btn rtl-btn';
-  rtlBtn.setAttribute('aria-label', 'Switch to RTL');
-  rtlBtn.textContent = document.documentElement.getAttribute('dir') === 'rtl' ? 'LTR' : 'RTL';
-  topbarRight.insertBefore(rtlBtn, themeBtn.nextSibling);
+  themeBtn.setAttribute('aria-label', 'Switch to dark mode');
+
+  if (!topbarRight.querySelector('.dash-topbar__notif')) {
+    const notifBtn = document.createElement('button');
+    notifBtn.type = 'button';
+    notifBtn.className = 'navbar__icon-btn dash-topbar__notif';
+    notifBtn.setAttribute('aria-label', 'Open notifications');
+    notifBtn.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5" />
+        <path d="M9 17a3 3 0 0 0 6 0" />
+      </svg>
+      <span class="dash-notif-dot" aria-hidden="true"></span>
+    `;
+    topbarRight.insertBefore(notifBtn, themeBtn);
+  }
+
+  if (!topbarRight.querySelector('.rtl-btn')) {
+    const rtlBtn = document.createElement('button');
+    rtlBtn.type = 'button';
+    rtlBtn.className = 'navbar__icon-btn rtl-btn';
+    rtlBtn.setAttribute('aria-label', 'Switch to RTL');
+    rtlBtn.textContent = document.documentElement.getAttribute('dir') === 'rtl' ? 'LTR' : 'RTL';
+    topbarRight.insertBefore(rtlBtn, themeBtn.nextSibling);
+  }
+
+  const profileImage = topbarRight.querySelector('img');
+  if (profileImage) {
+    profileImage.classList.add('dash-topbar__avatar');
+    if (!profileImage.alt) {
+      profileImage.alt = isAdminDashboard() ? 'Admin profile' : 'User profile';
+    }
+  }
+}
+
+function initDashboardRoleCopy() {
+  const title = document.querySelector('.dash-page-title');
+  const subtitle = document.querySelector('.dash-page-subtitle');
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+
+  if (current !== 'index.html' || !title) return;
+
+  if (isAdminDashboard()) {
+    title.textContent = 'Admin Dashboard';
+    if (subtitle) {
+      subtitle.textContent = 'Welcome back. Studio performance, staffing, and client activity at a glance.';
+    }
+    return;
+  }
+
+  if (isUserDashboard()) {
+    title.textContent = 'User Dashboard';
+    if (subtitle) {
+      subtitle.textContent = 'Welcome back, Alexandra. Your project milestones, approvals, and portal updates are ready.';
+    }
+  }
+}
+
+function initDashboardLogout() {
+  const nav = document.querySelector('.dash-nav');
+  if (!nav || nav.querySelector('.dash-nav__link--logout')) return;
+
+  const footer = document.createElement('div');
+  footer.className = 'dash-nav__footer';
+  footer.innerHTML = `
+    <a href="../login.html" class="dash-nav__link dash-nav__link--logout">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" aria-hidden="true">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+        <polyline points="16 17 21 12 16 7" />
+        <line x1="21" y1="12" x2="9" y2="12" />
+      </svg>
+      Logout
+    </a>
+  `;
+  nav.appendChild(footer);
+}
+
+function initDashboardBrandMarks() {
+  document.querySelectorAll('.navbar__logo-mark').forEach(mark => {
+    mark.textContent = '';
+    mark.setAttribute('aria-hidden', 'true');
+  });
 }
 
 function initMaterialSelections() {
@@ -117,9 +201,12 @@ function initMaterialSelections() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initDashboardBrandMarks();
   initDashboardTopbarControls();
   initDashboardSidebar();
   initDashboardNav();
   initDashboardNotifications();
+  initDashboardRoleCopy();
+  initDashboardLogout();
   initMaterialSelections();
 });

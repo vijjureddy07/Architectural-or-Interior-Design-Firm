@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auraarch.com/sitemap.xml

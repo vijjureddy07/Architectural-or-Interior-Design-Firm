@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch User Dashboard Materials — approve finishes, compare options, and track selection status." />
   <title>Materials — Aura Arch Client Portal</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -11,7 +14,7 @@
   <style>
     .material-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .material-card { background: var(--surface-elevated); border-radius: 12px; overflow: hidden; border: 2px solid var(--clr-border); transition: all 0.25s; cursor: pointer; }
-    .material-card:hover { border-color: var(--clr-gold); box-shadow: 0 4px 20px rgba(211,160,109,0.15); }
+    .material-card:hover { border-color: var(--clr-gold); box-shadow: 0 4px 20px rgba(var(--clr-gold-rgb),0.15); }
     .material-card.approved { border-color: #22c55e; }
     .material-card.rejected { border-color: #ef4444; opacity: 0.6; }
     .material-card__swatch { height: 160px; overflow: hidden; }
@@ -33,9 +36,9 @@
 </head>
 <body class="dashboard-layout">
 
-  <!-- ══ SIDEBAR ══ -->
+  
   <aside class="dash-sidebar" id="dashSidebar">
-    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a></div>
+    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a></div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Overview</p>
       <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
@@ -50,7 +53,7 @@
     </nav>
   </aside>
 
-  <!-- ══ MAIN ══ -->
+  
   <div class="dash-main">
     <header class="dash-topbar">
       <div class="dash-topbar__left">
@@ -64,7 +67,7 @@
     </header>
     <div class="dash-content">
 
-      <!-- Progress Summary -->
+      
       <div class="dash-card" style="margin-bottom:1.5rem;">
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;">
           <div><p style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--clr-text);">14</p><p style="font-size:0.75rem;color:var(--clr-text-muted);">Total Items</p></div>
@@ -78,7 +81,7 @@
         <p style="font-size:0.75rem;color:var(--clr-text-muted);margin-top:0.5rem;">57% complete — please review pending items below</p>
       </div>
 
-      <!-- Living Areas -->
+      
       <div class="mat-section">
         <h2 class="mat-section-title">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -143,7 +146,7 @@
         </div>
       </div>
 
-      <!-- Kitchen -->
+      
       <div class="mat-section">
         <h2 class="mat-section-title">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>

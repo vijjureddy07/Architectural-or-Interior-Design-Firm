@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Aura Arch Client Portal — User Dashboard" />
   <title>Dashboard — Aura Arch Client Portal</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -12,11 +14,11 @@
 </head>
 <body class="dashboard-layout">
 
-  <!-- ══ SIDEBAR ══ -->
+  
   <aside class="dash-sidebar" id="dashSidebar" role="complementary" aria-label="Dashboard navigation">
     <div class="dash-sidebar__brand">
       <a href="../../index.html" class="navbar__logo" style="text-decoration:none;">
-        <div class="navbar__logo-mark">SN</div>
+        <div class="navbar__logo-mark">AA</div>
         <span class="navbar__logo-text">Aura Arch</span>
       </a>
     </div>
@@ -65,17 +67,17 @@
     </nav>
   </aside>
 
-  <!-- ══ MAIN CONTENT ══ -->
+  
   <div class="dash-main">
-    <!-- Topbar -->
+    
     <header class="dash-topbar">
       <div class="dash-topbar__left">
         <button class="dash-hamburger" id="dashHamburger" aria-label="Toggle sidebar" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
         <div>
-          <h1 class="dash-page-title">Dashboard</h1>
-          <p class="dash-page-subtitle">Welcome back, Alexandra</p>
+          <h1 class="dash-page-title">User Dashboard</h1>
+          <p class="dash-page-subtitle">Welcome back, Alexandra. Your project milestones, approvals, and portal updates are ready.</p>
         </div>
       </div>
       <div class="dash-topbar__right">
@@ -101,10 +103,10 @@
       </div>
     </header>
 
-    <!-- Content -->
+    
     <div class="dash-content">
 
-      <!-- Project Status Banner -->
+      
       <div class="dash-project-banner">
         <div>
           <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold);margin-bottom:0.35rem;">Active Project</p>
@@ -117,10 +119,10 @@
         </div>
       </div>
 
-      <!-- Stat Cards -->
+      
       <div class="dash-stat-grid">
         <div class="dash-stat-card">
-          <div class="dash-stat-card__icon" style="background:rgba(211,160,109,0.12);">
+          <div class="dash-stat-card__icon" style="background:rgba(var(--clr-gold-rgb),0.12);">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
           </div>
           <div>
@@ -157,10 +159,10 @@
         </div>
       </div>
 
-      <!-- Timeline + Upcoming -->
+      
       <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
 
-        <!-- Timeline -->
+        
         <div class="dash-card">
           <div class="dash-card__header">
             <h3 class="dash-card__title">Project Timeline</h3>
@@ -198,7 +200,7 @@
           </div>
         </div>
 
-        <!-- Upcoming Actions -->
+        
         <div style="display:flex;flex-direction:column;gap:1.5rem;">
           <div class="dash-card">
             <div class="dash-card__header">
@@ -206,22 +208,22 @@
               <span style="font-size:0.75rem;color:var(--clr-gold);font-weight:600;">3 pending</span>
             </div>
             <div style="display:flex;flex-direction:column;gap:1rem;">
-              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(211,160,109,0.06);border-radius:8px;border:1px solid rgba(211,160,109,0.2);">
+              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(var(--clr-gold-rgb),0.06);border-radius:8px;border:1px solid rgba(var(--clr-gold-rgb),0.2);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><circle cx="12" cy="12" r="3"/></svg>
                 <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Approve kitchen stone</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Sample arriving Mar 28</p></div>
               </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(211,160,109,0.06);border-radius:8px;border:1px solid rgba(211,160,109,0.2);">
+              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(var(--clr-gold-rgb),0.06);border-radius:8px;border:1px solid rgba(var(--clr-gold-rgb),0.2);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
                 <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Review Render Batch 2</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">4 renders awaiting feedback</p></div>
               </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(211,160,109,0.06);border-radius:8px;border:1px solid rgba(211,160,109,0.2);">
+              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(var(--clr-gold-rgb),0.06);border-radius:8px;border:1px solid rgba(var(--clr-gold-rgb),0.2);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
                 <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Sign lighting proposal</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Document ready to sign</p></div>
               </div>
             </div>
           </div>
 
-          <!-- Progress Ring -->
+          
           <div class="dash-card" style="text-align:center;">
             <h3 class="dash-card__title" style="margin-bottom:1.5rem;">Overall Progress</h3>
             <div style="position:relative;width:120px;height:120px;margin:0 auto 1rem;">
@@ -238,7 +240,7 @@
         </div>
       </div>
 
-      <!-- Recent Renderings Preview -->
+      
       <div class="dash-card">
         <div class="dash-card__header">
           <h3 class="dash-card__title">Latest Renderings</h3>
@@ -264,8 +266,8 @@
         </div>
       </div>
 
-    </div><!-- /dash-content -->
-  </div><!-- /dash-main -->
+    </div>
+  </div>
 
   <script src="../../assets/js/main.js"></script>
   <script src="../../assets/js/dashboard.js"></script>

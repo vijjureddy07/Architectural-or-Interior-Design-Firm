@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch Admin Dashboard Analytics — track studio revenue, lead sources, client growth, and project performance." />
   <title>Analytics — Admin · Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -18,15 +21,28 @@
     .kpi-change { font-size: 0.75rem; font-weight: 600; }
     .kpi-change.up { color: #22c55e; }
     .kpi-change.down { color: #ef4444; }
-    @media (max-width: 1100px) { .analytics-kpi { grid-template-columns: 1fr 1fr; } }
+    .analytics-grid--top { display:grid; grid-template-columns:1.6fr 1fr; gap:1.5rem; }
+    .analytics-grid--bottom { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .geo-list { display:flex; flex-direction:column; gap:0.75rem; padding:0.5rem 0; }
+    .geo-list__track { height:6px; background:rgba(var(--clr-gold-rgb),0.12); border-radius:100px; overflow:hidden; }
+    .geo-list__fill { height:100%; border-radius:100px; background:var(--clr-gold); }
+    .geo-list__fill--ink { background: rgba(var(--clr-black-rgb), 0.82); }
+    .geo-list__fill--soft { background: rgba(var(--clr-black-rgb), 0.48); }
+    @media (max-width: 1100px) {
+      .analytics-kpi { grid-template-columns: 1fr 1fr; }
+      .analytics-grid--top { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .analytics-grid--bottom { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: var(--clr-gold);">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(var(--clr-gold-rgb),0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -59,10 +75,10 @@
 
     <div class="dash-content">
 
-      <!-- KPIs -->
+      
       <div class="analytics-kpi">
         <div class="kpi-card">
-          <div class="kpi-icon" style="background:rgba(211,160,109,0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div class="kpi-icon" style="background:rgba(var(--clr-gold-rgb),0.1);"><svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="20"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <p class="kpi-value">$2.4M</p>
           <p class="kpi-label">Revenue YTD</p>
           <p class="kpi-change up">↑ 18% vs prior year</p>
@@ -87,32 +103,38 @@
         </div>
       </div>
 
-      <!-- Charts Row -->
-      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+      
+      <div class="analytics-grid--top">
         <div class="dash-card">
           <div class="dash-card__header"><h3 class="dash-card__title">Monthly Revenue</h3></div>
-          <canvas id="revenueChart" height="240"></canvas>
+          <div class="dash-chart-frame dash-chart-frame--lg">
+            <canvas id="revenueChart" height="240"></canvas>
+          </div>
         </div>
         <div class="dash-card">
           <div class="dash-card__header"><h3 class="dash-card__title">Projects by Type</h3></div>
-          <canvas id="typeChart" height="240"></canvas>
+          <div class="dash-chart-frame dash-chart-frame--lg">
+            <canvas id="typeChart" height="240"></canvas>
+          </div>
         </div>
       </div>
 
-      <!-- Second row -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      
+      <div class="analytics-grid--bottom">
         <div class="dash-card">
           <div class="dash-card__header"><h3 class="dash-card__title">Lead Sources</h3></div>
-          <canvas id="sourceChart" height="200"></canvas>
+          <div class="dash-chart-frame dash-chart-frame--sm">
+            <canvas id="sourceChart" height="200"></canvas>
+          </div>
         </div>
         <div class="dash-card">
           <div class="dash-card__header"><h3 class="dash-card__title">Project Geography</h3></div>
-          <div style="display:flex;flex-direction:column;gap:0.75rem;padding:0.5rem 0;">
-            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>New York</span><span style="font-weight:600;">58%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:58%;background:var(--clr-gold);border-radius:100px;"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>London</span><span style="font-weight:600;">17%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:17%;background:var(--clr-black);border-radius:100px;"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Dubai / UAE</span><span style="font-weight:600;">14%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:14%;background:var(--clr-black);border-radius:100px;"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Paris</span><span style="font-weight:600;">7%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:7%;background:var(--clr-gray-400);border-radius:100px;"></div></div></div>
-            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Other</span><span style="font-weight:600;">4%</span></div><div style="height:6px;background:var(--clr-gray-100);border-radius:100px;"><div style="height:100%;width:4%;background:var(--clr-gray-400);border-radius:100px;"></div></div></div>
+          <div class="geo-list">
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>New York</span><span style="font-weight:600;">58%</span></div><div class="geo-list__track"><div class="geo-list__fill" style="width:58%;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>London</span><span style="font-weight:600;">17%</span></div><div class="geo-list__track"><div class="geo-list__fill geo-list__fill--ink" style="width:17%;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Dubai / UAE</span><span style="font-weight:600;">14%</span></div><div class="geo-list__track"><div class="geo-list__fill geo-list__fill--ink" style="width:14%;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Paris</span><span style="font-weight:600;">7%</span></div><div class="geo-list__track"><div class="geo-list__fill geo-list__fill--soft" style="width:7%;"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem;"><span>Other</span><span style="font-weight:600;">4%</span></div><div class="geo-list__track"><div class="geo-list__fill geo-list__fill--soft" style="width:4%;"></div></div></div>
           </div>
         </div>
       </div>
@@ -123,73 +145,126 @@
   <script src="../../assets/js/main.js"></script>
   <script src="../../assets/js/dashboard.js"></script>
   <script>
-    const gold = '#d3a06d';
-    const black = '#0a0a0a';
-    const gridColor = 'rgba(0,0,0,0.06)';
-    const font = { family: 'DM Sans, sans-serif', size: 11 };
+    const charts = [];
 
-    // Revenue Chart
-    new Chart(document.getElementById('revenueChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-        datasets: [{
-          label: '2026',
-          data: [210,185,320,290,380,450,410,0,0,0,0,0],
-          backgroundColor: (ctx) => {
-            const v = ctx.raw;
-            return v > 0 ? gold : 'rgba(211,160,109,0.15)';
+    function palette() {
+      const styles = getComputedStyle(document.documentElement);
+      const theme = document.documentElement.getAttribute('data-theme');
+      const gold = styles.getPropertyValue('--clr-gold').trim() || '#E25D47';
+      const goldRgb = styles.getPropertyValue('--clr-gold-rgb').trim() || '200, 164, 107';
+      const black = styles.getPropertyValue('--clr-black').trim() || '#171416';
+      const textMuted = styles.getPropertyValue('--text-secondary').trim() || 'rgba(23,20,22,0.66)';
+      const textStrong = styles.getPropertyValue('--text-primary').trim() || '#171416';
+      const gridColor = theme === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(23,20,22,0.08)';
+      return { gold, goldRgb, black, textMuted, textStrong, gridColor, theme };
+    }
+
+    function destroyCharts() {
+      while (charts.length) {
+        charts.pop().destroy();
+      }
+    }
+
+    function buildCharts() {
+      destroyCharts();
+      const colors = palette();
+      const font = { family: 'DM Sans, sans-serif', size: 11 };
+
+      charts.push(new Chart(document.getElementById('revenueChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          datasets: [{
+            label: '2026',
+            data: [210,185,320,290,380,450,410,0,0,0,0,0],
+            backgroundColor: ctx => ctx.raw > 0 ? colors.gold : `rgba(${colors.goldRgb}, 0.15)`,
+            borderRadius: 6,
+            borderSkipped: false
+          },{
+            label: '2025',
+            data: [185,160,280,245,310,390,360,290,420,380,410,440],
+            backgroundColor: `rgba(${colors.goldRgb}, 0.28)`,
+            borderRadius: 6,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { font, color: colors.textStrong, boxWidth: 10, padding: 16 }
+            }
           },
-          borderRadius: 6,
-          borderSkipped: false
-        },{
-          label: '2025',
-          data: [185,160,280,245,310,390,360,290,420,380,410,440],
-          backgroundColor: 'rgba(0,0,0,0.06)',
-          borderRadius: 6,
-          borderSkipped: false
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { position: 'top', labels: { font, color: '#666', boxWidth: 10, padding: 16 } } },
-        scales: {
-          x: { grid: { display: false }, ticks: { font, color: '#888' } },
-          y: { grid: { color: gridColor }, ticks: { font, color: '#888', callback: v => '$' + (v/1000) + 'k' } }
+          scales: {
+            x: { grid: { display: false }, ticks: { font, color: colors.textMuted } },
+            y: { grid: { color: colors.gridColor }, ticks: { font, color: colors.textMuted, callback: v => '$' + (v/1000) + 'k' } }
+          }
         }
-      }
-    });
+      }));
 
-    // Type donut
-    new Chart(document.getElementById('typeChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Residential','Commercial','Hospitality','Architecture'],
-        datasets: [{ data: [45, 22, 18, 15], backgroundColor: [gold, '#1a1a1a', '#555', '#999'], borderWidth: 0, hoverOffset: 8 }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false, cutout: '65%',
-        plugins: { legend: { position: 'bottom', labels: { font, padding: 14, boxWidth: 10 } } }
-      }
-    });
-
-    // Source
-    new Chart(document.getElementById('sourceChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Referrals','Website','Awards','Repeat','Press'],
-        datasets: [{ data: [42, 28, 12, 10, 8], backgroundColor: [gold, gold+'99', gold+'66', gold+'44', gold+'22'], borderRadius: 6, borderSkipped: false }]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { grid: { color: gridColor }, ticks: { font, color: '#888', callback: v => v + '%' } },
-          y: { grid: { display: false }, ticks: { font, color: '#666' } }
+      charts.push(new Chart(document.getElementById('typeChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Residential','Commercial','Hospitality','Architecture'],
+          datasets: [{
+            data: [45, 22, 18, 15],
+            backgroundColor: [
+              colors.gold,
+              colors.black,
+              `rgba(${colors.goldRgb}, 0.72)`,
+              `rgba(${colors.goldRgb}, 0.44)`
+            ],
+            borderWidth: 0,
+            hoverOffset: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '65%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { font, padding: 14, boxWidth: 10, color: colors.textStrong }
+            }
+          }
         }
-      }
-    });
+      }));
+
+      charts.push(new Chart(document.getElementById('sourceChart'), {
+        type: 'bar',
+        data: {
+          labels: ['Referrals','Website','Awards','Repeat','Press'],
+          datasets: [{
+            data: [42, 28, 12, 10, 8],
+            backgroundColor: [
+              colors.gold,
+              `rgba(${colors.goldRgb}, 0.78)`,
+              `rgba(${colors.goldRgb}, 0.58)`,
+              `rgba(${colors.goldRgb}, 0.38)`,
+              `rgba(${colors.goldRgb}, 0.22)`
+            ],
+            borderRadius: 6,
+            borderSkipped: false
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: colors.gridColor }, ticks: { font, color: colors.textMuted, callback: v => v + '%' } },
+            y: { grid: { display: false }, ticks: { font, color: colors.textStrong } }
+          }
+        }
+      }));
+    }
+
+    buildCharts();
+    document.addEventListener('themechange', buildCharts);
   </script>
 </body>
 </html>

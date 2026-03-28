@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch Admin Dashboard Projects — review active commissions, phases, timelines, and delivery status." />
   <title>Projects — Admin · Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -15,7 +18,7 @@
     .project-table tr:last-child td { border-bottom: none; }
     .project-table tr:hover td { background: var(--clr-gray-50); }
     .status-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
-    .status-pill.active { background: rgba(211,160,109,0.12); color: #9b6a3a; }
+    .status-pill.active { background: rgba(var(--clr-gold-rgb),0.12); color: var(--clr-gold-dark); }
     .status-pill.complete { background: #dcfce7; color: #166534; }
     .status-pill.planning { background: rgba(59,130,246,0.1); color: #1d4ed8; }
     .status-pill.on-hold { background: rgba(249,115,22,0.1); color: #c2410c; }
@@ -31,11 +34,11 @@
 </head>
 <body class="dashboard-layout">
 
-  <!-- SIDEBAR -->
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
+  
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: var(--clr-gold);">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(var(--clr-gold-rgb),0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -51,7 +54,7 @@
     </nav>
   </aside>
 
-  <!-- MAIN -->
+  
   <div class="dash-main">
     <header class="dash-topbar">
       <div class="dash-topbar__left">
@@ -67,7 +70,7 @@
 
     <div class="dash-content">
 
-      <!-- Header Actions -->
+      
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
         <div class="filter-bar" style="margin-bottom:0;">
           <button class="filter-pill active">All (12)</button>
@@ -81,7 +84,7 @@
         </button>
       </div>
 
-      <!-- Projects Table -->
+      
       <div class="dash-card" style="padding:0;overflow:hidden;">
         <table class="project-table">
           <thead>
@@ -161,7 +164,7 @@
         </table>
       </div>
 
-      <!-- Pagination -->
+      
       <div style="display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;font-size:0.8rem;color:var(--clr-text-muted);">
         <span>Showing 6 of 12 projects</span>
         <div style="display:flex;gap:0.5rem;">

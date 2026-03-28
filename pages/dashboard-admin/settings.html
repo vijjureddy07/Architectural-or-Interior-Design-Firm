@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch Admin Dashboard Settings — configure studio profile, notifications, portal permissions, and account preferences." />
   <title>Settings — Admin · Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -34,10 +37,10 @@
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: var(--clr-gold);">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(var(--clr-gold-rgb),0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -68,7 +71,7 @@
     <div class="dash-content">
       <div class="settings-layout">
 
-        <!-- Settings Nav -->
+        
         <div class="settings-nav">
           <a href="#studio" class="active">Studio Profile</a>
           <a href="#account">My Account</a>
@@ -78,15 +81,15 @@
           <a href="#danger">Danger Zone</a>
         </div>
 
-        <!-- Settings Content -->
+        
         <div>
 
-          <!-- Studio Profile -->
+          
           <div class="settings-section" id="studio">
             <h2>Studio Profile</h2>
             <p class="desc">Information shown on invoices, proposals, and client communications.</p>
             <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.75rem;">
-              <div style="width:80px;height:80px;background:var(--clr-black);border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.75rem;font-weight:600;color:white;flex-shrink:0;">SN</div>
+              <div class="navbar__logo-mark" aria-hidden="true" style="width:80px;height:80px;border-radius:22px;flex-shrink:0;background-size:72%;"></div>
               <div><button style="padding:0.5rem 1rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.85rem;background:transparent;cursor:pointer;color:var(--clr-text);margin-right:0.75rem;">Upload Logo</button><p style="font-size:0.75rem;color:var(--clr-text-muted);margin-top:0.5rem;">SVG, PNG or JPG · Max 2MB</p></div>
             </div>
             <div class="field-row">
@@ -101,7 +104,7 @@
             <button class="btn btn--primary">Save Changes</button>
           </div>
 
-          <!-- Account -->
+          
           <div class="settings-section" id="account">
             <h2>My Account</h2>
             <p class="desc">Update your personal details and change your password.</p>
@@ -127,7 +130,7 @@
             <button class="btn btn--primary">Save Account</button>
           </div>
 
-          <!-- Notifications -->
+          
           <div class="settings-section" id="notifications">
             <h2>Notifications</h2>
             <p class="desc">Choose what you receive updates about and how.</p>
@@ -153,7 +156,7 @@
             </div>
           </div>
 
-          <!-- Client Portal -->
+          
           <div class="settings-section" id="portal">
             <h2>Client Portal Settings</h2>
             <p class="desc">Configure what clients can see and do in their portal.</p>
@@ -176,7 +179,7 @@
             <div style="margin-top:1.25rem;"><button class="btn btn--primary">Save Portal Settings</button></div>
           </div>
 
-          <!-- Danger Zone -->
+          
           <div class="settings-section danger-zone" id="danger">
             <h2>Danger Zone</h2>
             <p class="desc">These actions are permanent and cannot be undone. Proceed with caution.</p>

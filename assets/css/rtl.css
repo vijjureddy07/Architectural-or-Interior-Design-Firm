@@ -41,6 +41,29 @@
   flex-direction: row-reverse;
 }
 
+[dir="rtl"] .editorial-hero__eyebrow,
+[dir="rtl"] .editorial-hero__actions,
+[dir="rtl"] .editorial-hero__meta,
+[dir="rtl"] .editorial-hero--split .editorial-hero__content,
+[dir="rtl"] .studio-grid,
+[dir="rtl"] .service-ladder,
+[dir="rtl"] .review-card__author {
+  direction: rtl;
+}
+
+[dir="rtl"] .editorial-hero--split .editorial-hero__content,
+[dir="rtl"] .studio-grid,
+[dir="rtl"] .service-ladder,
+[dir="rtl"] .project-story,
+[dir="rtl"] .project-story--reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+[dir="rtl"] .project-story__meta,
+[dir="rtl"] .project-story__details {
+  direction: rtl;
+}
+
 [dir="rtl"] .hero__cta {
   flex-direction: row-reverse;
 }
@@ -95,6 +118,25 @@
 
 [dir="rtl"] .portfolio-item__overlay {
   text-align: right;
+}
+
+[dir="rtl"] .editorial-hero__content,
+[dir="rtl"] .editorial-hero__quote,
+[dir="rtl"] .studio-grid__content,
+[dir="rtl"] .service-ladder__intro,
+[dir="rtl"] .service-ladder__body,
+[dir="rtl"] .project-story__body,
+[dir="rtl"] .quote-band__inner,
+[dir="rtl"] .review-card {
+  text-align: right;
+}
+
+[dir="rtl"] .project-story--reverse .project-story__media {
+  order: 1;
+}
+
+[dir="rtl"] .project-story--reverse .project-story__body {
+  order: 2;
 }
 
 [dir="rtl"] .stats-bar__item {
@@ -171,6 +213,14 @@
 }
 
 @media (max-width: 1024px) {
+  [dir="rtl"] .editorial-hero--split .editorial-hero__content,
+  [dir="rtl"] .studio-grid,
+  [dir="rtl"] .service-ladder,
+  [dir="rtl"] .project-story,
+  [dir="rtl"] .project-story--reverse {
+    grid-template-columns: 1fr;
+  }
+
   [dir="rtl"] .dash-sidebar,
   [dir="rtl"] .sidebar {
     transform: translateX(100%);

@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch User Dashboard Renderings — review immersive visualizations, approve scenes, and track revisions." />
   <title>3D Renderings — Aura Arch Client Portal</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -36,9 +39,9 @@
 </head>
 <body class="dashboard-layout">
 
-  <!-- ══ SIDEBAR ══ -->
+  
   <aside class="dash-sidebar" id="dashSidebar">
-    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a></div>
+    <div class="dash-sidebar__brand"><a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a></div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Overview</p>
       <a href="index.html" class="dash-nav__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
@@ -53,7 +56,7 @@
     </nav>
   </aside>
 
-  <!-- ══ MAIN ══ -->
+  
   <div class="dash-main">
     <header class="dash-topbar">
       <div class="dash-topbar__left">
@@ -67,7 +70,7 @@
     </header>
     <div class="dash-content">
 
-      <!-- Filter Bar -->
+      
       <div class="dash-card" style="margin-bottom:1.5rem;">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
@@ -77,12 +80,12 @@
             <button class="render-filter-btn" onclick="filterRenders(this,'revision')" style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;font-weight:500;background:var(--clr-gray-100);color:var(--clr-text);border:none;cursor:pointer;">Revision (1)</button>
           </div>
           <div style="display:flex;gap:0.5rem;">
-            <button style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;background:rgba(211,160,109,0.1);color:var(--clr-gold);border:1px solid rgba(211,160,109,0.3);cursor:pointer;font-weight:600;">↓ Download All</button>
+            <button style="padding:0.45rem 1rem;border-radius:6px;font-size:0.8rem;background:rgba(var(--clr-gold-rgb),0.1);color:var(--clr-gold);border:1px solid rgba(var(--clr-gold-rgb),0.3);cursor:pointer;font-weight:600;">↓ Download All</button>
           </div>
         </div>
       </div>
 
-      <!-- Renders Grid -->
+      
       <div class="render-grid">
         <div class="render-card" data-status="approved">
           <div class="render-card__img" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Living Room" /><div class="render-card__zoom"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="32"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div></div>
@@ -136,7 +139,7 @@
     </div>
   </div>
 
-  <!-- Lightbox -->
+  
   <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
     <div class="lightbox-inner">
       <button class="lightbox-close" onclick="closeLightboxBtn()">✕</button>

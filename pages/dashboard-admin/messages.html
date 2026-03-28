@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch Admin Dashboard Messages — manage studio communications, client conversations, and unread inbox threads." />
   <title>Messages — Admin · Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -14,7 +17,7 @@
     .inbox-thread { overflow-y: auto; display: flex; flex-direction: column; background: var(--clr-surface); }
     .inbox-item { display: flex; gap: 0.75rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--clr-border); cursor: pointer; transition: background 0.15s; position: relative; }
     .inbox-item:hover { background: var(--clr-gray-50); }
-    .inbox-item.active { background: rgba(211,160,109,0.06); border-left: 3px solid var(--clr-gold); }
+    .inbox-item.active { background: rgba(var(--clr-gold-rgb),0.06); border-left: 3px solid var(--clr-gold); }
     .inbox-item.unread::before { content: ''; position: absolute; top: 50%; left: 0.5rem; transform: translateY(-50%); width: 6px; height: 6px; background: var(--clr-gold); border-radius: 50%; }
     .inbox-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
     .inbox-meta { flex: 1; min-width: 0; }
@@ -39,10 +42,10 @@
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: var(--clr-gold);">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(var(--clr-gold-rgb),0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -71,7 +74,7 @@
     </header>
 
     <div class="inbox-layout">
-      <!-- Inbox List -->
+      
       <div class="inbox-list">
         <div style="padding:1rem 1.25rem;border-bottom:1px solid var(--clr-border);">
           <input type="search" placeholder="Search messages..." style="width:100%;padding:0.5rem 0.75rem;border:1px solid var(--clr-border);border-radius:8px;font-size:0.8rem;background:var(--clr-surface);color:var(--clr-text);outline:none;" />
@@ -81,7 +84,7 @@
           <div class="inbox-meta">
             <p class="inbox-name">Alexandra Chen <span class="time">2h</span></p>
             <p class="inbox-preview">The quartzite samples have arrived — can you confirm...</p>
-            <span class="inbox-tag" style="background:rgba(211,160,109,0.12);color:#9b6a3a;">Park Slope</span>
+            <span class="inbox-tag" style="background:rgba(var(--clr-gold-rgb),0.12);color:var(--clr-gold-dark);">Park Slope</span>
           </div>
         </div>
         <div class="inbox-item unread">
@@ -118,7 +121,7 @@
         </div>
       </div>
 
-      <!-- Active Thread -->
+      
       <div class="inbox-thread">
         <div class="thread-header">
           <div style="display:flex;align-items:center;gap:1rem;">

@@ -1,6 +1,7 @@
 <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="128" height="128" rx="30" fill="#213943"/>
-  <path d="M28 94V62C28 42.1178 44.1177 26 64 26C83.8823 26 100 42.1178 100 62V94" stroke="#D3A06D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M46 94V64C46 53.5066 54.5066 45 65 45C75.4934 45 84 53.5066 84 64V94" stroke="#F6F0E8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M64.5 45V94" stroke="#D3A06D" stroke-width="6" stroke-linecap="round"/>
+  <path d="M24 104V58C24 35.9086 41.9086 18 64 18C86.0914 18 104 35.9086 104 58V104" stroke="#E25D47" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 104V60C40 46.7452 50.7452 36 64 36C77.2548 36 88 46.7452 88 60V104" stroke="#F38A77" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 104V70C56 65.5817 59.5817 62 64 62C68.4183 62 72 65.5817 72 70V104" stroke="#C84333" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 104H94" stroke="#E25D47" stroke-width="8" stroke-linecap="round"/>
+  <path d="M48 46H80" stroke="#E25D47" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
 </svg>

@@ -3,194 +3,148 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The Case for Biophilic Design: Why Nature Belongs in Every Room — Aura Arch Journal." />
+  <meta name="description" content="The Case for Biophilic Design: Why Nature Belongs in Every Room — a journal article from Aura Arch." />
   <title>The Case for Biophilic Design — Aura Arch Journal</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../assets/css/rtl.css" />
-  <style>
-    .article-hero { height: 60vh; min-height: 400px; position: relative; overflow: hidden; }
-    .article-hero img { width: 100%; height: 100%; object-fit: cover; }
-    .article-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%); display: flex; align-items: flex-end; }
-    .article-hero-content { padding: 3rem; max-width: 860px; }
-    .article-body { max-width: 720px; margin: 0 auto; padding: var(--space-4xl) var(--space-lg); }
-    .article-body h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 400; margin: 2.5rem 0 1rem; color: var(--clr-text); }
-    .article-body p { color: var(--clr-text-muted); line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.0625rem; }
-    .article-body blockquote { border-left: 3px solid var(--clr-gold); padding: 1rem 1.5rem; margin: 2.5rem 0; background: rgba(211,160,109,0.06); border-radius: 0 8px 8px 0; }
-    .article-body blockquote p { color: var(--clr-text); font-family: var(--font-display); font-size: 1.25rem; font-style: italic; font-weight: 400; margin: 0; }
-    .article-body figure { margin: 2.5rem 0; }
-    .article-body figure img { width: 100%; border-radius: 12px; }
-    .article-body figure figcaption { font-size: 0.8rem; color: var(--clr-text-muted); text-align: center; margin-top: 0.75rem; font-style: italic; }
-    .article-sidebar { position: sticky; top: 100px; }
-    .related-card { background: var(--surface-elevated); border-radius: 10px; overflow: hidden; margin-bottom: 1rem; display: flex; gap: 1rem; padding: 0.75rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-    .related-card img { width: 72px; height: 72px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
-    .related-card__text { flex: 1; }
-    .related-card__text h4 { font-size: 0.875rem; font-weight: 600; color: var(--clr-text); margin-bottom: 0.25rem; line-height: 1.4; }
-    .related-card__text span { font-size: 0.75rem; color: var(--clr-text-muted); }
-    .share-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; border: 1px solid var(--clr-border); border-radius: 8px; font-size: 0.85rem; background: none; cursor: pointer; color: var(--clr-text); transition: all 0.2s; }
-    .share-btn:hover { background: var(--clr-black); color: white; border-color: var(--clr-black); }
-    .article-layout { display:grid; grid-template-columns:1fr 320px; gap:4rem; align-items:start; }
-    @media (max-width: 960px) {
-      .article-layout { grid-template-columns: 1fr; gap: 2rem; }
-      .article-body { padding: 2rem 0; }
-      .article-sidebar { position: static; padding-top: 0; }
-    }
-    @media (max-width: 640px) {
-      .article-hero-content { padding: 1.5rem; }
-    }
-  </style>
 </head>
 <body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation"></nav>
+  <div class="navbar__mobile" aria-hidden="true"></div>
 
-  <!-- ══ NAVBAR ══ -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar__inner">
-      <a href="../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <ul class="navbar__nav" role="list">
-        <li class="navbar__nav-item"><a href="../index.html" class="navbar__nav-link">Home<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="../index.html">Home Page 1</a><a href="home2.html">Home Page 2</a></div></li>
-        <li class="navbar__nav-item"><a href="about.html" class="navbar__nav-link">About</a></li>
-        <li class="navbar__nav-item"><a href="services.html" class="navbar__nav-link">Services</a></li>
-        <li class="navbar__nav-item"><a href="portfolio.html" class="navbar__nav-link">Portfolio</a></li>
-        <li class="navbar__nav-item"><a href="blog.html" class="navbar__nav-link">Journal</a></li>
-        <li class="navbar__nav-item"><a href="contact.html" class="navbar__nav-link">Contact</a></li>
-        <li class="navbar__nav-item"><a href="dashboard-user/index.html" class="navbar__nav-link">Dashboard<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg></a><div class="navbar__dropdown"><a href="dashboard-user/index.html">User Dashboard</a><a href="dashboard-admin/index.html">Admin Dashboard</a></div></li>
-      </ul>
-      <div class="navbar__actions">
-        <button class="navbar__icon-btn theme-btn" aria-label="Toggle dark mode"><svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/></svg></button>
-        <button class="navbar__icon-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
-        <a href="login.html" class="btn btn--ghost">Login</a>
+  <main>
+    <section class="article-hero">
+      <div class="article-hero__image">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85" alt="Biophilic design living room interior" data-parallax="0.08" loading="eager" />
       </div>
-      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
-  <div class="navbar__mobile"><a href="../index.html" class="navbar__mobile-link">Home</a><a href="blog.html" class="navbar__mobile-link">Journal</a><a href="contact.html" class="navbar__mobile-link">Contact</a><a href="login.html" class="btn btn--primary" style="margin-top:1rem;display:inline-block;">Login</a></div>
-
-  <!-- ══ ARTICLE HERO ══ -->
-  <div class="article-hero">
-    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80" alt="Biophilic design living wall interior" />
-    <div class="article-hero-overlay">
-      <div class="article-hero-content">
-        <a href="blog.html" style="color:var(--clr-gold);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:inline-block;margin-bottom:1rem;">← Back to Journal</a>
-        <span style="display:inline-block;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.2);padding:0.25rem 0.75rem;border-radius:20px;margin-bottom:1rem;">Interior Design</span>
-        <h1 style="font-family:var(--font-display);font-size:clamp(1.75rem,4vw,3rem);color:white;font-weight:300;line-height:1.2;margin-bottom:1rem;">The Case for Biophilic Design:<br><em>Why Nature Belongs in Every Room</em></h1>
-        <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
-          <div style="display:flex;align-items:center;gap:0.75rem;">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Isabel Voss" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--clr-gold);" />
-            <div>
-              <p style="color:white;font-size:0.875rem;font-weight:600;margin:0;">Isabel Voss</p>
-              <p style="color:rgba(255,255,255,0.6);font-size:0.75rem;margin:0;">Principal Designer</p>
+      <div class="article-hero__overlay"></div>
+      <div class="article-hero__content">
+        <div class="container">
+          <a href="blog.html" class="btn btn--ghost-light">Back to Journal</a>
+          <div class="section-label" style="margin-top:var(--sp-8);"><span>Interior Design</span></div>
+          <h1 style="max-width:920px;color:var(--clr-white);margin-top:var(--sp-4);">The case for biophilic design: why nature belongs in every room.</h1>
+          <p class="article-hero__lead">Biophilic design is not a styling trend. It is a way of making interiors feel healthier, calmer, and more aligned with how people actually recover, focus, and live.</p>
+          <div class="article-meta">
+            <div class="article-meta__author">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=85" alt="Isabel Voss" loading="lazy" />
+              <div>
+                <strong style="display:block;color:var(--clr-white);">Isabel Voss</strong>
+                <span>Principal Designer</span>
+              </div>
             </div>
+            <span>March 18, 2026</span>
+            <span>8 min read</span>
           </div>
-          <span style="color:rgba(255,255,255,0.5);">·</span>
-          <span style="color:rgba(255,255,255,0.6);font-size:0.85rem;">March 18, 2026</span>
-          <span style="color:rgba(255,255,255,0.5);">·</span>
-          <span style="color:rgba(255,255,255,0.6);font-size:0.85rem;">8 min read</span>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- ══ ARTICLE LAYOUT ══ -->
-  <section style="background: var(--clr-surface); padding: 0 0 var(--space-5xl);">
-    <div class="container">
-      <div class="article-layout">
+    <section class="page-section page-section--tight">
+      <div class="container article-layout">
+        <article class="article-body">
+          <p>The rooms people return to most often are usually the ones that feel easiest on the body. They hold soft daylight, some visual depth, honest materials, and an atmosphere that slows the pace of the day. That response is not accidental. It is part of what biophilic design tries to formalize.</p>
 
-        <!-- Article Body -->
-        <article class="article-body" style="max-width:100%;padding:3rem 0;">
-          <p>When we integrate natural elements into architectural and interior space — living walls, raw stone, diffused daylight, water features — we tap into something ancient in human psychology. The research confirms what intuition long suspected: proximity to nature reduces cortisol levels, sharpens cognitive focus, and elevates mood in measurable ways.</p>
+          <p>At Aura Arch, we use biophilic thinking as a design framework rather than a decorative theme. It helps us make decisions about orientation, materiality, lighting, and even furniture placement so a room feels grounded instead of over-composed.</p>
 
-          <p>The term "biophilia" was popularised by biologist E.O. Wilson in his 1984 book of the same name. It describes our innate tendency to seek connections with other living systems. But for designers, biophilic design has evolved far beyond placing a few potted plants near a window.</p>
+          <blockquote>
+            <p>Nature in interiors works best when it is structural to the room, not added after the fact.</p>
+          </blockquote>
 
-          <blockquote><p>"A truly biophilic space doesn't just reference nature — it extends nature. The boundary between inside and outside dissolves."</p></blockquote>
-
-          <h2>The Three Dimensions of Biophilic Design</h2>
-
-          <p>At Aura Arch, we approach biophilic design across three interconnected dimensions: direct nature contact, indirect nature representation, and spatial conditions that evoke natural environments.</p>
-
-          <p>Direct contact means literal integration — living moss walls, interior water features, plants that have genuine presence in the spatial composition. Indirect representation encompasses natural materials like stone, timber, and leather; forms that echo organic shapes; and the use of texture that rewards close inspection the way bark or stone does.</p>
+          <h2>Start with natural light before you add natural elements.</h2>
+          <p>Plants and organic textures are useful, but they cannot compensate for a room that is poorly lit or visually flat. We usually begin with light quality: how daylight enters, what it hits first, and how it changes across the day. Window treatments, reflection from pale surfaces, and the placement of architectural openings all matter more than the number of plants in the room.</p>
 
           <figure>
-            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=900&q=80" alt="Living wall installation in contemporary interior" />
-            <figcaption>Living wall installation in the Park Slope Residence, New York. Plant selection by Aura Arch in collaboration with Botanica NYC.</figcaption>
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=85" alt="Natural daylight in a calm bedroom interior" loading="lazy" />
+            <figcaption>Natural daylight, tonal restraint, and breathable circulation create most of the calm people describe as restorative.</figcaption>
           </figure>
 
-          <h2>Spatial Conditions and the Psychology of Refuge</h2>
+          <h2>Material honesty is more calming than visual excess.</h2>
+          <p>Biophilic rooms tend to feel better because they reduce synthetic noise. Timber with visible grain, linen with texture, stone with quiet variation, and plaster that catches light softly all provide complexity without clutter. They do not need to be rustic. They just need to feel believable.</p>
 
-          <p>The third dimension — spatial conditions — is perhaps the most nuanced. Evolutionary psychology suggests we're drawn to spaces that offer both prospect (a wide view, a sense of openness and opportunity) and refuge (a sheltered position, enclosure, safety). These competing needs explain why the most successful living spaces often pair open-plan zones with intimate alcoves.</p>
+          <p>That is why we often limit the palette while increasing depth inside it. One oak tone can appear across joinery, furniture, and trim, while stone, brushed metal, and woven textiles create a slower, more layered reading of the room.</p>
 
-          <p>Ceiling height is a powerful lever here. We use double-height volumes for communal and social areas, dropping to more intimate proportions for reading nooks and sleeping spaces. The shift isn't just aesthetic — it's neurological.</p>
+          <h2>Views, thresholds, and movement patterns matter too.</h2>
+          <p>People often reduce biophilic design to greenery, but the bigger effect usually comes from the experience of moving through the space. A framed view to a courtyard, a bench at a window, a compressed entry before a larger living area, or even the sound quality of a softer room can all create the sense that the space breathes.</p>
 
-          <h2>Material Specificity</h2>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1616594039964-3d4f0b2fb9f5?w=1200&q=85" alt="Layered living room with textured materials" loading="lazy" />
+            <figcaption>Visual softness comes from restraint, tonal consistency, and a clear relationship between architecture and interior layers.</figcaption>
+          </figure>
 
-          <p>Materials are where biophilic intention becomes tangible. There's a meaningful difference between engineered stone and bookmatched marble — the former is uniform and industrial; the latter is a geological artefact, unique and unrepeatable. Similarly, solid hardwood flooring ages and develops character; engineered alternatives, however practical, don't carry the same emotional resonance.</p>
+          <h2>Use planting as one layer, not the whole story.</h2>
+          <p>Plants help because they introduce movement, irregularity, and a living edge to otherwise static rooms. But a biophilic interior should still work when the planting is scaled back. If the only natural signal in the room is a row of potted plants, the design is probably still relying on surface effect rather than spatial quality.</p>
 
-          <p>This doesn't mean biophilic interiors require extravagant budgets. Textured linen, raw plaster walls, hand-thrown ceramics, and unfinished brass hardware all communicate naturalistic warmth at accessible price points. What matters is intentionality — selecting materials that reward engagement rather than deterring it.</p>
+          <p>The better approach is to let planting sit inside a wider strategy: warm daylight, natural textures, comfortable sightlines, filtered views, and a lighting plan that stays soft after sunset.</p>
 
-          <h2>The Role of Light</h2>
-
-          <p>Possibly the most powerful biophilic tool available to architects and interior designers is daylight. We specify windows generously, position glazing to capture morning light in bedrooms and eastern-facing living areas, and design shading that modulates glare without sacrificing connection to the outside world.</p>
-
-          <p>Artificial lighting is designed to complement natural rhythms. Warm, lower colour temperatures (2700K–3000K) in the evening; brighter, cooler task lighting during working hours. Dimming control throughout so the occupant can tune their environment to their activity and time of day.</p>
-
-          <!-- Tags -->
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--clr-border);">
-            <span style="padding:0.35rem 0.9rem;background:var(--clr-gray-100);border-radius:20px;font-size:0.8rem;color:var(--clr-text-muted);">Biophilic Design</span>
-            <span style="padding:0.35rem 0.9rem;background:var(--clr-gray-100);border-radius:20px;font-size:0.8rem;color:var(--clr-text-muted);">Interior Design</span>
-            <span style="padding:0.35rem 0.9rem;background:var(--clr-gray-100);border-radius:20px;font-size:0.8rem;color:var(--clr-text-muted);">Materials</span>
-            <span style="padding:0.35rem 0.9rem;background:var(--clr-gray-100);border-radius:20px;font-size:0.8rem;color:var(--clr-text-muted);">Sustainability</span>
+          <div class="tag-list" aria-label="Article tags">
+            <span>Biophilic Design</span>
+            <span>Interior Design</span>
+            <span>Materials</span>
+            <span>Sustainability</span>
           </div>
 
-          <!-- Author Bio -->
-          <div style="background:var(--surface-elevated);border-radius:12px;padding:2rem;margin-top:2.5rem;display:flex;gap:1.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.05);">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&q=80" alt="Isabel Voss" style="width:80px;height:80px;border-radius:50%;object-fit:cover;flex-shrink:0;" />
-            <div>
-              <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:500;margin-bottom:0.35rem;">Isabel Voss</h3>
-              <p style="font-size:0.8rem;color:var(--clr-gold);margin-bottom:0.75rem;">Principal Designer, Aura Arch</p>
-              <p style="font-size:0.875rem;color:var(--clr-text-muted);line-height:1.7;margin:0;">Isabel has led interior design at Aura Arch for over a decade, with a focus on integrating natural materials, biophilic principles, and bespoke craftsmanship into residential and hospitality projects globally.</p>
+          <div class="panel-shell">
+            <div class="article-meta__author" style="margin-bottom:var(--sp-4);">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=85" alt="Isabel Voss" loading="lazy" />
+              <div>
+                <strong style="display:block;">Isabel Voss</strong>
+                <span style="color:var(--clr-gold);font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;">Principal Designer, Aura Arch</span>
+              </div>
             </div>
+            <p style="margin:0;">Isabel leads interior direction at Aura Arch with a focus on calm spatial sequencing, tactile material palettes, and rooms that support daily life with less visual noise.</p>
           </div>
 
-          <!-- Share -->
-          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--clr-border);">
-            <span style="font-size:0.85rem;font-weight:600;color:var(--clr-text);margin-right:0.5rem;align-self:center;">Share:</span>
-            <button class="share-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M24 4.56v14.91C24 21.98 21.98 24 19.45 24H4.56C2.02 24 0 21.98 0 19.45V4.56C0 2.02 2.02 0 4.56 0h14.9C21.98 0 24 2.02 24 4.56zm-7.2 0h-2.35c-.86 0-1.02.41-1.02.99v1.58h2.04l-.27 2.35H13.43V16.8H11v-7.32H9.6V7.13H11V5.55C11 3.92 11.96 3 13.4 3c.68 0 1.4.05 2.1.1z"/></svg> Facebook</button>
-            <button class="share-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</button>
-            <button class="share-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</button>
-            <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copy Link</button>
+          <div class="share-group" aria-label="Share article">
+            <button type="button">Facebook</button>
+            <button type="button">X</button>
+            <button type="button">LinkedIn</button>
+            <button type="button" onclick="if (navigator.clipboard) navigator.clipboard.writeText(window.location.href)">Copy Link</button>
           </div>
         </article>
 
-        <!-- Sidebar -->
-        <aside class="article-sidebar" style="padding-top:3rem;">
-          <div style="background:var(--surface-elevated);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:0 2px 16px rgba(0,0,0,0.05);">
-            <h3 style="font-family:var(--font-display);font-size:1rem;font-weight:500;margin-bottom:1.25rem;padding-bottom:0.75rem;border-bottom:1px solid var(--clr-border);">Related Articles</h3>
-            <div class="related-card">
-              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&q=80" alt="Japandi" />
-              <div class="related-card__text"><h4><a href="blog-post.html" style="color:inherit;text-decoration:none;">Japandi: Wabi-Sabi Meets Scandi Minimalism</a></h4><span>5 min read</span></div>
-            </div>
-            <div class="related-card">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=80" alt="Materials" />
-              <div class="related-card__text"><h4><a href="blog-post.html" style="color:inherit;text-decoration:none;">The Material Library: Specifying Luxury Finishes</a></h4><span>7 min read</span></div>
-            </div>
-            <div class="related-card">
-              <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=200&q=80" alt="Lighting" />
-              <div class="related-card__text"><h4><a href="blog-post.html" style="color:inherit;text-decoration:none;">Lighting as Architecture: The Fifth Wall</a></h4><span>5 min read</span></div>
+        <aside class="article-sidebar sticky-side">
+          <div class="article-aside-card">
+            <h3 style="margin-bottom:var(--sp-5);">Related Articles</h3>
+            <div class="page-cluster">
+              <article class="related-card">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=200&q=85" alt="Japandi interior article" loading="lazy" />
+                <div class="related-card__text">
+                  <h4><a href="blog-post.html" style="color:inherit;text-decoration:none;">Japandi, but Warmer: How We Avoid Flat Minimalism</a></h4>
+                  <span>5 min read</span>
+                </div>
+              </article>
+              <article class="related-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=85" alt="Materials article" loading="lazy" />
+                <div class="related-card__text">
+                  <h4><a href="blog-post.html" style="color:inherit;text-decoration:none;">The Material Library: Specifying Luxury Without Noise</a></h4>
+                  <span>7 min read</span>
+                </div>
+              </article>
+              <article class="related-card">
+                <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=200&q=85" alt="Lighting article" loading="lazy" />
+                <div class="related-card__text">
+                  <h4><a href="blog-post.html" style="color:inherit;text-decoration:none;">Lighting as Architecture: The Fifth Wall</a></h4>
+                  <span>5 min read</span>
+                </div>
+              </article>
             </div>
           </div>
 
-          <div style="background:var(--clr-black);border-radius:12px;padding:1.5rem;text-align:center;">
-            <p style="font-family:var(--font-display);font-size:1.1rem;color:white;margin-bottom:0.5rem;font-weight:300;">Start Your Project</p>
-            <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin-bottom:1.25rem;">Let's design a space that brings nature and beauty into your everyday life.</p>
-            <a href="contact.html" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Consultation</a>
+          <div class="article-aside-card article-aside-card--contrast">
+            <div class="section-label"><span>Begin the Brief</span></div>
+            <h3 style="margin-top:var(--sp-4);">Need this level of thought applied to your own space?</h3>
+            <p style="margin-top:var(--sp-4);">We design homes and hospitality spaces that feel calm, tactile, and fully resolved from first sketch to final styling.</p>
+            <a href="contact.html" class="btn btn--primary" style="margin-top:var(--sp-6);width:100%;justify-content:center;">Book a Consultation</a>
           </div>
         </aside>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ══ FOOTER ══ -->
-  <footer class="footer"><div class="container"><div class="footer__grid"><div><div class="navbar__logo" style="margin-bottom:0;"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span></div><p class="footer__brand-text">Architectural &amp; interior design creating timeless spaces.</p></div><div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html" class="footer__link">About</a></li><li><a href="services.html" class="footer__link">Services</a></li><li><a href="portfolio.html" class="footer__link">Portfolio</a></li><li><a href="blog.html" class="footer__link">Journal</a></li></ul></div><div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html" class="footer__link">Architecture</a></li><li><a href="services.html" class="footer__link">Interior Design</a></li></ul></div><div><div class="footer__col-title">Client Area</div><ul class="footer__links"><li><a href="login.html" class="footer__link">Login</a></li><li><a href="dashboard-user/index.html" class="footer__link">Dashboard</a></li></ul></div><div><div class="footer__col-title">Legal</div><ul class="footer__links"><li><a href="privacy.html" class="footer__link">Privacy</a></li><li><a href="terms.html" class="footer__link">Terms</a></li><li><a href="faq.html" class="footer__link">FAQ</a></li></ul></div></div><div class="footer__bottom"><p class="footer__bottom-left">© 2026 Aura Arch. All rights reserved.</p><div class="footer__contact-row"><span>hello@auraarch.com</span></div><div class="footer__bottom-right"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></div></footer>
-
+  <footer class="footer"></footer>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

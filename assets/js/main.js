@@ -40,7 +40,7 @@ function updateThemeColor(theme) {
     themeColor.name = 'theme-color';
     document.head.appendChild(themeColor);
   }
-  themeColor.content = theme === 'dark' ? '#14181A' : '#F6F0E8';
+  themeColor.content = theme === 'dark' ? '#171416' : '#FFFFFF';
 }
 
 function initBrandAssets() {
@@ -63,8 +63,11 @@ function initBrandAssets() {
     }
     link.href = faviconHref;
     if (link.rel !== 'apple-touch-icon') link.type = 'image/svg+xml';
+    if (link.rel === 'icon') link.sizes = 'any';
   });
 }
+
+initBrandAssets();
 
 function getPublicLinkMap() {
   const inPagesDir = /\/pages\//.test(window.location.pathname);
@@ -76,6 +79,7 @@ function getPublicLinkMap() {
     home2: page('home2.html'),
     about: page('about.html'),
     services: page('services.html'),
+    serviceDetails: page('service-details.html'),
     portfolio: page('portfolio.html'),
     blog: page('blog.html'),
     contact: page('contact.html'),
@@ -138,6 +142,7 @@ function buildPublicNavbar(paths) {
           </button>
           <button class="navbar__icon-btn rtl-btn" type="button" aria-label="Switch to RTL">RTL</button>
           <a href="${paths.login}" class="btn btn--ghost">Login</a>
+          <a href="${paths.signup}" class="btn btn--primary">Sign Up</a>
         </div>
 
         <button class="navbar__hamburger" type="button" aria-label="Open menu" aria-expanded="false">
@@ -165,6 +170,7 @@ function buildPublicNavbar(paths) {
         </button>
         <button class="navbar__icon-btn rtl-btn" type="button" aria-label="Switch to RTL">RTL</button>
         <a href="${paths.login}" class="btn btn--ghost">Login</a>
+        <a href="${paths.signup}" class="btn btn--primary">Sign Up</a>
       </div>
     </div>
   `;
@@ -180,7 +186,7 @@ function buildPublicFooter(paths) {
               <div class="navbar__logo-mark" aria-hidden="true"></div>
               <span class="navbar__logo-text" style="color:var(--clr-white);">Aura Arch</span>
             </div>
-            <p class="footer__brand-text">Architectural and interior design studio shaping calm, tactile spaces with lasting presence.</p>
+            <p class="footer__brand-text">Architecture and interiors composed with quiet monumentality, tactile warmth, and rigorous detail.</p>
             <div class="footer__socials" aria-label="Social media links">
               <a href="#" class="footer__social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
               <a href="#" class="footer__social-btn" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 0 0-3.64 19.32c-.05-1.64 0-3.61.4-5.39.22-.95 1.45-6.14 1.45-6.14s-.36-.72-.36-1.79c0-1.68.97-2.94 2.18-2.94 1.03 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-.99 4-.28 1.2.6 2.18 1.77 2.18 2.12 0 3.54-2.72 3.54-5.94 0-2.45-1.65-4.28-4.66-4.28-3.39 0-5.5 2.53-5.5 5.36 0 .98.29 1.68.75 2.22.21.25.24.35.16.64-.05.21-.17.72-.22.92-.07.3-.3.41-.56.3-1.57-.64-2.3-2.35-2.3-4.28 0-3.18 2.69-6.99 8.01-6.99 4.28 0 7.1 3.1 7.1 6.42 0 4.4-2.45 7.69-6.05 7.69-1.21 0-2.34-.65-2.73-1.38l-.74 2.92c-.27 1.02-.79 2.29-1.18 3.07A10 10 0 1 0 12 2z"/></svg></a>
@@ -201,10 +207,11 @@ function buildPublicFooter(paths) {
           <div>
             <div class="footer__col-title">Services</div>
             <ul class="footer__links">
-              <li><a href="${paths.services}" class="footer__link">Architectural Design</a></li>
-              <li><a href="${paths.services}" class="footer__link">Interior Design</a></li>
-              <li><a href="${paths.services}" class="footer__link">3D Visualization</a></li>
-              <li><a href="${paths.services}" class="footer__link">Project Management</a></li>
+              <li><a href="${paths.serviceDetails}?service=architectural-design" class="footer__link">Architectural Design</a></li>
+              <li><a href="${paths.serviceDetails}?service=interior-design" class="footer__link">Interior Design</a></li>
+              <li><a href="${paths.serviceDetails}?service=visualization" class="footer__link">3D Visualization</a></li>
+              <li><a href="${paths.serviceDetails}?service=lighting-design" class="footer__link">Lighting Design</a></li>
+              <li><a href="${paths.serviceDetails}?service=project-delivery" class="footer__link">Project Delivery</a></li>
               <li><a href="${paths.pricing}" class="footer__link">Pricing</a></li>
             </ul>
           </div>
@@ -297,6 +304,7 @@ const ThemeManager = (() => {
     writeStoredValue(STORAGE_KEYS.theme, theme);
     updateThemeColor(theme);
     syncControls(theme);
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
   }
 
   function toggle() {
@@ -410,24 +418,133 @@ const Navbar = (() => {
 })();
 
 const ScrollReveal = (() => {
-  function init() {
-    const elements = document.querySelectorAll('.reveal');
+  let observer = null;
+
+  function init(root = document) {
+    const elements = Array.from(root.querySelectorAll('.reveal')).filter(el => !el.dataset.revealBound);
     if (!elements.length) return;
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-      elements.forEach(el => el.classList.add('visible'));
+      elements.forEach(el => {
+        el.dataset.revealBound = 'true';
+        el.classList.add('visible');
+      });
       return;
     }
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    if (!observer) {
+      observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    }
 
-    elements.forEach(el => observer.observe(el));
+    elements.forEach(el => {
+      el.dataset.revealBound = 'true';
+      observer.observe(el);
+    });
+  }
+
+  return { init };
+})();
+
+const ParallaxMedia = (() => {
+  let items = [];
+  let ticking = false;
+  let bound = false;
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function update() {
+    ticking = false;
+
+    items.forEach(item => {
+      const rect = item.getBoundingClientRect();
+      const speed = parseFloat(item.dataset.parallax || '0.12');
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      const translate = clamp((progress - 0.5) * 60 * speed * 10, -24, 24);
+      item.style.transform = `translate3d(0, ${translate.toFixed(2)}px, 0) scale(1.04)`;
+    });
+  }
+
+  function requestTick() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  }
+
+  function init(root = document) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    root.querySelectorAll('[data-parallax]').forEach(item => {
+      item.dataset.parallaxBound = 'true';
+    });
+
+    items = Array.from(document.querySelectorAll('[data-parallax]'));
+    if (!items.length) return;
+
+    if (!bound) {
+      window.addEventListener('scroll', requestTick, { passive: true });
+      window.addEventListener('resize', requestTick);
+      bound = true;
+    }
+
+    requestTick();
+  }
+
+  return { init };
+})();
+
+const HeroLoad = (() => {
+  function init() {
+    const body = document.body;
+    if (!body || body.classList.contains('page-ready')) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      body.classList.add('page-ready');
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        body.classList.add('page-ready');
+      });
+    });
+  }
+
+  return { init };
+})();
+
+const MouseTilt = (() => {
+  function init(root = document) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    root.querySelectorAll('[data-tilt]').forEach(el => {
+      if (el.dataset.tiltBound) return;
+      el.dataset.tiltBound = 'true';
+
+      const intensity = parseFloat(el.dataset.tiltStrength || '10');
+
+      el.addEventListener('pointermove', event => {
+        const rect = el.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        const rotateY = (x - 0.5) * intensity;
+        const rotateX = (0.5 - y) * intensity * 0.9;
+
+        el.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translate3d(0, -4px, 0)`;
+      });
+
+      el.addEventListener('pointerleave', () => {
+        el.style.transform = '';
+      });
+    });
   }
 
   return { init };
@@ -782,18 +899,21 @@ function initActiveNav() {
 
     const targetPath = normalizePath(new URL(href, window.location.href).pathname);
     const isHomeGroup = link.dataset.navGroup === 'home' && (currentFile === 'index.html' || currentFile === 'home2.html' || currentPath === '/');
-    const isMatch = targetPath === currentPath || isHomeGroup;
+    const isServicesGroup = currentFile === 'service-details.html' && targetPath.endsWith('/services');
+    const isMatch = targetPath === currentPath || isHomeGroup || isServicesGroup;
     link.classList.toggle('is-active', isMatch);
   });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initPublicChrome();
-  initBrandAssets();
   ThemeManager.init();
   RTLManager.init();
   Navbar.init();
+  HeroLoad.init();
   ScrollReveal.init();
+  ParallaxMedia.init();
+  MouseTilt.init();
   Tabs.init();
   Accordion.init();
   FormValidation.init();

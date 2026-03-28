@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aura Arch Admin Dashboard Team — view studio roles, team capacity, and staff assignments across active projects." />
   <title>Team — Admin · Aura Arch</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/aura-arch-favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/images/aura-arch-favicon.svg" />
   <link rel="stylesheet" href="../../assets/css/style.css" />
   <link rel="stylesheet" href="../../assets/css/dark-mode.css" />
   <link rel="stylesheet" href="../../assets/css/rtl.css" />
@@ -29,10 +32,10 @@
 </head>
 <body class="dashboard-layout">
 
-  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: #d3a06d;">
+  <aside class="dash-sidebar" id="dashSidebar" style="--sidebar-accent: var(--clr-gold);">
     <div class="dash-sidebar__brand">
-      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">SN</div><span class="navbar__logo-text">Aura Arch</span></a>
-      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(211,160,109,0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
+      <a href="../../index.html" class="navbar__logo"><div class="navbar__logo-mark">AA</div><span class="navbar__logo-text">Aura Arch</span></a>
+      <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--clr-gold);background:rgba(var(--clr-gold-rgb),0.12);padding:0.2rem 0.6rem;border-radius:4px;margin-top:0.5rem;display:block;text-align:center;">Admin</span>
     </div>
     <nav class="dash-nav">
       <p class="dash-nav__section">Studio</p>
@@ -159,7 +162,7 @@
           </div>
         </div>
         <div class="team-card" style="background:var(--clr-gray-50);border-style:dashed;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;cursor:pointer;min-height:260px;">
-          <div style="width:48px;height:48px;background:rgba(211,160,109,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+          <div style="width:48px;height:48px;background:rgba(var(--clr-gold-rgb),0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;">
             <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="22"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </div>
           <p style="font-size:0.875rem;font-weight:500;color:var(--clr-text-muted);">Add Team Member</p>
