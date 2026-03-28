@@ -47,7 +47,7 @@ function initBrandAssets() {
   const base = getScriptBase();
   if (!base) return;
 
-  const faviconHref = new URL('../images/aura-arch-favicon.svg?v=20260328', base).href;
+  const faviconHref = new URL('../images/aura-arch-favicon.svg?v=20260328b', base).href;
   const iconSelectors = [
     'link[rel="icon"]',
     'link[rel="shortcut icon"]',
