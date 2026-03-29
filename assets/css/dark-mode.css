@@ -37,7 +37,11 @@
 }
 
 [data-theme="dark"] .page-header {
-  background: var(--clr-black);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(255,255,255,0.04), transparent 22%),
+    radial-gradient(circle at 84% 14%, rgba(var(--clr-gold-rgb), 0.16), transparent 28%),
+    radial-gradient(circle at 74% 82%, rgba(var(--clr-gold-rgb), 0.08), transparent 22%),
+    linear-gradient(118deg, rgba(var(--clr-black-rgb), 0.99) 0%, rgba(var(--clr-black-rgb), 0.96) 54%, rgba(var(--clr-black-rgb), 0.90) 100%);
   border-bottom-color: var(--border-color);
 }
 

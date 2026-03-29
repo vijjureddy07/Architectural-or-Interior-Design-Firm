@@ -24,7 +24,7 @@ const JournalPostPage = (() => {
       bio: 'Isabel leads interior direction at Aura Arch with a focus on calm spatial sequencing, tactile material palettes, and rooms that support daily life with less visual noise.',
       heroImage: '../assets/images/pages/journal-post/kian-zhang-zg7B433_29s-unsplash.jpg',
       heroAlt: 'Biophilic design living room interior',
-      cardImage: '../assets/images/pages/journal-post/lauren-wang-3oPrNLLVzZk-unsplash.jpg',
+      cardImage: '../assets/images/pages/journal/lotus-design-n-print-RwXneIyqxAw-unsplash.jpg',
       tags: ['Biophilic Design', 'Interior Design', 'Materials', 'Sustainability'],
       body: `
         <p>The rooms people return to most often are usually the ones that feel easiest on the body. They hold soft daylight, some visual depth, honest materials, and an atmosphere that slows the pace of the day. That response is not accidental. It is part of what biophilic design tries to formalize.</p>
@@ -141,7 +141,7 @@ const JournalPostPage = (() => {
       author: 'David Kim',
       role: 'Project Lead',
       bio: 'David coordinates design development and delivery at Aura Arch, shaping the workflow that carries projects from concept through procurement and final completion.',
-      heroImage: '../assets/images/pages/journal-post/daniel-mccullough-HtBlQdxfG9k-unsplash.jpg',
+      heroImage: '../assets/images/pages/journal/ryan-ancill-h86ZkM5Qiqg-unsplash.jpg',
       heroAlt: 'Design process workspace with plans and samples',
       cardImage: '../assets/images/pages/journal-post/austin-distel-wawEfYdpkag-unsplash.jpg',
       tags: ['Process', 'Studio Workflow', 'Project Delivery', 'Interior Design'],

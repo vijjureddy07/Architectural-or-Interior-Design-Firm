@@ -29,17 +29,17 @@
     <section class="page-section">
       <div class="container">
         <div class="categories-bar reveal" aria-label="Journal categories">
-          <button class="category-pill active" type="button">All</button>
-          <button class="category-pill" type="button">Architecture</button>
-          <button class="category-pill" type="button">Interior Design</button>
-          <button class="category-pill" type="button">Materials</button>
-          <button class="category-pill" type="button">Sustainability</button>
-          <button class="category-pill" type="button">Studio News</button>
-          <button class="category-pill" type="button">Process</button>
+          <button class="category-pill active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="category-pill" type="button" data-filter="architecture" aria-pressed="false">Architecture</button>
+          <button class="category-pill" type="button" data-filter="interior-design" aria-pressed="false">Interior Design</button>
+          <button class="category-pill" type="button" data-filter="materials" aria-pressed="false">Materials</button>
+          <button class="category-pill" type="button" data-filter="sustainability" aria-pressed="false">Sustainability</button>
+          <button class="category-pill" type="button" data-filter="studio-news" aria-pressed="false">Studio News</button>
+          <button class="category-pill" type="button" data-filter="process" aria-pressed="false">Process</button>
         </div>
 
         <div class="journal-grid">
-          <article class="journal-card journal-card--feature reveal">
+          <article class="journal-card journal-card--feature reveal" data-categories="interior-design sustainability">
             <div class="journal-card__media">
               <a href="journal-post.html?article=biophilic-design" class="journal-card__media-link" aria-label="Read article: The Case for Biophilic Design">
                 <img src="../assets/images/pages/journal/kian-zhang-zg7B433_29s-unsplash.jpg" alt="Biophilic design living room" loading="lazy" />
@@ -55,7 +55,7 @@
             </div>
           </article>
 
-          <article class="journal-card reveal">
+          <article class="journal-card reveal" data-categories="architecture">
             <div class="journal-card__media"><a href="journal-post.html?article=thresholds" class="journal-card__media-link" aria-label="Read article: Thresholds That Slow You Down in the Best Way"><img src="../assets/images/pages/journal/annie-spratt-krEX3ehhezs-unsplash.jpg" alt="Architectural threshold and entry design" loading="lazy" /></a></div>
             <div class="journal-card__body">
               <div class="journal-card__tag">Architecture</div>
@@ -67,7 +67,7 @@
             </div>
           </article>
 
-          <article class="journal-card reveal reveal-delay-1">
+          <article class="journal-card reveal reveal-delay-1" data-categories="materials">
             <div class="journal-card__media"><a href="journal-post.html?article=stone-restraint" class="journal-card__media-link" aria-label="Read article: Why Mixed Stone Palettes Still Need Restraint"><img src="../assets/images/pages/journal/cat-han-VgyN_CWXQVM-unsplash.jpg" alt="Japandi-inspired interior details" loading="lazy" /></a></div>
             <div class="journal-card__body">
               <div class="journal-card__tag">Materials</div>
@@ -79,7 +79,7 @@
             </div>
           </article>
 
-          <article class="journal-card reveal reveal-delay-2">
+          <article class="journal-card reveal reveal-delay-2" data-categories="interior-design">
             <div class="journal-card__media"><a href="journal-post.html?article=lighting-evening-mood" class="journal-card__media-link" aria-label="Read article: Lighting as Architecture: Designing for Evening Mood"><img src="../assets/images/pages/journal/tim-schmidbauer-3SDBYr0mszs-unsplash.jpg" alt="Layered lighting interior" loading="lazy" /></a></div>
             <div class="journal-card__body">
               <div class="journal-card__tag">Interior Design</div>
@@ -91,8 +91,8 @@
             </div>
           </article>
 
-          <article class="journal-card reveal">
-            <div class="journal-card__media"><a href="journal-post.html?article=aura-arch-workflow" class="journal-card__media-link" aria-label="Read article: From Brief to Build: Inside the Aura Arch Workflow"><img src="../assets/images/pages/journal/daniel-mccullough-HtBlQdxfG9k-unsplash.jpg" alt="Design process workspace" loading="lazy" /></a></div>
+          <article class="journal-card reveal" data-categories="process">
+            <div class="journal-card__media"><a href="journal-post.html?article=aura-arch-workflow" class="journal-card__media-link" aria-label="Read article: From Brief to Build: Inside the Aura Arch Workflow"><img src="../assets/images/pages/journal/ryan-ancill-h86ZkM5Qiqg-unsplash.jpg" alt="Design process workspace" loading="lazy" /></a></div>
             <div class="journal-card__body">
               <div class="journal-card__tag">Process</div>
               <h3 class="journal-card__title"><a href="journal-post.html?article=aura-arch-workflow" style="color:inherit;text-decoration:none;">From Brief to Build: Inside the Aura Arch Workflow</a></h3>
@@ -103,8 +103,8 @@
             </div>
           </article>
 
-          <article class="journal-card reveal reveal-delay-1">
-            <div class="journal-card__media"><a href="journal-post.html?article=kitchen-main-room" class="journal-card__media-link" aria-label="Read article: When the Kitchen Becomes the Main Room"><img src="../assets/images/pages/journal/lauren-wang-3oPrNLLVzZk-unsplash.jpg" alt="Modern kitchen design" loading="lazy" /></a></div>
+          <article class="journal-card reveal reveal-delay-1" data-categories="architecture">
+            <div class="journal-card__media"><a href="journal-post.html?article=kitchen-main-room" class="journal-card__media-link" aria-label="Read article: When the Kitchen Becomes the Main Room"><img src="../assets/images/pages/journal/lotus-design-n-print-RwXneIyqxAw-unsplash.jpg" alt="Modern kitchen design" loading="lazy" /></a></div>
             <div class="journal-card__body">
               <div class="journal-card__tag">Architecture</div>
               <h3 class="journal-card__title"><a href="journal-post.html?article=kitchen-main-room" style="color:inherit;text-decoration:none;">When the Kitchen Becomes the Main Room</a></h3>
@@ -115,7 +115,7 @@
             </div>
           </article>
 
-          <article class="journal-card reveal reveal-delay-2">
+          <article class="journal-card reveal reveal-delay-2" data-categories="studio-news">
             <div class="journal-card__media"><a href="journal-post.html?article=residential-design-excellence" class="journal-card__media-link" aria-label="Read article: Aura Arch Recognized for Residential Design Excellence"><img src="../assets/images/pages/journal/sean-pollock-PhYq704ffdA-unsplash.jpg" alt="Studio award recognition event" loading="lazy" /></a></div>
             <div class="journal-card__body">
               <div class="journal-card__tag">Studio News</div>
@@ -141,10 +141,23 @@
   <footer class="footer"></footer>
   <script src="../assets/js/main.js"></script>
   <script>
-    document.querySelectorAll('.category-pill').forEach(pill => {
+    const categoryPills = document.querySelectorAll('.category-pill');
+    const journalCards = document.querySelectorAll('.journal-card');
+
+    categoryPills.forEach(pill => {
       pill.addEventListener('click', () => {
-        document.querySelectorAll('.category-pill').forEach(item => item.classList.remove('active'));
-        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+
+        categoryPills.forEach(item => {
+          item.classList.toggle('active', item === pill);
+          item.setAttribute('aria-pressed', item === pill ? 'true' : 'false');
+        });
+
+        journalCards.forEach(card => {
+          const categories = (card.dataset.categories || '').split(/\s+/).filter(Boolean);
+          const shouldShow = filter === 'all' || categories.includes(filter);
+          card.hidden = !shouldShow;
+        });
       });
     });
   </script>

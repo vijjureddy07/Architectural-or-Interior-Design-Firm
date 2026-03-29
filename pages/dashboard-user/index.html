@@ -110,11 +110,11 @@
       
       <div class="dash-project-banner">
         <div>
-          <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-gold);margin-bottom:0.35rem;">Active Project</p>
+          <p class="dash-project-banner__eyebrow">Active Project</p>
           <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:white;margin:0;">Upper West Side Residence</h2>
-          <p style="color:rgba(255,255,255,0.6);font-size:0.875rem;margin:0.35rem 0 0;">Lead Designer: Isabel Voss · Started October 2025</p>
+          <p class="dash-project-banner__meta">Lead Designer: Isabel Voss · Started October 2025</p>
         </div>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <div class="dash-project-banner__actions">
           <a href="renderings.html" class="btn btn--primary" style="font-size:0.875rem;">View Renderings</a>
           <a href="messages.html" class="btn btn--ghost-light" style="font-size:0.875rem;">Message Team</a>
         </div>
@@ -161,7 +161,7 @@
       </div>
 
       
-      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+      <div class="dash-split-layout">
 
         
         <div class="dash-card">
@@ -204,37 +204,35 @@
         
         <div style="display:flex;flex-direction:column;gap:1.5rem;">
           <div class="dash-card">
-            <div class="dash-card__header">
-              <h3 class="dash-card__title">Action Required</h3>
-              <span style="font-size:0.75rem;color:var(--clr-gold);font-weight:600;">3 pending</span>
+          <div class="dash-card__header">
+            <h3 class="dash-card__title">Action Required</h3>
+            <span style="font-size:0.75rem;color:var(--clr-gold);font-weight:600;">3 pending</span>
+          </div>
+          <div class="dash-action-list">
+            <div class="dash-action-item">
+              <div class="dash-action-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="dash-action-item__copy"><p class="dash-action-item__title">Approve kitchen stone</p><p class="dash-action-item__meta">Sample arriving Mar 28</p></div>
             </div>
-            <div style="display:flex;flex-direction:column;gap:1rem;">
-              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(var(--clr-gold-rgb),0.06);border-radius:8px;border:1px solid rgba(var(--clr-gold-rgb),0.2);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><circle cx="12" cy="12" r="3"/></svg>
-                <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Approve kitchen stone</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Sample arriving Mar 28</p></div>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(var(--clr-gold-rgb),0.06);border-radius:8px;border:1px solid rgba(var(--clr-gold-rgb),0.2);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
-                <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Review Render Batch 2</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">4 renders awaiting feedback</p></div>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.75rem;padding:0.875rem;background:rgba(var(--clr-gold-rgb),0.06);border-radius:8px;border:1px solid rgba(var(--clr-gold-rgb),0.2);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="1.5" width="18" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <div><p style="font-size:0.85rem;font-weight:600;margin:0;color:var(--clr-text);">Sign lighting proposal</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Document ready to sign</p></div>
-              </div>
+            <div class="dash-action-item">
+              <div class="dash-action-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><rect x="2" y="3" width="20" height="14" rx="2"/></svg></div>
+              <div class="dash-action-item__copy"><p class="dash-action-item__title">Review Render Batch 2</p><p class="dash-action-item__meta">4 renders awaiting feedback</p></div>
             </div>
+            <div class="dash-action-item">
+              <div class="dash-action-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+              <div class="dash-action-item__copy"><p class="dash-action-item__title">Sign lighting proposal</p><p class="dash-action-item__meta">Document ready to sign</p></div>
+            </div>
+          </div>
           </div>
 
           
           <div class="dash-card" style="text-align:center;">
             <h3 class="dash-card__title" style="margin-bottom:1.5rem;">Overall Progress</h3>
-            <div style="position:relative;width:120px;height:120px;margin:0 auto 1rem;">
+            <div class="dash-circle-progress">
               <svg viewBox="0 0 120 120" width="120" height="120">
                 <circle cx="60" cy="60" r="50" fill="none" stroke="var(--clr-border)" stroke-width="10"/>
                 <circle cx="60" cy="60" r="50" fill="none" stroke="var(--clr-gold)" stroke-width="10" stroke-dasharray="314" stroke-dashoffset="104" stroke-linecap="round" transform="rotate(-90 60 60)"/>
               </svg>
-              <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-                <span style="font-family:var(--font-display);font-size:1.75rem;font-weight:400;color:var(--clr-text);">67%</span>
-              </div>
+              <div class="dash-circle-progress__value">67%</div>
             </div>
             <p style="font-size:0.8rem;color:var(--clr-text-muted);">Design Development Phase</p>
           </div>
@@ -247,22 +245,22 @@
           <h3 class="dash-card__title">Latest Renderings</h3>
           <a href="renderings.html" style="font-size:0.8rem;color:var(--clr-gold);font-weight:600;text-decoration:none;">View All →</a>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
-          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
-            <img src="../../assets/images/pages/dashboard-user/index/preview-01.jpg" alt="Living Room" style="width:100%;height:100%;object-fit:cover;" />
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Living Room v2</p></div>
+        <div class="dash-preview-grid">
+          <div class="dash-preview-card">
+            <img src="../../assets/images/pages/dashboard-user/index/preview-01.jpg" alt="Living Room" />
+            <div class="dash-preview-card__label"><p>Living Room v2</p></div>
           </div>
-          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
-            <img src="../../assets/images/pages/dashboard-user/index/preview-02.jpg" alt="Master Bedroom" style="width:100%;height:100%;object-fit:cover;" />
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Master Bedroom</p></div>
+          <div class="dash-preview-card">
+            <img src="../../assets/images/pages/dashboard-user/index/preview-02.jpg" alt="Master Bedroom" />
+            <div class="dash-preview-card__label"><p>Master Bedroom</p></div>
           </div>
-          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
-            <img src="../../assets/images/pages/dashboard-user/index/preview-03.jpg" alt="Kitchen" style="width:100%;height:100%;object-fit:cover;" />
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Kitchen</p></div>
+          <div class="dash-preview-card">
+            <img src="../../assets/images/pages/dashboard-user/index/preview-03.jpg" alt="Kitchen" />
+            <div class="dash-preview-card__label"><p>Kitchen</p></div>
           </div>
-          <div style="border-radius:8px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;">
-            <img src="../../assets/images/pages/dashboard-user/index/preview-04.jpg" alt="Entrance Hall" style="width:100%;height:100%;object-fit:cover;" />
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.75rem;background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);"><p style="color:white;font-size:0.75rem;font-weight:600;margin:0;">Entrance Hall</p></div>
+          <div class="dash-preview-card">
+            <img src="../../assets/images/pages/dashboard-user/index/preview-04.jpg" alt="Entrance Hall" />
+            <div class="dash-preview-card__label"><p>Entrance Hall</p></div>
           </div>
         </div>
       </div>

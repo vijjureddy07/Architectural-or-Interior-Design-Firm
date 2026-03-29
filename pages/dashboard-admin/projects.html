@@ -17,16 +17,13 @@
     .project-table th { text-align: left; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clr-text-muted); padding: 0.75rem 1rem; border-bottom: 1px solid var(--clr-border); }
     .project-table td { padding: 1rem; border-bottom: 1px solid var(--clr-border); font-size: 0.875rem; color: var(--clr-text); vertical-align: middle; }
     .project-table tr:last-child td { border-bottom: none; }
-    .project-table tr:hover td { background: var(--clr-gray-50); }
+    .project-table tr:hover td { background: rgba(var(--clr-gold-rgb),0.04); }
     .status-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
     .status-pill.active { background: rgba(var(--clr-gold-rgb),0.12); color: var(--clr-gold-dark); }
     .status-pill.complete { background: #dcfce7; color: #166534; }
     .status-pill.planning { background: rgba(59,130,246,0.1); color: #1d4ed8; }
     .status-pill.on-hold { background: rgba(249,115,22,0.1); color: #c2410c; }
-    .avatar-stack { display: flex; }
-    .avatar-stack img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid white; margin-left: -8px; object-fit: cover; }
-    .avatar-stack img:first-child { margin-left: 0; }
-    .prog-mini { height: 4px; background: var(--clr-gray-100); border-radius: 100px; width: 80px; overflow: hidden; }
+    .prog-mini { height: 4px; background: rgba(var(--clr-gold-rgb),0.12); border-radius: 100px; width: 80px; overflow: hidden; }
     .prog-mini__fill { height: 100%; background: var(--clr-gold); border-radius: 100px; }
     .filter-bar { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
     .filter-pill { padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--clr-border); background: transparent; color: var(--clr-text-muted); cursor: pointer; transition: all 0.2s; }
@@ -73,11 +70,11 @@
 
       
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
-        <div class="filter-bar" style="margin-bottom:0;">
-          <button class="filter-pill active">All (12)</button>
-          <button class="filter-pill">Active (8)</button>
-          <button class="filter-pill">Planning (3)</button>
-          <button class="filter-pill">Complete (1)</button>
+        <div class="dash-pill-row filter-bar" style="margin-bottom:0;">
+          <button class="dash-filter-pill filter-pill active">All (12)</button>
+          <button class="dash-filter-pill filter-pill">Active (8)</button>
+          <button class="dash-filter-pill filter-pill">Planning (3)</button>
+          <button class="dash-filter-pill filter-pill">Complete (1)</button>
         </div>
         <button class="btn btn--primary" style="gap:0.5rem;">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -86,8 +83,8 @@
       </div>
 
       
-      <div class="dash-card" style="padding:0;overflow:hidden;">
-        <table class="project-table">
+      <div class="dash-card" style="padding:0;">
+        <table class="project-table dash-table">
           <thead>
             <tr>
               <th>Project</th>
@@ -103,76 +100,76 @@
           <tbody>
             <tr>
               <td><div><p style="font-weight:600;margin:0;">Park Slope Residence</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Brooklyn, NY</p></div></td>
-              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="../../assets/images/pages/dashboard-admin/projects/client-01.jpg" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>A. Chen</span></div></td>
+              <td><div class="dash-table-entity"><span class="dash-entity-badge">AC</span><span>A. Chen</span></div></td>
               <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Interior</span></td>
-              <td><div class="avatar-stack"><img src="../../assets/images/pages/dashboard-admin/projects/client-01.jpg" alt="" /><img src="../../assets/images/pages/dashboard-admin/projects/client-03.jpg" alt="" /><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" /></div></td>
+              <td><div class="dash-chip-stack"><span class="dash-chip">IV</span><span class="dash-chip dash-chip--soft">PT</span><span class="dash-chip dash-chip--dark">DK</span></div></td>
               <td><div><p style="font-size:0.78rem;margin:0 0 4px;">72%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:72%;"></div></div></div></td>
               <td><span style="font-size:0.8rem;">Jun 12, 2026</span></td>
               <td><span class="status-pill active">Active</span></td>
-              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;" title="View"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              <td><button class="dash-table-action" title="View project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
             </tr>
             <tr>
               <td><div><p style="font-weight:600;margin:0;">Tribeca Penthouse</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Manhattan, NY</p></div></td>
-              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>J. Hartley</span></div></td>
+              <td><div class="dash-table-entity"><span class="dash-entity-badge">JH</span><span>J. Hartley</span></div></td>
               <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Architecture + Interior</span></td>
-              <td><div class="avatar-stack"><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" /><img src="../../assets/images/pages/dashboard-admin/projects/client-01.jpg" alt="" /></div></td>
+              <td><div class="dash-chip-stack"><span class="dash-chip dash-chip--dark">DK</span><span class="dash-chip">IV</span></div></td>
               <td><div><p style="font-size:0.78rem;margin:0 0 4px;">45%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:45%;"></div></div></div></td>
               <td><span style="font-size:0.8rem;">Sep 30, 2026</span></td>
               <td><span class="status-pill active">Active</span></td>
-              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              <td><button class="dash-table-action" title="View project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
             </tr>
             <tr>
               <td><div><p style="font-weight:600;margin:0;">Saffron Club Dubai</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">DIFC, Dubai UAE</p></div></td>
-              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="../../assets/images/pages/dashboard-admin/projects/client-03.jpg" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>Al-Mansoor Group</span></div></td>
+              <td><div class="dash-table-entity"><span class="dash-entity-badge dash-entity-badge--dark">AG</span><span>Al-Mansoor Group</span></div></td>
               <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Hospitality</span></td>
-              <td><div class="avatar-stack"><img src="../../assets/images/pages/dashboard-admin/projects/client-03.jpg" alt="" /><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" /></div></td>
+              <td><div class="dash-chip-stack"><span class="dash-chip dash-chip--dark">MT</span><span class="dash-chip dash-chip--soft">CR</span></div></td>
               <td><div><p style="font-size:0.78rem;margin:0 0 4px;">90%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:90%;"></div></div></div></td>
               <td><span style="font-size:0.8rem;">Apr 5, 2026</span></td>
               <td><span class="status-pill active">Active</span></td>
-              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              <td><button class="dash-table-action" title="View project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
             </tr>
             <tr>
               <td><div><p style="font-weight:600;margin:0;">Meridian Capital HQ</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Mayfair, London</p></div></td>
-              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>Meridian Capital</span></div></td>
+              <td><div class="dash-table-entity"><span class="dash-entity-badge dash-entity-badge--dark">MC</span><span>Meridian Capital</span></div></td>
               <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Commercial</span></td>
-              <td><div class="avatar-stack"><img src="../../assets/images/pages/dashboard-admin/projects/client-01.jpg" alt="" /></div></td>
+              <td><div class="dash-chip-stack"><span class="dash-chip">IV</span></div></td>
               <td><div><p style="font-size:0.78rem;margin:0 0 4px;">100%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:100%;background:#22c55e;"></div></div></div></td>
               <td><span style="font-size:0.8rem;">Dec 15, 2025</span></td>
               <td><span class="status-pill complete">Complete</span></td>
-              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              <td><button class="dash-table-action" title="View project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
             </tr>
             <tr>
               <td><div><p style="font-weight:600;margin:0;">Gramercy Villa</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">Manhattan, NY</p></div></td>
-              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="../../assets/images/pages/dashboard-admin/projects/client-01.jpg" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>S. Patel</span></div></td>
+              <td><div class="dash-table-entity"><span class="dash-entity-badge">SP</span><span>S. Patel</span></div></td>
               <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Residential</span></td>
-              <td><div class="avatar-stack"><img src="../../assets/images/pages/dashboard-admin/projects/client-03.jpg" alt="" /></div></td>
+              <td><div class="dash-chip-stack"><span class="dash-chip dash-chip--dark">MT</span></div></td>
               <td><div><p style="font-size:0.78rem;margin:0 0 4px;">12%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:12%;"></div></div></div></td>
               <td><span style="font-size:0.8rem;">Jan 20, 2027</span></td>
               <td><span class="status-pill planning">Planning</span></td>
-              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              <td><button class="dash-table-action" title="View project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
             </tr>
             <tr>
               <td><div><p style="font-weight:600;margin:0;">Noma Restaurant Fit-out</p><p style="font-size:0.75rem;color:var(--clr-text-muted);margin:0;">SoHo, NY</p></div></td>
-              <td><div style="display:flex;align-items:center;gap:0.6rem;"><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" /><span>Noma Group</span></div></td>
+              <td><div class="dash-table-entity"><span class="dash-entity-badge dash-entity-badge--dark">NG</span><span>Noma Group</span></div></td>
               <td><span style="font-size:0.78rem;color:var(--clr-text-muted);">Hospitality</span></td>
-              <td><div class="avatar-stack"><img src="../../assets/images/pages/dashboard-admin/projects/admin-avatar.jpg" alt="" /><img src="../../assets/images/pages/dashboard-admin/projects/client-01.jpg" alt="" /></div></td>
+              <td><div class="dash-chip-stack"><span class="dash-chip dash-chip--dark">DK</span><span class="dash-chip">MT</span></div></td>
               <td><div><p style="font-size:0.78rem;margin:0 0 4px;">60%</p><div class="prog-mini"><div class="prog-mini__fill" style="width:60%;"></div></div></div></td>
               <td><span style="font-size:0.8rem;">Jul 8, 2026</span></td>
               <td><span class="status-pill active">Active</span></td>
-              <td><button style="background:none;border:none;cursor:pointer;color:var(--clr-text-muted);padding:0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
+              <td><button class="dash-table-action" title="View project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button></td>
             </tr>
           </tbody>
         </table>
       </div>
 
       
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;font-size:0.8rem;color:var(--clr-text-muted);">
+      <div class="dash-pagination">
         <span>Showing 6 of 12 projects</span>
-        <div style="display:flex;gap:0.5rem;">
-          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:none;cursor:pointer;font-size:0.8rem;">Previous</button>
-          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:var(--clr-black);color:white;cursor:pointer;font-size:0.8rem;">1</button>
-          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:none;cursor:pointer;font-size:0.8rem;">2</button>
-          <button style="padding:0.4rem 0.85rem;border:1px solid var(--clr-border);border-radius:6px;background:none;cursor:pointer;font-size:0.8rem;">Next</button>
+        <div class="dash-pagination__controls">
+          <button class="dash-page-btn">Previous</button>
+          <button class="dash-page-btn dash-page-btn--active">1</button>
+          <button class="dash-page-btn">2</button>
+          <button class="dash-page-btn">Next</button>
         </div>
       </div>
 
