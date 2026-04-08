@@ -235,4 +235,8 @@
   [dir="rtl"] .dashboard-main {
     margin-right: 0 !important;
   }
+
+  [dir="rtl"] .dash-topbar__left {
+    flex-direction: row;
+  }
 }

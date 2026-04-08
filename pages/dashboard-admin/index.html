@@ -162,8 +162,23 @@
   <script src="../../assets/js/dashboard.js"></script>
   <script>
     const revenueCanvas = document.getElementById('revenueChart');
+    const donutCanvas = document.getElementById('donutChart');
     const months = ['Oct','Nov','Dec','Jan','Feb','Mar'];
     const data = [185000, 220000, 310000, 195000, 280000, 410000];
+    const projectBreakdown = [5, 3, 2, 2];
+
+    function sizeCanvas(canvas, height) {
+      const ratio = window.devicePixelRatio || 1;
+      const width = Math.max(220, Math.floor(canvas.getBoundingClientRect().width || canvas.parentElement?.clientWidth || 320));
+      canvas.width = width * ratio;
+      canvas.height = height * ratio;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+
+      const context = canvas.getContext('2d');
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      return { context, width };
+    }
 
     function drawRevenueChart() {
       if (!revenueCanvas) return;
@@ -172,40 +187,106 @@
       const gold = styles.getPropertyValue('--clr-gold').trim() || '#E25D47';
       const goldRgb = styles.getPropertyValue('--clr-gold-rgb').trim() || '200, 164, 107';
       const theme = document.documentElement.getAttribute('data-theme');
-      const textColor = theme === 'dark' ? 'rgba(255,255,255,0.58)' : 'rgba(23,20,22,0.52)';
+      const textColor = theme === 'dark' ? 'rgba(255,255,255,0.72)' : 'rgba(23,20,22,0.78)';
       const max = Math.max(...data);
-      const h = 240;
-      const pad = 40;
-      const barW = 40;
-      const gap = ((revenueCanvas.offsetWidth || 500) - pad * 2 - barW * months.length) / (months.length - 1);
+      const height = 240;
+      const { context: c, width } = sizeCanvas(revenueCanvas, height);
+      const compact = width < 360;
+      const padX = compact ? 20 : 28;
+      const baseGap = compact ? 6 : 10;
+      let barW = Math.floor((width - padX * 2 - baseGap * (months.length - 1)) / months.length);
+      barW = Math.max(compact ? 18 : 22, Math.min(compact ? 30 : 40, barW));
+      let gap = Math.floor((width - padX * 2 - barW * months.length) / (months.length - 1));
+      if (gap < baseGap) {
+        gap = baseGap;
+        barW = Math.max(16, Math.floor((width - padX * 2 - gap * (months.length - 1)) / months.length));
+      }
 
-      revenueCanvas.width = revenueCanvas.offsetWidth || 500;
-      revenueCanvas.height = h;
+      const baseline = height - (compact ? 24 : 30);
+      const valueFont = compact ? '600 10px DM Sans, sans-serif' : '600 11px DM Sans, sans-serif';
+      const monthFont = compact ? '500 10px DM Sans, sans-serif' : '500 11px DM Sans, sans-serif';
 
-      const c = revenueCanvas.getContext('2d');
-      c.clearRect(0, 0, revenueCanvas.width, h);
+      c.clearRect(0, 0, width, height);
 
       months.forEach((m, i) => {
-        const x = pad + i * (barW + gap);
-        const bh = (data[i] / max) * (h - 60);
-        const y = h - 30 - bh;
-        const grad = c.createLinearGradient(0, y, 0, h - 30);
+        const x = padX + i * (barW + gap);
+        const barHeight = (data[i] / max) * (height - (compact ? 70 : 78));
+        const y = baseline - barHeight;
+        const grad = c.createLinearGradient(0, y, 0, baseline);
         grad.addColorStop(0, gold);
-        grad.addColorStop(1, `rgba(${goldRgb}, 0.2)`);
+        grad.addColorStop(1, `rgba(${goldRgb}, 0.34)`);
         c.fillStyle = grad;
         c.beginPath();
-        c.roundRect(x, y, barW, bh, 4);
+        c.roundRect(x, y, barW, barHeight, 4);
         c.fill();
         c.fillStyle = textColor;
-        c.font = '11px sans-serif';
         c.textAlign = 'center';
-        c.fillText(m, x + barW / 2, h - 10);
-        c.fillText('$' + (data[i] / 1000).toFixed(0) + 'k', x + barW / 2, y - 5);
+        c.font = valueFont;
+        c.fillText('$' + (data[i] / 1000).toFixed(0) + 'k', x + barW / 2, Math.max(12, y - 6));
+        c.font = monthFont;
+        c.fillText(m, x + barW / 2, height - 8);
       });
     }
 
-    drawRevenueChart();
-    document.addEventListener('themechange', drawRevenueChart);
+    function drawDonutChart() {
+      if (!donutCanvas) return;
+
+      const styles = getComputedStyle(document.documentElement);
+      const theme = document.documentElement.getAttribute('data-theme');
+      const gold = styles.getPropertyValue('--clr-gold').trim() || '#E25D47';
+      const goldRgb = styles.getPropertyValue('--clr-gold-rgb').trim() || '200, 164, 107';
+      const ink = theme === 'dark' ? 'rgba(255,255,255,0.82)' : 'rgba(23,20,22,0.84)';
+      const muted = theme === 'dark' ? 'rgba(255,255,255,0.62)' : 'rgba(23,20,22,0.62)';
+      const total = projectBreakdown.reduce((sum, value) => sum + value, 0);
+      const { context: c, width } = sizeCanvas(donutCanvas, 160);
+      const height = 160;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const radius = Math.min(width, height) * 0.31;
+      const lineWidth = Math.max(12, Math.round(radius * 0.34));
+      const gap = 0.08;
+      const colors = [
+        gold,
+        theme === 'dark' ? 'rgba(255,255,255,0.82)' : 'rgba(23,20,22,0.84)',
+        `rgba(${goldRgb}, 0.6)`,
+        `rgba(${goldRgb}, 0.32)`
+      ];
+
+      c.clearRect(0, 0, width, height);
+      c.lineCap = 'round';
+
+      let start = -Math.PI / 2;
+      projectBreakdown.forEach((value, index) => {
+        const span = (value / total) * (Math.PI * 2 - gap * projectBreakdown.length);
+        c.beginPath();
+        c.strokeStyle = colors[index];
+        c.lineWidth = lineWidth;
+        c.arc(centerX, centerY, radius, start, start + span);
+        c.stroke();
+        start += span + gap;
+      });
+
+      c.fillStyle = ink;
+      c.textAlign = 'center';
+      c.font = '600 24px Cormorant Garamond, Georgia, serif';
+      c.fillText(String(total), centerX, centerY - 2);
+      c.fillStyle = muted;
+      c.font = '600 10px DM Sans, sans-serif';
+      c.fillText('Active Projects', centerX, centerY + 18);
+    }
+
+    let chartFrame;
+    function redrawDashboardCharts() {
+      window.cancelAnimationFrame(chartFrame);
+      chartFrame = window.requestAnimationFrame(() => {
+        drawRevenueChart();
+        drawDonutChart();
+      });
+    }
+
+    redrawDashboardCharts();
+    document.addEventListener('themechange', redrawDashboardCharts);
+    window.addEventListener('resize', redrawDashboardCharts);
   </script>
 </body>
 </html>

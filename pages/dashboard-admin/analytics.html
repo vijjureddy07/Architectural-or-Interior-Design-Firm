@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="../../assets/css/dashboard.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   <style>
-    .analytics-kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 1.5rem; }
-    .kpi-card { background: var(--surface-elevated); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; }
+    .analytics-kpi { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .kpi-card { background: var(--surface-elevated); border-radius: 12px; border: 1px solid var(--clr-border); padding: 1.5rem; min-width: 0; }
     .kpi-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
     .kpi-value { font-family: var(--font-display); font-size: 1.875rem; font-weight: 400; color: var(--clr-text); margin-bottom: 0.2rem; line-height: 1; }
     .kpi-label { font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 0.5rem; }
@@ -25,6 +25,7 @@
     .analytics-grid--top { display:grid; grid-template-columns:1.6fr 1fr; gap:1.5rem; }
     .analytics-grid--bottom { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
     .geo-list { display:flex; flex-direction:column; gap:0.75rem; padding:0.5rem 0; }
+    .geo-list > div { min-width: 0; }
     .geo-list__track { height:6px; background:rgba(var(--clr-gold-rgb),0.12); border-radius:100px; overflow:hidden; }
     .geo-list__fill { height:100%; border-radius:100px; background:var(--clr-gold); }
     .geo-list__fill--ink { background: rgba(var(--clr-black-rgb), 0.82); }
@@ -35,6 +36,12 @@
     }
     @media (max-width: 768px) {
       .analytics-grid--bottom { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .analytics-kpi { grid-template-columns: 1fr; }
+      .kpi-card { padding: 1.25rem; }
+      .analytics-grid--top,
+      .analytics-grid--bottom { gap: 1rem; }
     }
   </style>
 </head>
@@ -169,7 +176,8 @@
     function buildCharts() {
       destroyCharts();
       const colors = palette();
-      const font = { family: 'DM Sans, sans-serif', size: 11 };
+      const compact = window.innerWidth < 480;
+      const font = { family: 'DM Sans, sans-serif', size: compact ? 10 : 11 };
 
       charts.push(new Chart(document.getElementById('revenueChart'), {
         type: 'bar',
@@ -195,7 +203,7 @@
           plugins: {
             legend: {
               position: 'top',
-              labels: { font, color: colors.textStrong, boxWidth: 10, padding: 16 }
+              labels: { font, color: colors.textStrong, boxWidth: 10, padding: compact ? 10 : 16 }
             }
           },
           scales: {
@@ -228,7 +236,7 @@
           plugins: {
             legend: {
               position: 'bottom',
-              labels: { font, padding: 14, boxWidth: 10, color: colors.textStrong }
+              labels: { font, padding: compact ? 10 : 14, boxWidth: 10, color: colors.textStrong }
             }
           }
         }
@@ -266,6 +274,11 @@
 
     buildCharts();
     document.addEventListener('themechange', buildCharts);
+    let analyticsResizeTimer;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(analyticsResizeTimer);
+      analyticsResizeTimer = window.setTimeout(buildCharts, 120);
+    });
   </script>
 </body>
 </html>
