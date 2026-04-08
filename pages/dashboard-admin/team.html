@@ -16,8 +16,8 @@
     .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
     .team-card { background: var(--surface-elevated); border-radius: 12px; border: 1px solid var(--clr-border); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
     .team-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
-    .team-card__photo { height: 160px; overflow: hidden; position: relative; }
-    .team-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-card__photo { min-height: 196px; aspect-ratio: 4 / 3; overflow: hidden; position: relative; display: flex; align-items: flex-end; justify-content: center; background: linear-gradient(180deg, rgba(var(--clr-gold-rgb),0.1), rgba(var(--clr-gold-rgb),0.03)); }
+    .team-card__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
     .team-card__role-badge { position: absolute; bottom: 0.75rem; left: 0.75rem; background: var(--clr-gold); color: white; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 10px; }
     .team-card__body { padding: 1.25rem; }
     .team-card__name { font-weight: 700; font-size: 0.9375rem; color: var(--clr-text); margin: 0 0 0.2rem; }
@@ -26,9 +26,18 @@
     .team-card__stat { text-align: center; flex: 1; }
     .team-card__stat-val { font-family: var(--font-display); font-size: 1.125rem; font-weight: 400; color: var(--clr-text); }
     .team-card__stat-label { font-size: 0.65rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.1rem; }
+    .team-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .team-toolbar__filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .team-filter-btn { padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid var(--clr-border); background: transparent; color: var(--clr-text-muted); cursor: pointer; }
+    .team-filter-btn.is-active { border-color: var(--clr-black); background: var(--clr-black); color: white; }
     @media (max-width: 1200px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr; }
+      .team-toolbar__filters { width: 100%; }
+      .team-filter-btn { flex: 1 1 calc(50% - 0.25rem); }
+      .team-toolbar .btn { width: 100%; justify-content: center; }
+    }
   </style>
 </head>
 <body class="dashboard-layout">
@@ -67,12 +76,12 @@
 
     <div class="dash-content">
 
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
-        <div style="display:flex;gap:0.5rem;">
-          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:none;background:var(--clr-black);color:white;cursor:pointer;">All Roles</button>
-          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">Architecture</button>
-          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">Interior</button>
-          <button style="padding:0.4rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:500;border:1px solid var(--clr-border);background:transparent;color:var(--clr-text-muted);cursor:pointer;">3D &amp; Viz</button>
+      <div class="team-toolbar">
+        <div class="team-toolbar__filters">
+          <button class="team-filter-btn is-active">All Roles</button>
+          <button class="team-filter-btn">Architecture</button>
+          <button class="team-filter-btn">Interior</button>
+          <button class="team-filter-btn">3D &amp; Viz</button>
         </div>
         <button class="btn btn--primary" style="gap:0.5rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Add Member</button>
       </div>

@@ -101,38 +101,60 @@ function initDashboardNotifications() {
   });
 }
 
+function getDashboardThemeIcons() {
+  return `
+    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </svg>
+  `;
+}
+
+function syncDashboardControlStates() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+
+  document.querySelectorAll('.dashboard-layout .theme-btn').forEach(button => {
+    button.setAttribute('aria-pressed', String(isDark));
+    button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  });
+
+  document.querySelectorAll('.dashboard-layout .rtl-btn').forEach(button => {
+    button.textContent = isRTL ? 'LTR' : 'RTL';
+    button.setAttribute('aria-pressed', String(isRTL));
+    button.setAttribute('aria-label', isRTL ? 'Switch to left-to-right layout' : 'Switch to right-to-left layout');
+  });
+}
+
 function initDashboardTopbarControls() {
+  document.querySelectorAll('.dashboard-layout .theme-btn').forEach(button => {
+    button.type = 'button';
+    button.innerHTML = getDashboardThemeIcons();
+  });
+
   const topbarRight = document.querySelector('.dash-topbar__right');
+  if (topbarRight) {
+    const notificationButtons = Array.from(topbarRight.querySelectorAll('button')).filter(button => {
+      const label = button.getAttribute('aria-label') || '';
+      return /notification/i.test(label) || button.classList.contains('dash-topbar__notif');
+    });
+
+    if (notificationButtons.length > 1) {
+      notificationButtons.slice(1).forEach(button => button.remove());
+    }
+  }
+
   if (!topbarRight) return;
-
-  const themeBtn = topbarRight.querySelector('.theme-btn');
-  if (!themeBtn) return;
-
-  themeBtn.setAttribute('aria-label', 'Switch to dark mode');
-
-  if (!topbarRight.querySelector('.dash-topbar__notif')) {
-    const notifBtn = document.createElement('button');
-    notifBtn.type = 'button';
-    notifBtn.className = 'navbar__icon-btn dash-topbar__notif';
-    notifBtn.setAttribute('aria-label', 'Open notifications');
-    notifBtn.innerHTML = `
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5" />
-        <path d="M9 17a3 3 0 0 0 6 0" />
-      </svg>
-      <span class="dash-notif-dot" aria-hidden="true"></span>
-    `;
-    topbarRight.insertBefore(notifBtn, themeBtn);
-  }
-
-  if (!topbarRight.querySelector('.rtl-btn')) {
-    const rtlBtn = document.createElement('button');
-    rtlBtn.type = 'button';
-    rtlBtn.className = 'navbar__icon-btn rtl-btn';
-    rtlBtn.setAttribute('aria-label', 'Switch to RTL');
-    rtlBtn.textContent = document.documentElement.getAttribute('dir') === 'rtl' ? 'LTR' : 'RTL';
-    topbarRight.insertBefore(rtlBtn, themeBtn.nextSibling);
-  }
 
   const profileImage = topbarRight.querySelector('img');
   if (profileImage) {
@@ -140,6 +162,28 @@ function initDashboardTopbarControls() {
     if (!profileImage.alt) {
       profileImage.alt = isAdminDashboard() ? 'Admin profile' : 'User profile';
     }
+  }
+}
+
+function initDashboardSidebarTools() {
+  const nav = document.querySelector('.dash-nav');
+  if (!nav || nav.querySelector('.dash-nav__mobile-tools')) return;
+
+  const wrapper = document.createElement('div');
+  wrapper.className = 'dash-nav__mobile-tools';
+  wrapper.innerHTML = `
+    <p class="dash-nav__section">Preferences</p>
+    <div class="dash-nav__mobile-tools-row">
+      <button type="button" class="navbar__icon-btn theme-btn dash-nav__tool">${getDashboardThemeIcons()}</button>
+      <button type="button" class="navbar__icon-btn rtl-btn dash-nav__tool">${document.documentElement.getAttribute('dir') === 'rtl' ? 'LTR' : 'RTL'}</button>
+    </div>
+  `;
+
+  const footer = nav.querySelector('.dash-nav__footer');
+  if (footer) {
+    nav.insertBefore(wrapper, footer);
+  } else {
+    nav.appendChild(wrapper);
   }
 }
 
@@ -203,10 +247,15 @@ function initMaterialSelections() {
 document.addEventListener('DOMContentLoaded', () => {
   initDashboardBrandMarks();
   initDashboardTopbarControls();
+  initDashboardSidebarTools();
   initDashboardSidebar();
   initDashboardNav();
   initDashboardNotifications();
   initDashboardRoleCopy();
   initDashboardLogout();
   initMaterialSelections();
+  syncDashboardControlStates();
 });
+
+document.addEventListener('themechange', syncDashboardControlStates);
+document.addEventListener('rtlchange', syncDashboardControlStates);

@@ -314,12 +314,15 @@ const ThemeManager = (() => {
   function init() {
     apply(getPreferred());
 
-    document.querySelectorAll('.theme-btn').forEach(btn => {
-      btn.addEventListener('click', toggle);
+    document.addEventListener('click', event => {
+      const button = event.target.closest('.theme-btn');
+      if (!button) return;
+      toggle();
     });
 
-    document.querySelectorAll('.theme-toggle-checkbox').forEach(toggle => {
-      toggle.addEventListener('change', () => apply(toggle.checked ? 'dark' : 'light'));
+    document.addEventListener('change', event => {
+      if (!event.target.matches('.theme-toggle-checkbox')) return;
+      apply(event.target.checked ? 'dark' : 'light');
     });
 
     const media = window.matchMedia('(prefers-color-scheme: dark)');
@@ -350,6 +353,7 @@ const RTLManager = (() => {
     document.documentElement.setAttribute('lang', isRTL ? 'ar' : 'en');
     writeStoredValue(STORAGE_KEYS.rtl, String(isRTL));
     syncControls(isRTL);
+    document.dispatchEvent(new CustomEvent('rtlchange', { detail: { rtl: isRTL } }));
   }
 
   function toggle() {
@@ -359,12 +363,15 @@ const RTLManager = (() => {
   function init() {
     apply(readStoredValue(STORAGE_KEYS.rtl) === 'true');
 
-    document.querySelectorAll('.rtl-btn').forEach(btn => {
-      btn.addEventListener('click', toggle);
+    document.addEventListener('click', event => {
+      const button = event.target.closest('.rtl-btn');
+      if (!button) return;
+      toggle();
     });
 
-    document.querySelectorAll('.rtl-toggle-checkbox').forEach(toggle => {
-      toggle.addEventListener('change', () => apply(toggle.checked));
+    document.addEventListener('change', event => {
+      if (!event.target.matches('.rtl-toggle-checkbox')) return;
+      apply(event.target.checked);
     });
   }
 
