@@ -210,23 +210,27 @@ function initDashboardRoleCopy() {
   }
 }
 
-function initDashboardLogout() {
+function initDashboardNavCleanup() {
   const nav = document.querySelector('.dash-nav');
-  if (!nav || nav.querySelector('.dash-nav__link--logout')) return;
+  if (!nav) return;
 
-  const footer = document.createElement('div');
-  footer.className = 'dash-nav__footer';
-  footer.innerHTML = `
-    <a href="../login.html" class="dash-nav__link dash-nav__link--logout">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" aria-hidden="true">
-        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-        <polyline points="16 17 21 12 16 7" />
-        <line x1="21" y1="12" x2="9" y2="12" />
-      </svg>
-      Logout
-    </a>
-  `;
-  nav.appendChild(footer);
+  nav.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const label = link.textContent.replace(/\s+/g, ' ').trim();
+    const isUnusedLink = href === '../dashboard-user/index.html'
+      || href === '../login.html'
+      || /^(Client View|Sign Out|Logout)$/i.test(label);
+
+    if (!isUnusedLink) return;
+
+    const wrapper = link.parentElement;
+    if (wrapper && wrapper !== nav && wrapper.children.length === 1) {
+      wrapper.remove();
+      return;
+    }
+
+    link.remove();
+  });
 }
 
 function initDashboardBrandMarks() {
@@ -246,13 +250,13 @@ function initMaterialSelections() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initDashboardBrandMarks();
+  initDashboardNavCleanup();
   initDashboardTopbarControls();
   initDashboardSidebarTools();
   initDashboardSidebar();
   initDashboardNav();
   initDashboardNotifications();
   initDashboardRoleCopy();
-  initDashboardLogout();
   initMaterialSelections();
   syncDashboardControlStates();
 });
