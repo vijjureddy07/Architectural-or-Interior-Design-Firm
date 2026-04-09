@@ -1608,8 +1608,13 @@
   .dash-topbar__right {
     gap: 0.65rem;
   }
-  .dash-topbar__right > :last-child {
+  .dash-topbar__right > :last-child:not(img):not(.dash-topbar__avatar) {
     flex: 1 1 100%;
+  }
+  .dash-topbar__right > img:last-child,
+  .dash-topbar__right > .dash-topbar__avatar:last-child {
+    flex: 0 0 auto;
+    align-self: flex-start;
   }
   .dash-nav__mobile-tools-row {
     flex-direction: row;

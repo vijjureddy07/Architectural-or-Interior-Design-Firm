@@ -233,6 +233,34 @@ function initDashboardNavCleanup() {
   });
 }
 
+function initDashboardHomeExit() {
+  const nav = document.querySelector('.dash-nav');
+  if (!nav) return;
+
+  let footer = nav.querySelector('.dash-nav__footer');
+  if (!footer) {
+    footer = document.createElement('div');
+    footer.className = 'dash-nav__footer';
+    nav.appendChild(footer);
+  }
+
+  if (footer.querySelector('a[href="../../index.html"]')) return;
+
+  const link = document.createElement('a');
+  link.href = '../../index.html';
+  link.className = 'dash-nav__link';
+  link.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" aria-hidden="true">
+      <path d="M3 12h13" />
+      <path d="M10 5l-7 7 7 7" />
+      <path d="M14 7h4a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-4" />
+    </svg>
+    Exit to Home
+  `;
+
+  footer.appendChild(link);
+}
+
 function initDashboardBrandMarks() {
   document.querySelectorAll('.navbar__logo-mark').forEach(mark => {
     mark.textContent = '';
@@ -251,6 +279,7 @@ function initMaterialSelections() {
 document.addEventListener('DOMContentLoaded', () => {
   initDashboardBrandMarks();
   initDashboardNavCleanup();
+  initDashboardHomeExit();
   initDashboardTopbarControls();
   initDashboardSidebarTools();
   initDashboardSidebar();
